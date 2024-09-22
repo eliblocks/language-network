@@ -1,0 +1,15 @@
+<%= form_with model: [:admin, user] do |form| %>
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <%= form.label :email, class: "form-label" %>
+        <%= form.text_field :email, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :role, class: "form-label" %>
+        <%= form.text_field :role, class: "form-control" %>
+      </div>
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

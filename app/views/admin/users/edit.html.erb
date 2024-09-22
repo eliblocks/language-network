@@ -1,0 +1,9 @@
+<h1>Edit User</h1>
+<%= link_to "Users", admin_users_path %>
+
+<%= render "form", user: @user %>
+
+<div class="mt-5">
+  <h4>Danger</h4>
+  <%= button_to "Delete User", admin_user_path(@user), method: :delete, class: "btn btn-danger mt-3" %>
+</div>
