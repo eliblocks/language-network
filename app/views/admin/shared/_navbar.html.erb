@@ -1,0 +1,7 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "Language Network", admin_users_path, class: "navbar-brand" %>
+
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
+  </div>
+</nav>
