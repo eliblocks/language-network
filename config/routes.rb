@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   namespace :admin do
-    resources :users
+    resources :users do
+      resources :messages, only: [ :create, :destroy ]
+    end
   end
 end
