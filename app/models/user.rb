@@ -7,4 +7,15 @@ class User < ApplicationRecord
   def admin?
     role == "admin"
   end
+
+  def format_messages
+    <<~HEREDOC
+      USER CONVERSATION
+      user id: #{id}
+      user email: #{email}
+
+
+      #{messages.format}
+    HEREDOC
+  end
 end
