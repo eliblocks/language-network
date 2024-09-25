@@ -2,6 +2,7 @@ class Admin::MessagesController < AdminController
   def create
     @user = User.find(params[:user_id])
     @user.messages.create!(message_params)
+    @user.summarize
 
     redirect_to admin_user_path(@user)
   end
