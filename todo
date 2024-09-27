@@ -1,2 +1,1 @@
-- basic integration with chatgpt, save summary of conversation after every user message.
-- user and messages creation from telegram
+- embed summary
