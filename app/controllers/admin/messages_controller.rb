@@ -1,7 +1,7 @@
 class Admin::MessagesController < AdminController
   def create
     @user = User.find(params[:user_id])
-    @user.messages.create!(message_params)
+    @user.messages.create!(role: "user", content: params[:message][:content])
     @user.respond
 
     redirect_to admin_user_path(@user)
@@ -13,11 +13,5 @@ class Admin::MessagesController < AdminController
     @message.destroy
 
     redirect_to admin_user_path(@user)
-  end
-
-  private
-
-  def message_params
-    params.require(:message).permit(:content, :role)
   end
 end
