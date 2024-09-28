@@ -17,4 +17,8 @@ Rails.application.routes.draw do
       resources :messages, only: [ :create, :destroy ]
     end
   end
+
+  namespace :api do
+    resources :messages, only: [:create]
+  end
 end

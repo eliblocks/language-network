@@ -4,6 +4,14 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
+
+  def self.create_from_telegram(telegram_id)
+    email = "#{telegram_id}@example.com"
+    password = SecureRandom.hex
+
+    create(email:, password:, telegram_id:)
+  end
+
   def platform_description
     <<~HEREDOC
       Language Network is a community platform that connects people with mutual requirements,
@@ -13,7 +21,7 @@ class User < ApplicationRecord
     HEREDOC
   end
 
-  def welcome_prompt
+  def welcome_instructions
     <<~HEREDOC
       You are welcoming a new user to Language Network.
       We are trying to get new users to post about what who they are and what they are looking for.
@@ -22,28 +30,7 @@ class User < ApplicationRecord
     HEREDOC
   end
 
-  def summary_prompt
-    "Summarize the interest of the user with the following conversation:\n\n"
-  end
-
-  def admin?
-    role == "admin"
-  end
-
-  def welcome_message
-    "#{platform_description}\n\n#{welcome_prompt}\n\n#{format_messages}"
-  end
-
-  def welcome_response
-    message = { role: 'system', content: welcome_message }
-    chat(message).dig("choices", 0, "message", "content")
-  end
-
-  def welcome
-    messages.create(role: 'assistant', content: welcome_response)
-  end
-
-  def format_messages
+  def formatted_messages
     <<~HEREDOC
       USER CONVERSATION
       user id: #{id}
@@ -54,21 +41,53 @@ class User < ApplicationRecord
     HEREDOC
   end
 
-  def respond
+  def summary_prompt
+    "Summarize the interest of the user with the following conversation:\n\n#{formatted_messages}"
+  end
+
+  def admin?
+    role == "admin"
+  end
+
+  def welcome_prompt
+    "#{platform_description}\n\n#{welcome_instructions}\n\n#{formatted_messages}"
+  end
+
+  def welcome_response
+    message = { role: 'system', content: welcome_prompt }
+    chat(message).dig("choices", 0, "message", "content")
+  end
+
+  def response
     if messages.count == 1
-      welcome
+      welcome_response
     else
-      continue_conversation
+      'Ok'
     end
   end
 
-  def continue_conversation
-    messages.create(role: 'assistant', content: 'OK')
+  def respond
+    message = messages.create(role: "assistant", content: response)
+
+    send_telegram(message) if telegram_id
+  end
+
+  def send_telegram(message)
+    return unless telegram_id
+
+    token = ENV.fetch('TELEGRAM_TOKEN')
+
+    url = "https://api.telegram.org/bot#{token}/sendMessage"
+
+    Net::HTTP.post(
+      URI(url),
+      { "text" => message.content, "chat_id" => telegram_id }.to_json,
+      "Content-Type" => "application/json"
+    )
   end
 
   def summarize
-    content = summary_prompt + format_messages
-    message = { role: "system", content: }
+    message = { role: "system", content: summary_prompt }
     response = chat(message).dig("choices", 0, "message", "content")
     update!(search: response)
   end
