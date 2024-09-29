@@ -4,12 +4,14 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
-
-  def self.create_from_telegram(telegram_id)
+  def self.create_from_telegram(params)
+    telegram_id = params["id"].to_s
+    first_name = params["first_name"]
+    last_name = params["last_name"]
     email = "#{telegram_id}@example.com"
     password = SecureRandom.hex
 
-    create(email:, password:, telegram_id:)
+    create!(email:, password:, telegram_id:, first_name:, last_name:)
   end
 
   def platform_description
@@ -35,6 +37,7 @@ class User < ApplicationRecord
       USER CONVERSATION
       user id: #{id}
       user email: #{email}
+      user full name: #{name}
 
 
       #{messages.format}
@@ -43,6 +46,13 @@ class User < ApplicationRecord
 
   def summary_prompt
     "Summarize the interest of the user with the following conversation:\n\n#{formatted_messages}"
+  end
+
+  def name
+    return "" unless first_name
+    return first_name unless last_name
+
+    "#{first_name} #{last_name}"
   end
 
   def admin?

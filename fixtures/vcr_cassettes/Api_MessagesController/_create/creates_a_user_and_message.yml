@@ -1,0 +1,165 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-08-06","messages":[{"role":"system","content":"Language
+        Network is a community platform that connects people with mutual requirements,\nfor
+        example people seeking roommates or jobs.\nUsers must explain a little about
+        themselves and what they are looking for,\nand then the platform will try
+        to find a good match to suggest a connection\n\n\nYou are welcoming a new
+        user to Language Network.\nWe are trying to get new users to post about what
+        who they are and what they are looking for.\nOnce we determine from the conversation
+        that we have enough information to suggest a connection with another user\nwe
+        will let them know that we will look for matches.\n\n\nUSER CONVERSATION\nuser
+        id: 2\nuser email: 5899443915@example.com\nuser full name: Eli Block\n\n\ndate:
+        2024-09-29 15:44:40\nrole: user\ncontent: Hello\n\n"}],"temperature":0.5}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer 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
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 29 Sep 2024 15:44:42 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '1015'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29796'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 408ms
+      X-Request-Id:
+      - req_4447996ac17bc5a4d722b5fded4ed605
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=apaNmJ6pCw5muUHnxFyhclSPd7wMR17fea9tCCPpP5U-1727624682-1.0.1.1-bx9LCP7LvSnFRNSchHLO38cgPXry8V92y0Z2f2j8cIkuALVHHtPthQstAMz0MpknzQkKsOwh5m6pGNsMvGEX.A;
+        path=/; expires=Sun, 29-Sep-24 16:14:42 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=rtbIpEu7Y5m8823KgM3dpCG1VHyvFrF2toDfDhmhatI-1727624682631-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8cad18936a3ab0c7-ATL
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-ACqO9F5J9mjPxf42FayN5aOi9PPlF",
+          "object": "chat.completion",
+          "created": 1727624681,
+          "model": "gpt-4o-2024-08-06",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "date: 2024-09-29 15:44:45\nrole: assistant\ncontent: Hi Eli! Welcome to Language Network. We're excited to have you here. Could you tell us a little bit about yourself and what you're looking for? Whether it's a roommate, a job, or something else, we're here to help you find a great match!",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 173,
+            "completion_tokens": 74,
+            "total_tokens": 247,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_5050236cbd"
+        }
+  recorded_at: Sun, 29 Sep 2024 15:44:42 GMT
+- request:
+    method: post
+    uri: https://api.telegram.org/bot7721874674:AAF21pcf6nKm0ezSzSkGiG6Bu1JfVcw3A00/sendMessage
+    body:
+      encoding: UTF-8
+      string: '{"text":"date: 2024-09-29 15:44:45\nrole: assistant\ncontent: Hi Eli!
+        Welcome to Language Network. We''re excited to have you here. Could you tell
+        us a little bit about yourself and what you''re looking for? Whether it''s
+        a roommate, a job, or something else, we''re here to help you find a great
+        match!","chat_id":"5899443915"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.telegram.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.18.0
+      Date:
+      - Sun, 29 Sep 2024 15:44:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '542'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Type,Date,Server,Connection
+    body:
+      encoding: UTF-8
+      string: '{"ok":true,"result":{"message_id":18,"from":{"id":7721874674,"is_bot":true,"first_name":"Language
+        Network","username":"language_network_bot"},"chat":{"id":5899443915,"first_name":"Eli","last_name":"Block","type":"private"},"date":1727624683,"text":"date:
+        2024-09-29 15:44:45\nrole: assistant\ncontent: Hi Eli! Welcome to Language
+        Network. We''re excited to have you here. Could you tell us a little bit about
+        yourself and what you''re looking for? Whether it''s a roommate, a job, or
+        something else, we''re here to help you find a great match!"}}'
+  recorded_at: Sun, 29 Sep 2024 15:44:43 GMT
+recorded_with: VCR 6.3.1

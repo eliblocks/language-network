@@ -51,6 +51,12 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "dotenv"
+  gem "rspec-rails"
+end
+
+group :test do
+  gem "webmock"
+  gem "vcr"
 end
 
 group :development do
