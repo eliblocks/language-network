@@ -32,6 +32,14 @@ class User < ApplicationRecord
     HEREDOC
   end
 
+  def comparison_instructions
+    <<~HEREDOC
+      We are now trying to find the best match for the searching user. 
+      Given the user and two other users along with their conversation histores,
+      return the user id of the best match for the searching user
+    HEREDOC
+  end
+
   def formatted_messages
     <<~HEREDOC
       USER CONVERSATION
@@ -46,6 +54,23 @@ class User < ApplicationRecord
 
   def summary_prompt
     "Summarize the interest of the user with the following conversation:\n\n#{formatted_messages}"
+  end
+
+  def comparison_prompt(user1, user2)
+    <<~HEREDOC
+      #{platform_description}
+
+      #{comparison instructions}
+
+      searching user
+      #{formatted_messages}
+
+      possible match
+      #{user1.formatted_messages}
+
+      possible match
+      #{user2.formatted_messages}
+    HEREDOC
   end
 
   def name
@@ -100,6 +125,24 @@ class User < ApplicationRecord
     message = { role: "system", content: summary_prompt }
     response = chat(message).dig("choices", 0, "message", "content")
     update!(search: response)
+  end
+
+
+  def compare(user1, user2)
+    message = { role: "system", content: comparison_prompt }
+    response = chat(message).dig("choices", 0, "message", "content")
+    User.find(reponse)
+  end
+
+  def best_match
+    best = nil
+    User.where.not(id:).each do |user|
+      best = user unless best
+
+      best = compare(best, user)
+    end
+
+    best
   end
 
   def chat(message)
