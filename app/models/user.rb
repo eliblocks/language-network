@@ -141,6 +141,7 @@ class User < ApplicationRecord
       update(status: "searching")
       respond_with_chatbot(confirm_post_prompt)
     else
+      update(status: "initial")
       respond_with_chatbot(create_post_prompt)
     end
   end
@@ -181,12 +182,18 @@ class User < ApplicationRecord
   end
 
   def chat(role, content)
-    OpenAI::Client.new.chat(
+    Rails.logger.info "Messaging ChatGPT: #{content}"
+
+    response = OpenAI::Client.new.chat(
       parameters: {
         model: "gpt-4o-2024-08-06",
         messages: [ { role:, content: } ],
         temperature: 0.5
       }
     ).dig("choices", 0, "message", "content")
+
+    Rails.logger.info "ChatGPT Response: #{response}"
+
+    response
   end
 end
