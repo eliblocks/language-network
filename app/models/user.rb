@@ -89,28 +89,66 @@ class User < ApplicationRecord
   end
 
   def welcome_response
-    message = { role: 'system', content: welcome_prompt }
-    chat(message).dig("choices", 0, "message", "content")
+    chat("system", welcome_prompt)
   end
 
-  def response
-    if messages.count == 1
-      welcome_response
-    else
-      'Ok'
-    end
+  def post_complete?
+    response = chat("system", is_post_complete_prompt)
+    response.downcase.include?("yes")
   end
 
-  def respond
+  def is_post_complete_prompt
+    <<~HEREDOC
+      #{platform_description}
+
+      Based the conversation with the user below, do we have enough information to generate a psot that can be matched against other users? Yes or No
+
+      #{formatted_messages}
+    HEREDOC
+  end
+
+  def create_post_prompt
+    <<~HEREDOC
+      #{platform_description}
+
+      Based on the existing conversation below, guide the user towards providing sufficient information that could be used to match them with other users.
+
+      #{formatted_messages}
+    HEREDOC
+  end
+
+  def confirm_post_prompt
+      <<~HEREDOC
+      #{platform_description}
+
+      We have determined that we collected sufficient information to begin matching this user.
+      We will now search for anyone we can connect them too.
+      Inform the user based on the existing conversation below.
+
+      #{formatted_messages}
+    HEREDOC
+  end
+
+  def respond_with_chatbot(content)
+    response = chat("system", content)
     message = messages.create(role: "assistant", content: response)
 
     send_telegram(message) if telegram_id
   end
 
+  def respond
+    if post_complete?
+      update(status: "searching")
+      respond_with_chatbot(confirm_post_prompt)
+    else
+      respond_with_chatbot(create_post_prompt)
+    end
+  end
+
   def send_telegram(message)
     return unless telegram_id
 
-    token = ENV.fetch('TELEGRAM_TOKEN')
+    token = ENV.fetch("TELEGRAM_TOKEN")
 
     url = "https://api.telegram.org/bot#{token}/sendMessage"
 
@@ -122,15 +160,12 @@ class User < ApplicationRecord
   end
 
   def summarize
-    message = { role: "system", content: summary_prompt }
-    response = chat(message).dig("choices", 0, "message", "content")
+    response = chat("system", summary_prompt)
     update!(search: response)
   end
 
-
   def compare(user1, user2)
-    message = { role: "system", content: comparison_prompt }
-    response = chat(message).dig("choices", 0, "message", "content")
+    response = chat("system", comparison_prompt)
     User.find(reponse)
   end
 
@@ -145,13 +180,13 @@ class User < ApplicationRecord
     best
   end
 
-  def chat(message)
+  def chat(role, content)
     OpenAI::Client.new.chat(
       parameters: {
         model: "gpt-4o-2024-08-06",
-        messages: [ message ],
+        messages: [ { role:, content: } ],
         temperature: 0.5
       }
-    )
+    ).dig("choices", 0, "message", "content")
   end
 end

@@ -1,0 +1,227 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-08-06","messages":[{"role":"system","content":"Language
+        Network is a community platform that connects people with mutual requirements,\nfor
+        example people seeking roommates or jobs.\nUsers must explain a little about
+        themselves and what they are looking for,\nand then the platform will try
+        to find a good match to suggest a connection\n\n\nBased the conversation with
+        the user below, do we have enough information to generate a psot that can
+        be matched against other users? Yes or No\n\nUSER CONVERSATION\nuser id: 5\nuser
+        email: john@example.com\nuser full name: John Smith\n\n\ndate: 2024-10-13
+        17:46:44\nrole: user\ncontent: Hello\n\n\n"}],"temperature":0.5}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer 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
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 13 Oct 2024 17:46:46 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '901'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29839'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 322ms
+      X-Request-Id:
+      - req_054b1c27629d18a262a361390d365e22
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=mMrIyIOpZG3IAvMFpZEjitYEGsTxqNzJBgtNCm7hjDY-1728841606-1.0.1.1-9H_cNhaWqSl0_rNTcNEfcUPInJ8bFUoA.jsAZ2B0fmhmUF.QVKUyLPuUc1tZAtQJMir7IchYXbqFdBlEISEyRg;
+        path=/; expires=Sun, 13-Oct-24 18:16:46 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=MUhIfZis95CQFHazPuFhctahC4CmlJVuPKv_FzuPgBk-1728841606561-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d21269fbd0c42cb-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AHwxyvg8B3D6DuawKZ2kkYFw74ebR",
+          "object": "chat.completion",
+          "created": 1728841606,
+          "model": "gpt-4o-2024-08-06",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "No",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 137,
+            "completion_tokens": 1,
+            "total_tokens": 138,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_6b68a8204b"
+        }
+  recorded_at: Sun, 13 Oct 2024 17:46:46 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-08-06","messages":[{"role":"system","content":"Language
+        Network is a community platform that connects people with mutual requirements,\nfor
+        example people seeking roommates or jobs.\nUsers must explain a little about
+        themselves and what they are looking for,\nand then the platform will try
+        to find a good match to suggest a connection\n\n\nBased on the existing conversation
+        below, guide the user towards providing sufficient information that could
+        be used to match them with other users.\n\nUSER CONVERSATION\nuser id: 5\nuser
+        email: john@example.com\nuser full name: John Smith\n\n\ndate: 2024-10-13
+        17:46:44\nrole: user\ncontent: Hello\n\n\n"}],"temperature":0.5}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer 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
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 13 Oct 2024 17:46:47 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '1028'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29838'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 324ms
+      X-Request-Id:
+      - req_4e0c1308b5c73a2e70dd00c23d7625aa
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=PXH4yX5Qn4oImZChD_pxCDWOxt9YG_.5JGmreKU.AB4-1728841607-1.0.1.1-XSyncVBJPmbIqLxWGhMS1r567evfZMJ2rNO7.r7pbsdlrHHOTBrhZaU5R87puUBWrNCgewV4nhVS8SMWgcF2CA;
+        path=/; expires=Sun, 13-Oct-24 18:16:47 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=l1vKkh4Yez0L3YLVVt5a46QlqrU7AssKL8P_YN.ottE-1728841607808-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8d2126a998b972ad-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AHwxy4hjBipD7ztFfNH1pdR0PaTpK",
+          "object": "chat.completion",
+          "created": 1728841606,
+          "model": "gpt-4o-2024-08-06",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "Hello John! Welcome to Language Network. To help us find the best matches for you, could you please provide a bit more information about yourself and what you're looking for? Whether it's finding a roommate, a job, or something else, sharing details like your interests, location preferences, or the type of job or living situation you're seeking will be very helpful. Let us know how we can assist you!",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 132,
+            "completion_tokens": 80,
+            "total_tokens": 212,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_6b68a8204b"
+        }
+  recorded_at: Sun, 13 Oct 2024 17:46:47 GMT
+recorded_with: VCR 6.3.1

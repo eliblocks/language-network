@@ -1,12 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Api::MessagesController, type: :request do
   def message(params)
   end
 
-  describe "#create", :vcr do
+  describe "#create" do
     it "creates a user and message" do
-      params = {  
+      params = {
         "update_id"=>460622228,
         "message"=> {
           "message_id"=>11,
@@ -16,17 +16,22 @@ RSpec.describe Api::MessagesController, type: :request do
             "first_name" => "Eli",
             "last_name" => "Block",
             "language_code" => "en"
-          }, 
-          "chat" => { 
+          },
+          "chat" => {
             "id"=>5899443915,
             "first_name"=>"Eli",
             "last_name"=>"Block",
-            "type"=>"private" 
+            "type"=>"private"
           },
           "date" => 1727550821,
           "text"=>"Hello"
         }
       }
+
+      client = instance_double(OpenAI::Client)
+      allow(OpenAI::Client).to(receive(:new)).and_return client
+      allow(client).to receive(:chat).and_return({ "choices" => [ { "message" => { "content" => "Yes" } } ] })
+      allow(Net::HTTP).to receive(:post)
 
       post api_messages_path(params)
 
@@ -34,6 +39,12 @@ RSpec.describe Api::MessagesController, type: :request do
       expect(user.name).to eq("Eli Block")
       expect(user.messages.count).to eq(2)
       expect(Message.last.role).to eq("assistant")
+
+      expect(Net::HTTP).to have_received(:post).with(
+        a_kind_of(URI::HTTPS),
+        { "text" => "Yes", "chat_id" => "5899443915" }.to_json,
+        a_kind_of(Hash)
+      )
     end
   end
 end
