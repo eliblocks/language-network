@@ -70,6 +70,8 @@ RSpec.configure do |config|
 
   config.include ActiveJob::TestHelper
 
+  config.include FactoryBot::Syntax::Methods
+
   VCR.configure do |config|
     config.cassette_library_dir = "fixtures/vcr_cassettes"
     config.hook_into :webmock

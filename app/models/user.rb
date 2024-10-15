@@ -34,9 +34,9 @@ class User < ApplicationRecord
 
   def comparison_instructions
     <<~HEREDOC
-      We are now trying to find the best match for the searching user. 
+      We are now trying to find the best match for the searching user.
       Given the user and two other users along with their conversation histores,
-      return the user id of the best match for the searching user
+      return the user id of the best match for the searching user. return only a user_id.
     HEREDOC
   end
 
@@ -60,7 +60,7 @@ class User < ApplicationRecord
     <<~HEREDOC
       #{platform_description}
 
-      #{comparison instructions}
+      #{comparison_instructions}
 
       searching user
       #{formatted_messages}
@@ -129,6 +129,10 @@ class User < ApplicationRecord
     HEREDOC
   end
 
+  def searching?
+    status == "searching"
+  end
+
   def respond_with_chatbot(content)
     response = chat("system", content)
     message = messages.create(role: "assistant", content: response)
@@ -165,17 +169,24 @@ class User < ApplicationRecord
     update!(search: response)
   end
 
+  def searchers
+    User.where(status: "searching").where.not(id: id)
+  end
+
   def compare(user1, user2)
-    response = chat("system", comparison_prompt)
-    User.find(reponse)
+    raise "Users not in searching status" unless user1.searching? && user2.searching?
+
+    response = chat("system", comparison_prompt(user1, user2))
+    User.find(response)
   end
 
   def best_match
-    best = nil
-    User.where.not(id:).each do |user|
-      best = user unless best
+    raise "User not in searching status" unless searching?
 
-      best = compare(best, user)
+    best = nil
+
+    searchers.each do |user|
+      best = (best ? compare(best, user) : user)
     end
 
     best

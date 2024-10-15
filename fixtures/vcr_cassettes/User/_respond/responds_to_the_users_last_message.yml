@@ -11,9 +11,9 @@ http_interactions:
         themselves and what they are looking for,\nand then the platform will try
         to find a good match to suggest a connection\n\n\nBased the conversation with
         the user below, do we have enough information to generate a psot that can
-        be matched against other users? Yes or No\n\nUSER CONVERSATION\nuser id: 27\nuser
-        email: john@example.com\nuser full name: John Smith\n\n\ndate: 2024-10-13
-        19:39:54\nrole: user\ncontent: Hello\n\n\n"}],"temperature":0.5}'
+        be matched against other users? Yes or No\n\nUSER CONVERSATION\nuser id: 92\nuser
+        email: sonja_ondricka@rutherford.test\nuser full name: Julio Renner\n\n\ndate:
+        2024-10-15 19:50:19\nrole: user\ncontent: Hello\n\n\n"}],"temperature":0.5}'
     headers:
       Content-Type:
       - application/json
@@ -31,7 +31,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Oct 2024 19:39:55 GMT
+      - Tue, 15 Oct 2024 19:50:20 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -43,7 +43,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '597'
+      - '665'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -53,38 +53,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '29839'
+      - '29835'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 322ms
+      - 330ms
       X-Request-Id:
-      - req_ef969c547913647a5d9f23ee3ca43d67
+      - req_43760fe75ccbeac294ec37ee885e60c2
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=Fclyeztqu8Lau1iIk5rhAKPiIG55p7xx0r1SUX2mPJM-1728848395-1.0.1.1-JdG.CmvjlfyKegVa8B9132NxwHVrsWasXdoVBmp.xZAC5J6l6mXtNF1XEYKDtChqeLjPqI3kmFj864v2yI2hXQ;
-        path=/; expires=Sun, 13-Oct-24 20:09:55 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=MJwiER2ITLwEl67yBtVrQHJ1USByIeVqRRF2n9ERDNo-1729021820-1.0.1.1-RwJZ_S9mxtzW2CWwl.k.cu7X2UOG1KZyasMfJTIzYYohCDr7M9_HYY3t6PtfoTAfcCdJWNoP9UO0wwnVesUwgw;
+        path=/; expires=Tue, 15-Oct-24 20:20:20 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=dN9EX2eKwduj9Whjozi2MqPi_7FJy_aMCLdFK6AQ5xA-1728848395611-0.0.1.1-604800000;
+      - _cfuvid=f0ayaUtlM61eR6cKSJBzXrtpWjJnCCNs_xkDQpc5ThA-1729021820452-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8d21cc63fec842c6-EWR
+      - 8d325664daaa4399-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AHyjTCcForbcLrtSO88OCiyidx3w7",
+          "id": "chatcmpl-AIhqeCMz9IDL4H4l1kim13obhuvXV",
           "object": "chat.completion",
-          "created": 1728848395,
+          "created": 1729021820,
           "model": "gpt-4o-2024-08-06",
           "choices": [
             {
@@ -99,9 +99,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 137,
+            "prompt_tokens": 145,
             "completion_tokens": 1,
-            "total_tokens": 138,
+            "total_tokens": 146,
             "prompt_tokens_details": {
               "cached_tokens": 0
             },
@@ -111,7 +111,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_6b68a8204b"
         }
-  recorded_at: Sun, 13 Oct 2024 19:39:55 GMT
+  recorded_at: Tue, 15 Oct 2024 19:50:20 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -123,9 +123,9 @@ http_interactions:
         themselves and what they are looking for,\nand then the platform will try
         to find a good match to suggest a connection\n\n\nBased on the existing conversation
         below, guide the user towards providing sufficient information that could
-        be used to match them with other users.\n\nUSER CONVERSATION\nuser id: 27\nuser
-        email: john@example.com\nuser full name: John Smith\n\n\ndate: 2024-10-13
-        19:39:54\nrole: user\ncontent: Hello\n\n\n"}],"temperature":0.5}'
+        be used to match them with other users.\n\nUSER CONVERSATION\nuser id: 92\nuser
+        email: sonja_ondricka@rutherford.test\nuser full name: Julio Renner\n\n\ndate:
+        2024-10-15 19:50:19\nrole: user\ncontent: Hello\n\n\n"}],"temperature":0.5}'
     headers:
       Content-Type:
       - application/json
@@ -143,7 +143,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Oct 2024 19:39:57 GMT
+      - Tue, 15 Oct 2024 19:50:22 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -155,7 +155,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '1423'
+      - '1330'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -165,45 +165,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '29838'
+      - '29834'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 324ms
+      - 332ms
       X-Request-Id:
-      - req_fd573f749e0a539fa872d9e863a0284b
+      - req_7f41f67e7c08ab11df8d5b91fd884a52
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=7Lx6Zw8RfZ2wJoNiBHscdZeptuzqLfLIAW6eKvoaSvE-1728848397-1.0.1.1-5nnSfp9z5vW4bnCjpnE3ijEH6laX_9EGD4CipQxAcr6gSjI11yC0dJeTxMGNCErsHoylk5qnaEL0C1uCPFnqxA;
-        path=/; expires=Sun, 13-Oct-24 20:09:57 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=e0s3sAxENp8EP51YSxmMXOp.z8hBvQTNwHQDaSDd2hs-1729021822-1.0.1.1-ruhK3r8oQGD.yhl_NfjxhzJ_d.lrq.XTyzxThvqOgeIaJRGav.JqGNTri75vzsF1Id4rLeAmD6RPj7AKa4VX0g;
+        path=/; expires=Tue, 15-Oct-24 20:20:22 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=HiAWcnA3INCt0zeo.KP47ViHyErKgMgJNGttGWd3oX4-1728848397258-0.0.1.1-604800000;
+      - _cfuvid=YmDN14SnSzZ0grGJd9iTji7QxxyAVFysjkS_b6B4wUM-1729021822010-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8d21cc6939934401-EWR
+      - 8d32566a680543af-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AHyjUycyxX06K6xCRIj5SnMVa5gmY",
+          "id": "chatcmpl-AIhqf4T2I9GQFHSmM2bcU9DaoiDGo",
           "object": "chat.completion",
-          "created": 1728848396,
+          "created": 1729021821,
           "model": "gpt-4o-2024-08-06",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "Hello, John! Welcome to Language Network. To help us find the best match for you, could you please share a bit about yourself and what you're looking for? For example, if you're seeking a roommate, you might mention your preferred location, budget, and any specific requirements or preferences. If you're looking for a job, it would be helpful to know your field of interest, experience level, and any other relevant details.",
+                "content": "Hello Julio! Welcome to Language Network. To help us find the best matches for you, could you please provide a little more information about yourself and what you're looking for? For example, are you seeking a roommate, a job, or something else? Additionally, it would be helpful to know your interests, preferences, or any specific requirements you might have. This will allow us to connect you with people who share similar needs or interests.",
                 "refusal": null
               },
               "logprobs": null,
@@ -211,9 +211,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 132,
-            "completion_tokens": 85,
-            "total_tokens": 217,
+            "prompt_tokens": 140,
+            "completion_tokens": 87,
+            "total_tokens": 227,
             "prompt_tokens_details": {
               "cached_tokens": 0
             },
@@ -221,7 +221,7 @@ http_interactions:
               "reasoning_tokens": 0
             }
           },
-          "system_fingerprint": "fp_e5e4913e83"
+          "system_fingerprint": "fp_a20a4ee344"
         }
-  recorded_at: Sun, 13 Oct 2024 19:39:57 GMT
+  recorded_at: Tue, 15 Oct 2024 19:50:22 GMT
 recorded_with: VCR 6.3.1
