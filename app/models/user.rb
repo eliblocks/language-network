@@ -118,7 +118,7 @@ class User < ApplicationRecord
   end
 
   def confirm_post_prompt
-      <<~HEREDOC
+    <<~HEREDOC
       #{platform_description}
 
       We have determined that we collected sufficient information to begin matching this user.
@@ -126,6 +126,18 @@ class User < ApplicationRecord
       Inform the user based on the existing conversation below.
 
       #{formatted_messages}
+    HEREDOC
+  end
+
+  def good_match_prompt(possible_match)
+    <<~HEREDOC
+      #{platform_description}
+
+      Based on the conversations with two separate users below, are they a good match for each other? Return yes or no.
+
+      #{formatted_messages}
+
+      #{possible_match.formatted_messages}
     HEREDOC
   end
 
@@ -190,6 +202,11 @@ class User < ApplicationRecord
     end
 
     best
+  end
+
+  def good_match?(possible_match)
+    response = chat("system", good_match_prompt(possible_match))
+    response.downcase.include?("yes")
   end
 
   def chat(role, content)
