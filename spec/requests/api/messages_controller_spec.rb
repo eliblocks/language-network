@@ -15,12 +15,14 @@ RSpec.describe Api::MessagesController, type: :request do
             "is_bot" => false,
             "first_name" => "Eli",
             "last_name" => "Block",
+            "username" => "eliblocks",
             "language_code" => "en"
           },
           "chat" => {
             "id"=>5899443915,
             "first_name"=>"Eli",
             "last_name"=>"Block",
+            "username" => "eliblocks",
             "type"=>"private"
           },
           "date" => 1727550821,
@@ -37,6 +39,7 @@ RSpec.describe Api::MessagesController, type: :request do
 
       user = User.last
       expect(user.name).to eq("Eli Block")
+      expect(user.telegram_username).to eq("eliblocks")
       expect(user.messages.count).to eq(2)
       expect(Message.last.role).to eq("assistant")
 

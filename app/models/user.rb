@@ -6,12 +6,13 @@ class User < ApplicationRecord
 
   def self.create_from_telegram(params)
     telegram_id = params["id"].to_s
+    telegram_username = params["username"]
     first_name = params["first_name"]
     last_name = params["last_name"]
     email = "#{telegram_id}@example.com"
     password = SecureRandom.hex
 
-    create!(email:, password:, telegram_id:, first_name:, last_name:)
+    create!(email:, password:, telegram_id:, telegram_username:, first_name:, last_name:)
   end
 
   def platform_description
@@ -156,6 +157,7 @@ class User < ApplicationRecord
     if post_complete?
       update(status: "searching")
       respond_with_chatbot(confirm_post_prompt)
+      seek
     else
       update(status: "initial")
       respond_with_chatbot(create_post_prompt)
@@ -207,6 +209,42 @@ class User < ApplicationRecord
   def good_match?(possible_match)
     response = chat("system", good_match_prompt(possible_match))
     response.downcase.include?("yes")
+  end
+
+  def seek
+    best = best_match
+
+    return unless best && good_match?(best)
+
+    create_match(best)
+  end
+
+  def create_match(user)
+    ActiveRecord::Base.transaction do
+      Match.create(searching_user_id: id, matched_user_id: user.id)
+      update(status: "matched")
+      user.update(status: "matched")
+    end
+    introduce_to(user)
+  end
+
+  def introduce_to(user)
+    message = user.messages.create(role: "assistant", content: "You should meet #{telegram_link || first_name}")
+    user.send_telegram(message) if user.telegram_id
+  end
+
+  def telegram_link
+    return nil unless telegram_username
+
+    "https://t.me/#{telegram_username}"
+  end
+
+  def matched_user
+    match = Match.where(status: "active").where("searching_user_id = ? or matched_user_id = ?", id, id)&.last
+
+    return unless match
+
+    match.searching_user == self ? match.matched_user : match.searching_user
   end
 
   def chat(role, content)

@@ -4,6 +4,8 @@
       <h1>User</h1>
       <div>Email: <%= @user.email %></div>
       <div>Role: <%= @user.role %></div>
+      <div>Status: <%= @user.status %></div>
+      <div>Match: <%= @user.matched_user&.email %></div>
     </div>
   </div>
   <div class="col-md-6">
