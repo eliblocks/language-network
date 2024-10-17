@@ -6,6 +6,8 @@ class Api::MessagesController < ApiController
     first_name = from["first_name"]
     last_name = from["last_name"]
 
+    telegram_username = nil unless telegram_username.present?
+
     user = User.find_or_initialize_by(telegram_id:) do |user|
       user.email = "#{telegram_id}@example.com"
       user.password = SecureRandom.hex

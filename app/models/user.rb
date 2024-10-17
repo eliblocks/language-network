@@ -8,17 +8,6 @@ class User < ApplicationRecord
   validates :telegram_id, uniqueness: true, allow_nil: true
   validates :telegram_username, uniqueness: true, allow_nil: true
 
-  def self.create_from_telegram(params)
-    telegram_id = params["id"].to_s
-    telegram_username = params["username"]
-    first_name = params["first_name"]
-    last_name = params["last_name"]
-    email = "#{telegram_id}@example.com"
-    password = SecureRandom.hex
-
-    create!(email:, password:, telegram_id:, telegram_username:, first_name:, last_name:)
-  end
-
   def platform_description
     <<~HEREDOC
       Language Network is a community platform that connects people with mutual requirements,
