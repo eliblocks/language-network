@@ -30,9 +30,9 @@ RSpec.describe Api::MessagesController, type: :request do
         }
       }
 
-      client = instance_double(OpenAI::Client)
-      allow(OpenAI::Client).to(receive(:new)).and_return client
-      allow(client).to receive(:chat).and_return({ "choices" => [ { "message" => { "content" => "Yes" } } ] })
+      # client = instance_double(OpenAI::Client)
+      # allow(OpenAI::Client).to(receive(:new)).and_return client
+      # allow(client).to receive(:chat).and_return({ "choices" => [ { "message" => { "content" => "Yes" } } ] })
       allow(Net::HTTP).to receive(:post)
 
       post api_messages_path(params)
@@ -45,7 +45,7 @@ RSpec.describe Api::MessagesController, type: :request do
 
       expect(Net::HTTP).to have_received(:post).with(
         a_kind_of(URI::HTTPS),
-        { "text" => "Yes", "chat_id" => "5899443915" }.to_json,
+        { "text" => user.welcome_message, "chat_id" => "5899443915" }.to_json,
         a_kind_of(Hash)
       )
     end

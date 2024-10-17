@@ -20,17 +20,24 @@ class User < ApplicationRecord
       Language Network is a community platform that connects people with mutual requirements,
       for example people seeking roommates or jobs.
       Users must explain a little about themselves and what they are looking for,
-      and then the platform will try to find a good match to suggest a connection
+      and then the platform will try to find a good match to suggest a connection.
     HEREDOC
   end
 
-  def welcome_instructions
-    <<~HEREDOC
-      You are welcoming a new user to Language Network.
-      We are trying to get new users to post about what who they are and what they are looking for.
-      Once we determine from the conversation that we have enough information to suggest a connection with another user
-      we will let them know that we will look for matches.
+  def welcome_message
+    message = <<~HEREDOC
+      Hello! I'm a bot that can connect you to people based on your needs. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
     HEREDOC
+
+    if telegram_id && !telegram_username
+      message << "\n#{username_notice}"
+    end
+
+    message
+  end
+
+  def username_notice
+    "Looks like you don't have a username set in Telegram. I'll need that to recommend you to other users."
   end
 
   def comparison_instructions
@@ -83,14 +90,6 @@ class User < ApplicationRecord
 
   def admin?
     role == "admin"
-  end
-
-  def welcome_prompt
-    "#{platform_description}\n\n#{welcome_instructions}\n\n#{formatted_messages}"
-  end
-
-  def welcome_response
-    chat("system", welcome_prompt)
   end
 
   def post_complete?
@@ -154,7 +153,12 @@ class User < ApplicationRecord
   end
 
   def respond
-    if post_complete?
+    if messages.count == 1
+      message = messages.create(role: "assistant", content: welcome_message)
+      send_telegram(message)
+    elsif telegram_id && !telegram_username
+      message = messages.create(role: "assistant", content: username_notice)
+    elsif post_complete?
       update(status: "searching")
       respond_with_chatbot(confirm_post_prompt)
       seek
