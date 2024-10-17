@@ -31,6 +31,14 @@ class Admin::UsersController < AdminController
     redirect_to admin_users_path
   end
 
+  def reset
+    @user = User.find(params[:user_id])
+    @user.messages.each(&:destroy!)
+    @user.update!(status: "initial")
+
+    redirect_to admin_users_path
+  end
+
   def destroy
     @user = User.find(params[:id])
     @user.destroy
@@ -41,6 +49,6 @@ class Admin::UsersController < AdminController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :telegram_id, :telegram_username, :role)
+    params.require(:user).permit(:email, :first_name, :last_name, :telegram_id, :telegram_username, :role, :status)
   end
 end

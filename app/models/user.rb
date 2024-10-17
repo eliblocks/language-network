@@ -5,8 +5,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   validates :email, uniqueness: true
-  validates :telegram_id, uniqueness: true
-  validates :telegram_username, uniqueness: true
+  validates :telegram_id, uniqueness: true, allow_nil: true
+  validates :telegram_username, uniqueness: true, allow_nil: true
 
   def self.create_from_telegram(params)
     telegram_id = params["id"].to_s

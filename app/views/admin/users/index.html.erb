@@ -10,6 +10,7 @@
       <th>Email</th>
       <th>Role</th>
       <th>Status</th>
+      <th>Messages</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -19,9 +20,11 @@
         <td><%= user.email %></td>
         <td><%= user.role %></td>
         <td><%= user.status %></td>
+        <td><%= user.messages.count %></td>
         <td>
           <%= link_to "Show", admin_user_path(user) %> |
-          <%= link_to "Edit", edit_admin_user_path(user) %>
+          <%= link_to "Edit", edit_admin_user_path(user) %> |
+          <%= link_to "Reset", admin_user_reset_path(user), data: { turbo_method: :patch } %>
         </td>
       </tr>
     <% end %>

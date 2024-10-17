@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users do
       resources :messages, only: [ :create, :destroy ]
+      patch "reset"
     end
   end
 

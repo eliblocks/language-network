@@ -3,6 +3,11 @@
 
 <%= render "form", user: @user %>
 
+<div class="mt-4">
+  <h4>Warning</h4>
+  <%= button_to "Reset User", admin_user_reset_path(@user), method: :patch, class: "btn btn-warning mt-3" %>
+</div>
+
 <div class="mt-5">
   <h4>Danger</h4>
   <%= button_to "Delete User", admin_user_path(@user), method: :delete, class: "btn btn-danger mt-3" %>
