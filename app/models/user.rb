@@ -10,10 +10,9 @@ class User < ApplicationRecord
 
   def platform_description
     <<~HEREDOC
-      Language Network is a community platform that connects people with mutual requirements,
-      for example people seeking roommates or jobs.
-      Users must explain a little about themselves and what they are looking for,
-      and then the platform will try to find a good match to suggest a connection.
+      You are a bot that makes connections.
+      People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
+      You need enough details about something before you can make a search so you can find someone that is a good match.
     HEREDOC
   end
 
@@ -85,38 +84,26 @@ class User < ApplicationRecord
     role == "admin"
   end
 
-  def post_complete?
-    response = chat("system", is_post_complete_prompt)
+  def ready_to_search?
+    response = chat("system", ready_to_search_prompt)
     response.downcase.include?("yes")
   end
 
-  def is_post_complete_prompt
+  def ready_to_search_prompt
     <<~HEREDOC
       #{platform_description}
 
-      Based the conversation with the user below, do we have enough information to generate a psot that can be matched against other users? Yes or No
+      Based on the conversation below, are we ready to search for matches? yes or no.
 
       #{formatted_messages}
     HEREDOC
   end
 
-  def create_post_prompt
+  def continue_conversation_prompt
     <<~HEREDOC
       #{platform_description}
 
       Based on the existing conversation below, guide the user towards providing sufficient information that could be used to match them with other users.
-
-      #{formatted_messages}
-    HEREDOC
-  end
-
-  def confirm_post_prompt
-    <<~HEREDOC
-      #{platform_description}
-
-      We have determined that we collected sufficient information to begin matching this user.
-      We will now search for anyone we can connect them too.
-      Inform the user based on the existing conversation below.
 
       #{formatted_messages}
     HEREDOC
@@ -151,13 +138,8 @@ class User < ApplicationRecord
       send_telegram(message)
     elsif telegram_id && !telegram_username
       message = messages.create(role: "assistant", content: username_notice)
-    elsif post_complete?
-      update(status: "searching")
-      respond_with_chatbot(confirm_post_prompt)
-      seek
     else
-      update(status: "initial")
-      respond_with_chatbot(create_post_prompt)
+      respond_with_chatbot(continue_conversation_prompt)
     end
   end
 

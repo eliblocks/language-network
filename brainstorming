@@ -1,0 +1,27 @@
+Need to figure out an interaction loop
+
+need to change the status of the user as they indicate through conversation whether they are actively looking for something
+
+Dont want to match users who have already been matched and have not responded.
+dont want to match users who have not yet provided sufficient details
+dont want to match users who have recently changed topics and have not yet provided sufficient detail on new topic
+
+Do want to match users who have provided addtional details after recently being matched
+
+need to inform users that a process has begun to find matches?
+
+
+
+thoughts
+
+one main conversation prompt where the messages are included in chat completion format. insert at bottom of prompt the status of the user. may or may not need to know if status has recently changed
+
+one prompt to determine status. Only need two statuses? Searching and not searching?
+
+mvp can probably kick off search on every message where user is in searching status
+
+users who are searching can match or be matched
+
+
+
+
