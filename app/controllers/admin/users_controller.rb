@@ -34,6 +34,8 @@ class Admin::UsersController < AdminController
   def reset
     @user = User.find(params[:user_id])
     @user.messages.each(&:destroy!)
+    Match.where(searching_user_id: @user.id).destroy_all
+    Match.where(matched_user_id: @user.id).destroy_all
     @user.update!(status: "initial")
 
     redirect_to admin_users_path

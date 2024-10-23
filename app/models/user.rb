@@ -85,7 +85,7 @@ class User < ApplicationRecord
   end
 
   def ready_to_search?
-    response = chat("system", ready_to_search_prompt)
+    response = chat_message("system", ready_to_search_prompt)
     response.downcase.include?("yes")
   end
 
@@ -103,9 +103,7 @@ class User < ApplicationRecord
     <<~HEREDOC
       #{platform_description}
 
-      Based on the existing conversation below, guide the user towards providing sufficient information that could be used to match them with other users.
-
-      #{formatted_messages}
+      Guide the user towards providing sufficient information that could be used to match them with other users.
     HEREDOC
   end
 
@@ -125,8 +123,9 @@ class User < ApplicationRecord
     status == "searching"
   end
 
-  def respond_with_chatbot(content)
-    response = chat("system", content)
+  def respond_with_chatbot(system_prompt)
+    items = messages.as_json(only: [ :role, :content ])
+    response = chat_messages(system_prompt, items)
     message = messages.create(role: "assistant", content: response)
 
     send_telegram(message) if telegram_id
@@ -167,7 +166,7 @@ class User < ApplicationRecord
   end
 
   def summarize
-    response = chat("system", summary_prompt)
+    response = chat_message("system", summary_prompt)
     update!(search: response)
   end
 
@@ -178,7 +177,7 @@ class User < ApplicationRecord
   def compare(user1, user2)
     raise "Users not in searching status" unless user1.searching? && user2.searching?
 
-    response = chat("system", comparison_prompt(user1, user2))
+    response = chat_message("system", comparison_prompt(user1, user2))
     User.find(response)
   end
 
@@ -195,7 +194,7 @@ class User < ApplicationRecord
   end
 
   def good_match?(possible_match)
-    response = chat("system", good_match_prompt(possible_match))
+    response = chat_message("system", good_match_prompt(possible_match))
     response.downcase.include?("yes")
   end
 
@@ -236,13 +235,21 @@ class User < ApplicationRecord
     match.searching_user == self ? match.matched_user : match.searching_user
   end
 
-  def chat(role, content)
-    Rails.logger.info "Messaging ChatGPT: #{content}"
+  def chat_message(role, content)
+    chat([ { role:, content: } ])
+  end
+
+  def chat_messages(system, messages)
+    chat(messages.unshift(role: "system", content: system))
+  end
+
+  def chat(messages)
+    Rails.logger.info "Messaging ChatGPT: #{messages}"
 
     response = OpenAI::Client.new.chat(
       parameters: {
         model: "gpt-4o-2024-08-06",
-        messages: [ { role:, content: } ],
+        messages:,
         temperature: 0.5
       }
     ).dig("choices", 0, "message", "content")
