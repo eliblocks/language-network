@@ -140,6 +140,15 @@ class User < ApplicationRecord
       message = messages.create(role: "assistant", content: username_notice)
     else
       respond_with_chatbot(continue_conversation_prompt)
+      UpdateStatusJob.perform_later(id)
+    end
+  end
+
+  def update_status
+    if ready_to_search?
+      update(status: "searching")
+    else
+      update(status: "drafting")
     end
   end
 
@@ -201,15 +210,16 @@ class User < ApplicationRecord
   def create_match(user)
     ActiveRecord::Base.transaction do
       Match.create(searching_user_id: id, matched_user_id: user.id)
+
+      searcher_message = messages.create(role: "assistant", content: "I found someone you should meet! #{telegram_link || first_name}")
+      matched_message = user.messages.create(role: "assistant", content: "I found someone you should meet! #{telegram_link || first_name}")
+
+      send_telegram(searcher_message) if telegram_id
+      user.send_telegram(matched_message) if user.telegram_id
+
       update(status: "matched")
       user.update(status: "matched")
     end
-    introduce_to(user)
-  end
-
-  def introduce_to(user)
-    message = user.messages.create(role: "assistant", content: "You should meet #{telegram_link || first_name}")
-    user.send_telegram(message) if user.telegram_id
   end
 
   def telegram_link
