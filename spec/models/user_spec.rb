@@ -54,9 +54,9 @@ RSpec.describe User do
       user2 = create(:user, id: 2, status: "searching")
       user3 = create(:user, id: 3, status: "searching")
 
-      user1.messages.create(role: "user", content: "I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits.")
+      user1.messages.create(role: "user", content: "I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits and work life balance.")
       user2.messages.create(role: "user", content: "I'm looking for a roommate to sign a new lease in Park Slope, Brooklyn")
-      user3.messages.create(role: "user", content: "I'm a founder at an early stage SaaS startup with a great product looking to bring on experienced engineers available to work in person in NYC")
+      user3.messages.create(role: "user", content: "I'm a founder at an early stage SaaS startup with a great product looking to bring on experienced full stack web developers with SaaS experience who are available to work full time in person in NYC.")
 
       user1.search
 

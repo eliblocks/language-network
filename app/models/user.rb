@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_neighbors :embedding
 
+  User.attributes_for_inspect = [ :id, :email, :telegram_id, :telegram_username, :first_name, :last_name, :summary, :status, :role, :created_at, :updated_at ]
+
   SEARCH_SIZE = 100
 
   def platform_description
@@ -17,6 +19,8 @@ class User < ApplicationRecord
       You are a bot that makes connections.
       People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
       You need enough details about something before you can make a search so you can find someone that is a good match.
+
+      However do not ask for exessive detail, if the user provides details in their first message dont ask for more unless needed.
     HEREDOC
   end
 
