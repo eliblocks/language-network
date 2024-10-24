@@ -92,16 +92,21 @@ class User < ApplicationRecord
     role == "admin"
   end
 
-  def ready_to_search?
-    response = chat_message("system", ready_to_search_prompt)
-    response.downcase.include?("yes")
+  def fetch_active?
+    response = chat_message("system", active_prompt)
+    response.downcase == "active"
   end
 
-  def ready_to_search_prompt
+  def active_prompt
     <<~HEREDOC
       #{platform_description}
 
-      Based on the conversation below, are we ready to search for matches? yes or no.
+      Based on the conversation below which status should we set the user to?
+
+      active - We should be actively searching for matches.
+      inactive - We should not be searching for matches at this moment.
+
+      respond with only one word, active or inactive.
 
       #{formatted_messages}
     HEREDOC
@@ -152,7 +157,7 @@ class User < ApplicationRecord
   end
 
   def update_status
-    if ready_to_search?
+    if fetch_active?
       update(status: "searching")
     else
       update(status: "drafting")
