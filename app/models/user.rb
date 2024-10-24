@@ -246,7 +246,7 @@ class User < ApplicationRecord
     ActiveRecord::Base.transaction do
       Match.create(searching_user_id: id, matched_user_id: user.id)
 
-      searcher_message = messages.create(role: "assistant", content: "I found someone you should meet! #{telegram_link || first_name}")
+      searcher_message = messages.create(role: "assistant", content: "I found someone you should meet! #{user.telegram_link || first_name}")
       matched_message = user.messages.create(role: "assistant", content: "I found someone you should meet! #{telegram_link || first_name}")
 
       send_telegram(searcher_message) if telegram_id
