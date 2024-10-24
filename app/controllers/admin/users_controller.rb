@@ -51,6 +51,6 @@ class Admin::UsersController < AdminController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :telegram_id, :telegram_username, :role, :status)
+    params.require(:user).permit(:email, :first_name, :last_name, :telegram_id, :telegram_username, :role, :status).compact_blank
   end
 end

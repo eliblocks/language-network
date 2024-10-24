@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_22_203214) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_24_002722) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "vector"
 
   create_table "good_job_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -110,6 +111,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_22_203214) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["matched_user_id"], name: "index_matches_on_matched_user_id"
+    t.index ["searching_user_id", "matched_user_id"], name: "index_matches_on_searching_user_id_and_matched_user_id", unique: true
     t.index ["searching_user_id"], name: "index_matches_on_searching_user_id"
   end
 
@@ -135,12 +137,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_22_203214) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role", default: "user", null: false
-    t.text "search"
+    t.text "summary"
     t.string "telegram_id"
     t.string "first_name"
     t.string "last_name"
     t.string "status", default: "initial", null: false
     t.string "telegram_username"
+    t.vector "embedding"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["telegram_id"], name: "index_users_on_telegram_id", unique: true

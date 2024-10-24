@@ -48,7 +48,7 @@ RSpec.describe User do
     end
   end
 
-  describe "#seek", :vcr do
+  describe "#search", :vcr do
     it "creates a match" do
       user1 = create(:user, id: 1, status: "searching")
       user2 = create(:user, id: 2, status: "searching")
@@ -58,7 +58,7 @@ RSpec.describe User do
       user2.messages.create(role: "user", content: "I'm looking for a roommate to sign a new lease in Park Slope, Brooklyn")
       user3.messages.create(role: "user", content: "I'm a founder at an early stage SaaS startup with a great product looking to bring on experienced engineers available to work in person in NYC")
 
-      user1.seek
+      user1.search
 
       expect(user1.reload.matched_user).to eq(user3)
       expect(user1.status).to eq("matched")

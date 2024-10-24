@@ -22,6 +22,8 @@ gem "devise"
 gem "ruby-openai"
 
 gem "good_job"
+
+gem "neighbor"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

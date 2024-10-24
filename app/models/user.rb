@@ -8,6 +8,10 @@ class User < ApplicationRecord
   validates :telegram_id, uniqueness: true, allow_nil: true
   validates :telegram_username, uniqueness: true, allow_nil: true
 
+  has_neighbors :embedding
+
+  SEARCH_SIZE = 100
+
   def platform_description
     <<~HEREDOC
       You are a bot that makes connections.
@@ -167,11 +171,30 @@ class User < ApplicationRecord
 
   def summarize
     response = chat_message("system", summary_prompt)
-    update!(search: response)
+    update!(summary: response)
+  end
+
+  def embed
+    raise "Requires a summary" unless summary
+
+    response = OpenAI::Client.new.embeddings(
+      parameters: {
+        model: "text-embedding-3-large",
+        input: summary
+      }
+    )
+
+    vector = response.dig("data", 0, "embedding")
+
+    update!(embedding: vector)
   end
 
   def searchers
     User.where(status: "searching").where.not(id: id)
+  end
+
+  def closest_matches
+    searchers.nearest_neighbors(:embedding, embedding, distance: "euclidean").first(SEARCH_SIZE)
   end
 
   def compare(user1, user2)
@@ -186,7 +209,7 @@ class User < ApplicationRecord
 
     best = nil
 
-    searchers.each do |user|
+    closest_matches.each do |user|
       best = (best ? compare(best, user) : user)
     end
 
@@ -198,7 +221,11 @@ class User < ApplicationRecord
     response.downcase.include?("yes")
   end
 
-  def seek
+  def search
+    return unless searching?
+
+    summarize
+    embed
     best = best_match
 
     return unless best && good_match?(best)
