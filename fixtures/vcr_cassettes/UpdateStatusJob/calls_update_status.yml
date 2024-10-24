@@ -10,9 +10,13 @@ http_interactions:
         and whenever you feel you have enough information you let them know that you
         will be on the lookout for any users that can be of use to them.\nYou need
         enough details about something before you can make a search so you can find
-        someone that is a good match.\n\n\nBased on the conversation below, are we
-        ready to search for matches? yes or no.\n\nUSER CONVERSATION\nuser id: 19\nuser
-        email: sharyn@wilkinson.test\nuser full name: Mamie Thompson\n\n\n\n\n"}],"temperature":0.5}'
+        someone that is a good match.\n\nHowever do not ask for exessive detail, if
+        the user provides details in their first message dont ask for more unless
+        needed.\n\n\nBased on the conversation below which status should we set the
+        user to?\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nrespond with only
+        one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 30\nuser email:
+        jerrold.lesch@larson.example\nuser full name: Wilber Lind\n\n\n\n\n"}],"temperature":0.5}'
     headers:
       Content-Type:
       - application/json
@@ -30,7 +34,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 23 Oct 2024 18:30:56 GMT
+      - Thu, 24 Oct 2024 20:28:10 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -42,7 +46,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '373'
+      - '355'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -52,45 +56,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '29852'
+      - '29779'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 296ms
+      - 442ms
       X-Request-Id:
-      - req_2bfe671c470992e835e0a06836a2b8df
+      - req_788dee118e2314169eeb3259da614abf
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=_nwwbOY8s6.mNf6Ebo8bY_IynynYBPWDTHPQ1dMx4Wo-1729708256-1.0.1.1-Abck_Jix54TA1cJ5WWeBRhA.IxnIjFscpGNbsPwPXgZ2d1IYf4dXxnxZ7Qrj9ReABQavo3MROBvKXw8Sv6VC4g;
-        path=/; expires=Wed, 23-Oct-24 19:00:56 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=cPJKTD5rKLIL23f5XevgqYdl7SVBAZxKGqASJ1N6pr0-1729801690-1.0.1.1-wdIeulTbHoyXOdu439jZdzFYcXWS12IPOjvugN3FwsIFmNcCaSfOjKYdxNTRU79oE8St62jctGov4xxy3Rmajw;
+        path=/; expires=Thu, 24-Oct-24 20:58:10 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=7AcXKKjS7ALn.GlYdGYbqriqNt1dVWMrwBDY_RzYGms-1729708256548-0.0.1.1-604800000;
+      - _cfuvid=yDgmBzFa4UOy4TnzbuzK1vW0cx0nRlsrCKQ7IMVjSI4-1729801690694-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8d73cd182b5a0f5d-EWR
+      - 8d7cb633d865427f-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-ALaQCvIbX0zpSZETtZpzp440aWkxe",
+          "id": "chatcmpl-ALyjCSZkiRUS7mIWa5mBu8qqTGyRD",
           "object": "chat.completion",
-          "created": 1729708256,
+          "created": 1729801690,
           "model": "gpt-4o-2024-08-06",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "No",
+                "content": "inactive",
                 "refusal": null
               },
               "logprobs": null,
@@ -98,9 +102,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 122,
+            "prompt_tokens": 180,
             "completion_tokens": 1,
-            "total_tokens": 123,
+            "total_tokens": 181,
             "prompt_tokens_details": {
               "cached_tokens": 0
             },
@@ -110,5 +114,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_a7d06e42a7"
         }
-  recorded_at: Wed, 23 Oct 2024 18:30:56 GMT
+  recorded_at: Thu, 24 Oct 2024 20:28:10 GMT
 recorded_with: VCR 6.3.1
