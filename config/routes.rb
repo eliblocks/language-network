@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :messages, only: [:create]
+    resources :messages, only: [ :create ]
   end
 end
