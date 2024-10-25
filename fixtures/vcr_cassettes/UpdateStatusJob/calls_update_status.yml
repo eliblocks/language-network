@@ -15,8 +15,8 @@ http_interactions:
         needed.\n\n\nBased on the conversation below which status should we set the
         user to?\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nrespond with only
-        one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 30\nuser email:
-        jerrold.lesch@larson.example\nuser full name: Wilber Lind\n\n\n\n\n"}],"temperature":0.5}'
+        one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 121\nuser email:
+        wilbert@fay.example\nuser full name: Stacee Jerde\n\n\n\n\n"}],"temperature":0.5}'
     headers:
       Content-Type:
       - application/json
@@ -34,7 +34,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 24 Oct 2024 20:28:10 GMT
+      - Fri, 25 Oct 2024 17:36:04 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -46,7 +46,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '355'
+      - '345'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -56,38 +56,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '29779'
+      - '29781'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 442ms
+      - 438ms
       X-Request-Id:
-      - req_788dee118e2314169eeb3259da614abf
+      - req_f2aee5797bee1ef507e5b70fa7e34acc
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=cPJKTD5rKLIL23f5XevgqYdl7SVBAZxKGqASJ1N6pr0-1729801690-1.0.1.1-wdIeulTbHoyXOdu439jZdzFYcXWS12IPOjvugN3FwsIFmNcCaSfOjKYdxNTRU79oE8St62jctGov4xxy3Rmajw;
-        path=/; expires=Thu, 24-Oct-24 20:58:10 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=pBTCAPDUl38hUxwwTVo.iCUNRSEHNmPYCkX1SJ6.cGI-1729877764-1.0.1.1-rRcCflsWUsgfVuqGsbLSKd.jGOp_6oSoz_d56b_vC8AsaKgnHOivxQkIxhGlYlXz2dIhar4E9FTpcCwqREDdwQ;
+        path=/; expires=Fri, 25-Oct-24 18:06:04 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=yDgmBzFa4UOy4TnzbuzK1vW0cx0nRlsrCKQ7IMVjSI4-1729801690694-0.0.1.1-604800000;
+      - _cfuvid=lu0KKaBH45G_j0VIq0zmBsasKHV4K8NR8pkvqJf.h1I-1729877764917-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8d7cb633d865427f-EWR
+      - 8d83f77bac8a5e7d-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-ALyjCSZkiRUS7mIWa5mBu8qqTGyRD",
+          "id": "chatcmpl-AMIWCj3nPkTssQfKkv8QIVMZJw4tc",
           "object": "chat.completion",
-          "created": 1729801690,
+          "created": 1729877764,
           "model": "gpt-4o-2024-08-06",
           "choices": [
             {
@@ -102,9 +102,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 180,
+            "prompt_tokens": 179,
             "completion_tokens": 1,
-            "total_tokens": 181,
+            "total_tokens": 180,
             "prompt_tokens_details": {
               "cached_tokens": 0
             },
@@ -112,7 +112,7 @@ http_interactions:
               "reasoning_tokens": 0
             }
           },
-          "system_fingerprint": "fp_a7d06e42a7"
+          "system_fingerprint": "fp_90354628f2"
         }
-  recorded_at: Thu, 24 Oct 2024 20:28:10 GMT
+  recorded_at: Fri, 25 Oct 2024 17:36:04 GMT
 recorded_with: VCR 6.3.1

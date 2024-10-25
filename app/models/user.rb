@@ -93,7 +93,7 @@ class User < ApplicationRecord
   end
 
   def fetch_active?
-    response = chat_message("system", active_prompt)
+    response = system_message(active_prompt)
     response.downcase == "active"
   end
 
@@ -132,13 +132,36 @@ class User < ApplicationRecord
     HEREDOC
   end
 
+  def introduction_prompt
+    <<~HEREDOC
+      #{platform_description}
+
+      You have just found a match. Their telegram link is #{matched_user.telegram_link}.
+
+      To give you context, here is the conversation with the other user:
+
+      #{matched_user.formatted_messages}
+    HEREDOC
+  end
+
+  def introduction
+    raise "User not in matched status" unless status == "matched"
+
+    respond_with_chatbot(introduction_prompt)
+  end
+
   def searching?
     status == "searching"
   end
 
-  def respond_with_chatbot(system_prompt)
-    items = messages.as_json(only: [ :role, :content ])
-    response = chat_messages(system_prompt, items)
+  def chat_completion(prompt)
+    items = [ { role: "system", content: prompt } ]
+    items.concat(messages.as_json(only: [ :role, :content ]))
+    chat(items)
+  end
+
+  def respond_with_chatbot(prompt)
+    response = chat_completion(prompt)
     message = messages.create(role: "assistant", content: response)
 
     send_telegram(message) if telegram_id
@@ -179,7 +202,7 @@ class User < ApplicationRecord
   end
 
   def summarize
-    response = chat_message("system", summary_prompt)
+    response = system_message(summary_prompt)
     update!(summary: response)
   end
 
@@ -209,7 +232,7 @@ class User < ApplicationRecord
   def compare(user1, user2)
     raise "Users not in searching status" unless user1.searching? && user2.searching?
 
-    response = chat_message("system", comparison_prompt(user1, user2))
+    response = system_message(comparison_prompt(user1, user2))
     User.find(response)
   end
 
@@ -226,7 +249,7 @@ class User < ApplicationRecord
   end
 
   def good_match?(possible_match)
-    response = chat_message("system", good_match_prompt(possible_match))
+    response = system_message(good_match_prompt(possible_match))
     response.downcase.include?("yes")
   end
 
@@ -246,15 +269,12 @@ class User < ApplicationRecord
     ActiveRecord::Base.transaction do
       Match.create(searching_user_id: id, matched_user_id: user.id)
 
-      searcher_message = messages.create(role: "assistant", content: "I found someone you should meet! #{user.telegram_link || user.first_name}")
-      matched_message = user.messages.create(role: "assistant", content: "I found someone you should meet! #{telegram_link || first_name}")
-
-      send_telegram(searcher_message) if telegram_id
-      user.send_telegram(matched_message) if user.telegram_id
-
       update(status: "matched")
       user.update(status: "matched")
     end
+
+    respond_with_chatbot(introduction_prompt)
+    user.respond_with_chatbot(user.introduction_prompt)
   end
 
   def telegram_link
@@ -271,12 +291,8 @@ class User < ApplicationRecord
     match.searching_user == self ? match.matched_user : match.searching_user
   end
 
-  def chat_message(role, content)
-    chat([ { role:, content: } ])
-  end
-
-  def chat_messages(system, messages)
-    chat(messages.unshift(role: "system", content: system))
+  def system_message(content)
+    chat([ { role: "system", content: } ])
   end
 
   def chat(messages)
