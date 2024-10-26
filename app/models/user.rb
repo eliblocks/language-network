@@ -52,8 +52,7 @@ class User < ApplicationRecord
     <<~HEREDOC
       USER CONVERSATION
       user id: #{id}
-      user email: #{email}
-      user full name: #{name}
+      user first name: #{first_name}
 
 
       #{messages.format}
@@ -134,11 +133,16 @@ class User < ApplicationRecord
 
   def introduction_prompt
     <<~HEREDOC
-      #{platform_description}
+      We are trying to craft a text message to introduce two users based on their conversations below.
+      We need to return the actual message, not an explanation of the message, because the result of this prompt will be sent to the user on the Telegram app.
+      This message will be sent to the user in middle of their current conversation so no need for a greeting.
+      Also, we need to include a telegram link so the user can message their match.
 
-      You have just found a match. Their telegram link is #{matched_user.telegram_link}.
+      We are sending a message to #{first_name} to let him know about #{matched_user.first_name}. #{matched_user.first_name}'s Telegram Link is #{matched_user.telegram_link}
 
-      To give you context, here is the conversation with the other user:
+
+      #{formatted_messages}
+
 
       #{matched_user.formatted_messages}
     HEREDOC
@@ -147,7 +151,7 @@ class User < ApplicationRecord
   def introduction
     raise "User not in matched status" unless status == "matched"
 
-    respond_with_chatbot(introduction_prompt)
+    system_message(introduction_prompt)
   end
 
   def searching?
@@ -296,7 +300,8 @@ class User < ApplicationRecord
   end
 
   def chat(messages)
-    Rails.logger.info "Messaging ChatGPT: #{messages}"
+    Rails.logger.info "Messaging ChatGPT:"
+    messages.each { |message| Rails.logger.info message }
 
     response = OpenAI::Client.new.chat(
       parameters: {

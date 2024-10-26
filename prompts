@@ -1,0 +1,52 @@
+We are trying to craft a text message to introduce two users based on their conversations below.
+We need to return the actual message, not an explanation of the message, because the result of this prompt will be sent to the user on the Telegram app.
+This message will be sent to the user in middle of their current conversation so no need for a greeting.
+Also, we need to include a telegram link so the user can message their match.
+
+We are sending a message to Sam to let him know about Mark. Mark's Telegram Link is t.me/mark
+
+USER CONVERSATION
+user id: 4
+user first name: Sam
+
+
+date: 2024-10-25 17:54:51
+role: user
+content: Hello
+
+date: 2024-10-25 17:54:51
+role: assistant
+content: Hello! I'm a bot that can connect you to people based on your needs. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
+
+
+date: 2024-10-25 17:55:03
+role: user
+content: I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits and work life balance.
+
+date: 2024-10-25 17:55:04
+role: assistant
+content: Great, thanks for sharing those details! I'll be on the lookout for any users or opportunities that match your experience with Ruby on Rails and your preference for in-person roles with good benefits and work-life balance in NYC.
+
+
+
+USER CONVERSATION
+user id: 3
+user first name: Mark
+
+
+date: 2024-10-25 17:55:16
+role: user
+content: Hi
+
+date: 2024-10-25 17:55:16
+role: assistant
+content: Hello! I'm a bot that can connect you to people based on your needs. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
+
+
+date: 2024-10-25 17:55:31
+role: user
+content: I'm a founder at an early stage SaaS startup with a great product looking to bring on full stack web developers with 2-4 years SaaS experience who are available to work full time in person in NYC.
+
+date: 2024-10-25 17:55:33
+role: assistant
+content: Great! You're looking for full stack web developers with 2-4 years of SaaS experience, available for full-time, in-person work in NYC. I'll be on the lookout for anyone who fits this description. If you have any other criteria or details to share, feel free to let me know!

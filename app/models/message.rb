@@ -6,7 +6,7 @@ class Message < ApplicationRecord
   validates :role, inclusion: { in: ROLES }
 
   def self.format
-    all.map(&:to_s).join("\n\n")
+    all.map(&:to_s).join("\n")
   end
 
   def to_s
