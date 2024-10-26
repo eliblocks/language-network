@@ -1,7 +1,7 @@
 We are trying to craft a text message to introduce two users based on their conversations below.
 We need to return the actual message, not an explanation of the message, because the result of this prompt will be sent to the user on the Telegram app.
 This message will be sent to the user in middle of their current conversation so no need for a greeting.
-Also, we need to include a telegram link so the user can message their match.
+Also, we need to include a telegram link so the user can message their match. Since this message will be received in telegram we want a plain text link with no markdown.
 
 We are sending a message to Sam to let him know about Mark. Mark's Telegram Link is t.me/mark
 

@@ -137,6 +137,7 @@ class User < ApplicationRecord
       We need to return the actual message, not an explanation of the message, because the result of this prompt will be sent to the user on the Telegram app.
       This message will be sent to the user in middle of their current conversation so no need for a greeting.
       Also, we need to include a telegram link so the user can message their match.
+      Since this message will be received in telegram we want a plain text link with no markdown.
 
       We are sending a message to #{first_name} to let him know about #{matched_user.first_name}. #{matched_user.first_name}'s Telegram Link is #{matched_user.telegram_link}
 
