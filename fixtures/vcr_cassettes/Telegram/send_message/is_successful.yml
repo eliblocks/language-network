@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.telegram.org/bot<TELEGRAM_TOKEN>/sendMessage
+    body:
+      encoding: UTF-8
+      string: '{"chat_id":"5899443915","text":"Hello"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.telegram.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.18.0
+      Date:
+      - Sun, 27 Oct 2024 19:35:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '280'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Expose-Headers:
+      - Content-Length,Content-Type,Date,Server,Connection
+    body:
+      encoding: UTF-8
+      string: '{"ok":true,"result":{"message_id":86,"from":{"id":7721874674,"is_bot":true,"first_name":"Language
+        Network","username":"language_network_bot"},"chat":{"id":5899443915,"first_name":"Eli","last_name":"Block","username":"eliblocks","type":"private"},"date":1730057746,"text":"Hello"}}'
+  recorded_at: Sun, 27 Oct 2024 19:35:46 GMT
+recorded_with: VCR 6.3.1

@@ -1,9 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Api::MessagesController, type: :request do
-  def message(params)
-  end
-
   describe "#create" do
     it "creates a user and message" do
       params = {
@@ -30,10 +27,7 @@ RSpec.describe Api::MessagesController, type: :request do
         }
       }
 
-      # client = instance_double(OpenAI::Client)
-      # allow(OpenAI::Client).to(receive(:new)).and_return client
-      # allow(client).to receive(:chat).and_return({ "choices" => [ { "message" => { "content" => "Yes" } } ] })
-      allow(Net::HTTP).to receive(:post)
+      allow(Telegram).to receive(:send_message)
 
       post api_messages_path(params)
 
@@ -43,11 +37,7 @@ RSpec.describe Api::MessagesController, type: :request do
       expect(user.messages.count).to eq(2)
       expect(Message.last.role).to eq("assistant")
 
-      expect(Net::HTTP).to have_received(:post).with(
-        a_kind_of(URI::HTTPS),
-        { "text" => user.welcome_message, "chat_id" => "5899443915" }.to_json,
-        a_kind_of(Hash)
-      )
+      expect(Telegram).to have_received(:send_message).with("5899443915", user.welcome_message)
     end
   end
 end

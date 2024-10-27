@@ -162,7 +162,7 @@ class User < ApplicationRecord
   def chat_completion(prompt)
     items = [ { role: "system", content: prompt } ]
     items.concat(messages.as_json(only: [ :role, :content ]))
-    chat(items)
+    Openai.chat(items)
   end
 
   def respond_with_chatbot(prompt)
@@ -195,15 +195,7 @@ class User < ApplicationRecord
   def send_telegram(message)
     return unless telegram_id
 
-    token = ENV.fetch("TELEGRAM_TOKEN")
-
-    url = "https://api.telegram.org/bot#{token}/sendMessage"
-
-    Net::HTTP.post(
-      URI(url),
-      { "text" => message.content, "chat_id" => telegram_id }.to_json,
-      "Content-Type" => "application/json"
-    )
+    Telegram.send_message(telegram_id, message.content)
   end
 
   def summarize
@@ -214,16 +206,7 @@ class User < ApplicationRecord
   def embed
     raise "Requires a summary" unless summary
 
-    response = OpenAI::Client.new.embeddings(
-      parameters: {
-        model: "text-embedding-3-large",
-        input: summary
-      }
-    )
-
-    vector = response.dig("data", 0, "embedding")
-
-    update!(embedding: vector)
+    update!(embedding: Openai.embed(summary))
   end
 
   def searchers
@@ -297,23 +280,6 @@ class User < ApplicationRecord
   end
 
   def system_message(content)
-    chat([ { role: "system", content: } ])
-  end
-
-  def chat(messages)
-    Rails.logger.info "Messaging ChatGPT:"
-    messages.each { |message| Rails.logger.info message }
-
-    response = OpenAI::Client.new.chat(
-      parameters: {
-        model: "gpt-4o-2024-08-06",
-        messages:,
-        temperature: 0.5
-      }
-    ).dig("choices", 0, "message", "content")
-
-    Rails.logger.info "ChatGPT Response: #{response}"
-
-    response
+    Openai.chat([ { role: "system", content: } ])
   end
 end
