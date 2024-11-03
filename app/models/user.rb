@@ -25,19 +25,13 @@ class User < ApplicationRecord
   end
 
   def welcome_message
-    message = <<~HEREDOC
-      Hello! I'm a bot that can connect you to people based on your needs. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
+    <<~HEREDOC
+      Hello! I'm a bot that can connect you to people based on your needs. Tell me a little about what you're looking for and I'll try to find someone relevant to you. #{"\n\n#{username_notice}" unless telegram_username}
     HEREDOC
-
-    if telegram_id && !telegram_username
-      message << "\n#{username_notice}"
-    end
-
-    message
   end
 
   def username_notice
-    "Looks like you don't have a username set in Telegram. I'll need that to recommend you to other users."
+    "Looks like you don't have a username set in Telegram. I need that to connect you to other users, but we can skip it for testing purposes."
   end
 
   def comparison_instructions
@@ -176,8 +170,8 @@ class User < ApplicationRecord
     if messages.count == 1
       message = messages.create(role: "assistant", content: welcome_message)
       send_telegram(message)
-    elsif telegram_id && !telegram_username
-      message = messages.create(role: "assistant", content: username_notice)
+    # elsif telegram_id && !telegram_username
+    #   message = messages.create(role: "assistant", content: username_notice)
     else
       respond_with_chatbot(continue_conversation_prompt)
       UpdateStatusJob.perform_later(id)
@@ -266,9 +260,9 @@ class User < ApplicationRecord
   end
 
   def telegram_link
-    return nil unless telegram_username
+    # return nil unless telegram_username
 
-    "https://t.me/#{telegram_username}"
+    "https://t.me/#{telegram_username || "test-username"}"
   end
 
   def matched_user

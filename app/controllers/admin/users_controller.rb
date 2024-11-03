@@ -26,7 +26,10 @@ class Admin::UsersController < AdminController
 
   def update
     @user = User.find(params[:id])
-    @user.update!(user_params)
+    @user.assign_attributes(user_params)
+
+    @user.telegram_id = nil unless @user.telegram_id.present?
+    @user.telegram_username = nil unless @user.telegram_username.present?
 
     redirect_to admin_users_path
   end

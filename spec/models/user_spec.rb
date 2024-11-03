@@ -5,7 +5,7 @@ RSpec.describe User do
     before { allow(Net::HTTP).to receive(:post) }
     context "New user" do
       it "responds with a welcome message" do
-        user = create(:user)
+        user = create(:telegram_user)
         user.messages.create!(role: "user", content: "Hello")
 
         user.respond

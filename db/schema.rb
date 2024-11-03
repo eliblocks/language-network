@@ -139,10 +139,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_24_002722) do
     t.string "role", default: "user", null: false
     t.text "summary"
     t.string "telegram_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "status", default: "initial", null: false
     t.string "telegram_username"
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "status", default: "initial", null: false
     t.vector "embedding"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
