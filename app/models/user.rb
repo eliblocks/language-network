@@ -162,7 +162,7 @@ class User < ApplicationRecord
   def chat_completion(prompt)
     items = [ { role: "system", content: prompt } ]
     items.concat(messages.as_json(only: [ :role, :content ]))
-    Openai.chat(items)
+    Ai.chat(items)
   end
 
   def respond_with_chatbot(prompt)
@@ -206,7 +206,7 @@ class User < ApplicationRecord
   def embed
     raise "Requires a summary" unless summary
 
-    update!(embedding: Openai.embed(summary))
+    update!(embedding: Ai.embed(summary))
   end
 
   def searchers
@@ -280,6 +280,6 @@ class User < ApplicationRecord
   end
 
   def system_message(content)
-    Openai.chat([ { role: "system", content: } ])
+    Ai.chat([ { role: "system", content: } ])
   end
 end
