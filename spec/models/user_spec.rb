@@ -17,20 +17,6 @@ RSpec.describe User do
         expect(message.content).not_to include("username")
       end
     end
-
-    # context "New user needs to set telegram id" do
-    #   it "responds with a welcome message and username notice" do
-    #     user = create(:user, telegram_id: 123)
-    #     user.messages.create!(role: "user", content: "Hello")
-
-    #     user.respond
-
-    #     message = user.messages.last
-
-    #     expect(message.role).to eq("assistant")
-    #     expect(message.content).to include("Hello!")
-    #   end
-    # end
   end
 
   describe "#search", :vcr do
