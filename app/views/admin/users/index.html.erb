@@ -8,6 +8,7 @@
   <thead>
     <tr>
       <th>Email</th>
+      <th>Name</th>
       <th>Role</th>
       <th>Status</th>
       <th>Messages</th>
@@ -18,6 +19,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
+        <td><%= user.name %></td>
         <td><%= user.role %></td>
         <td><%= user.status %></td>
         <td><%= user.messages.count %></td>
