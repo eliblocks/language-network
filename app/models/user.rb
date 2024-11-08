@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   def welcome_message
     <<~HEREDOC
-      Hello! I'm a bot that can connect you to people based on your needs. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
+      Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
     HEREDOC
   end
 
