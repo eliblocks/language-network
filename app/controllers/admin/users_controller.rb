@@ -31,6 +31,8 @@ class Admin::UsersController < AdminController
     @user.telegram_id = nil unless @user.telegram_id.present?
     @user.telegram_username = nil unless @user.telegram_username.present?
 
+    @user.save!
+
     redirect_to admin_users_path
   end
 
