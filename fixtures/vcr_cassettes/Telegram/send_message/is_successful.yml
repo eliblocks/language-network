@@ -25,11 +25,11 @@ http_interactions:
       Server:
       - nginx/1.18.0
       Date:
-      - Sun, 27 Oct 2024 19:35:46 GMT
+      - Thu, 07 Nov 2024 21:59:17 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '280'
+      - '281'
       Connection:
       - keep-alive
       Strict-Transport-Security:
@@ -42,7 +42,7 @@ http_interactions:
       - Content-Length,Content-Type,Date,Server,Connection
     body:
       encoding: UTF-8
-      string: '{"ok":true,"result":{"message_id":86,"from":{"id":7721874674,"is_bot":true,"first_name":"Language
-        Network","username":"language_network_bot"},"chat":{"id":5899443915,"first_name":"Eli","last_name":"Block","username":"eliblocks","type":"private"},"date":1730057746,"text":"Hello"}}'
-  recorded_at: Sun, 27 Oct 2024 19:35:46 GMT
+      string: '{"ok":true,"result":{"message_id":120,"from":{"id":7721874674,"is_bot":true,"first_name":"Language
+        Network","username":"language_network_bot"},"chat":{"id":5899443915,"first_name":"Eli","last_name":"Block","username":"eliblocks","type":"private"},"date":1731016757,"text":"Hello"}}'
+  recorded_at: Thu, 07 Nov 2024 21:59:17 GMT
 recorded_with: VCR 6.3.1

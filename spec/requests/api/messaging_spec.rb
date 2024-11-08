@@ -43,9 +43,9 @@ RSpec.describe "Messaging", type: :request do
     # Bob searches and matches with Sam
     bob_message = "I'm a founder at an early stage SaaS startup with a great product looking to bring on full stack web developers with 2-4 years SaaS experience who are available to work full time in person in NYC."
     post api_messages_path(params(bob, bob_message))
-    expect(sam.reload.messages.last.content).to include("t.me/bob")
+    expect(sam.reload.messages.last.content).to include(bob.telegram_link)
     expect(sam.reload.status).to eq("matched")
-    expect(bob.reload.messages.last.content).to include("t.me/sam")
+    expect(bob.reload.messages.last.content).to include(sam.telegram_link)
     expect(bob.reload.status).to eq("matched")
     expect(sam.reload.matched_user).to eq(bob)
 
