@@ -30,10 +30,6 @@ class User < ApplicationRecord
     HEREDOC
   end
 
-  # def username_notice
-  #   "Looks like you don't have a username set in Telegram. I need that to connect you to other users, but we can skip it for testing purposes."
-  # end
-
   def comparison_instructions
     <<~HEREDOC
       We are now trying to find the best match for the searching user.
@@ -169,8 +165,6 @@ class User < ApplicationRecord
     if messages.count == 1
       message = messages.create(role: "assistant", content: welcome_message)
       send_telegram(message)
-    # elsif telegram_id && !telegram_username
-    #   message = messages.create(role: "assistant", content: username_notice)
     else
       respond_with_chatbot(continue_conversation_prompt)
       UpdateStatusJob.perform_later(id)
@@ -259,7 +253,7 @@ class User < ApplicationRecord
   end
 
   def telegram_link
-    "[#{name}](tg://user?id=#{telegram_id})"
+   "<a href='tg://user?id=#{telegram_id}'>#{name}</a>"
   end
 
   def matched_user
