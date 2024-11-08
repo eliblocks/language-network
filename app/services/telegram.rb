@@ -8,7 +8,7 @@ class Telegram
     end
 
     def send_message(chat_id, text)
-      post("/sendMessage", { chat_id:, text: }.to_json)
+      post("/sendMessage", { chat_id:, text:, parse_mode: "MarkdownV2" }.to_json)
     end
   end
 end
