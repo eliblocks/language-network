@@ -40,5 +40,7 @@ module LanguageNetwork
     config.generators.system_tests = nil
 
     config.active_job.queue_adapter = :good_job
+
+    config.action_mailer.perform_deliveries = false
   end
 end
