@@ -56,4 +56,80 @@ RSpec.describe "Messaging", type: :request do
     post api_messages_path(params(bob, "Thank you"))
     expect(bob.reload.status).to eq("drafting")
   end
+
+  context "with instagram" do
+    def params(user, text)
+      {
+        "object" => "instagram",
+        "entry" => [
+          {
+            "time" => 1731261732963,
+            "id" => ENV["INSTAGRAM_PROFILE_ID"],
+            "messaging" => [
+              {
+                "sender" => {
+                  "id" => user.instagram_id
+                }, "recipient" => {
+                  "id" => ENV["INSTAGRAM_PROFILE_ID"]
+                },
+                "timestamp" => 1731261730927,
+                "message" => {
+                  "text" => text
+                }
+              }
+            ]
+          }
+        ]
+      }
+    end
+
+    it "handles messages", :vcr do
+      allow(Instagram).to receive(:send_message)
+
+      # Mock the behavior of the Instagram.profile method
+      allow(Instagram).to receive(:profile) do |id|
+        user = User.find_by(instagram_id: id)
+        { profile: { username: user&.instagram_username } }.to_json
+      end
+
+      # Sam initiates and searches
+      sam = create(:instagram_user, first_name: "sam")
+      expect(sam.status).to eq("initial")
+
+      post api_webhooks_instagram_path(params(sam, "Hello"))
+      expect(sam.messages.count).to eq(2)
+      expect(sam.reload.status).to eq("initial")
+
+      sam_message = "I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits and work life balance."
+      post api_webhooks_instagram_path(params(sam, sam_message))
+
+      expect(sam.reload.messages.count).to eq(4)
+      expect(sam.reload.status).to eq("searching")
+
+      # Bob initiates
+      bob = create(:instagram_user, first_name: "bob")
+      expect(bob.status).to eq("initial")
+
+      post api_webhooks_instagram_path(params(bob, "Hello"))
+      expect(bob.reload.messages.count).to eq(2)
+      expect(bob.reload.status).to eq("initial")
+
+      # Bob searches and matches with Sam
+      bob_message = "I'm a founder at an early stage SaaS startup with a great product looking to bring on full stack web developers with 2-4 years SaaS experience who are available to work full time in person in NYC."
+      post api_webhooks_instagram_path(params(bob, bob_message))
+
+      expect(sam.reload.messages.last.content).to include("www.instagram.com")
+      expect(sam.reload.status).to eq("matched")
+      expect(bob.reload.messages.last.content).to include("www.instagram.com")
+      expect(bob.reload.status).to eq("matched")
+      expect(sam.reload.matched_user).to eq(bob)
+
+      # Sam and Bob no longer active
+      post api_webhooks_instagram_path(params(sam, "Thank you"))
+      expect(sam.reload.status).to eq("drafting")
+
+      post api_webhooks_instagram_path(params(bob, "Thank you"))
+      expect(bob.reload.status).to eq("drafting")
+    end
+  end
 end

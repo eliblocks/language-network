@@ -8,9 +8,12 @@ class User < ApplicationRecord
   validates :telegram_id, uniqueness: true, allow_nil: true
   validates :telegram_username, uniqueness: true, allow_nil: true
 
+  validates :instagram_id, uniqueness: true, allow_nil: true
+  validates :instagram_username, uniqueness: true, allow_nil: true
+
   has_neighbors :embedding
 
-  User.attributes_for_inspect = [ :id, :email, :telegram_id, :telegram_username, :first_name, :last_name, :summary, :status, :role, :created_at, :updated_at ]
+  User.attributes_for_inspect = [ :id, :email, :telegram_id, :telegram_username, :instagram_id, :instagram_username, :first_name, :last_name, :summary, :status, :role, :created_at, :updated_at ]
 
   SEARCH_SIZE = 100
 
@@ -70,6 +73,10 @@ class User < ApplicationRecord
     HEREDOC
   end
 
+  def intro_name
+    first_name || instagram_username
+  end
+
   def name
     return "" unless first_name
     return first_name unless last_name
@@ -121,14 +128,14 @@ class User < ApplicationRecord
     HEREDOC
   end
 
-  def introduction_prompt
+  def telegram_introduction
     <<~HEREDOC
       We are trying to craft a text message to introduce two users based on their conversations below.
       We need to return the actual message, not an explanation of the message, because the result of this prompt will be sent to the user on the Telegram app.
       This message will be sent to the user in middle of their current conversation so no need for a greeting.
       Instead of referring to the user by name, just use their telegram link. Telegram will display the name in the a tag.
 
-      We are sending a message to #{first_name} to let him know about #{matched_user.first_name}. #{matched_user.first_name}'s Telegram Link is #{matched_user.telegram_link}
+      We are sending a message to #{first_name} to let them know about #{matched_user.first_name}. #{matched_user.first_name}'s Telegram Link is #{matched_user.telegram_link}
 
 
       #{formatted_messages}
@@ -138,10 +145,24 @@ class User < ApplicationRecord
     HEREDOC
   end
 
-  def introduction
-    raise "User not in matched status" unless status == "matched"
+  def instagram_introduction
+    <<~HEREDOC
+      We are trying to craft a text message to introduce two users based on their conversations below.
+      We need to return the actual message, not an explanation of the message, because the result of this prompt will be messaged to the user.
+      This message will be sent to the user in middle of their current conversation so no need for a greeting.
+      Don't provide any information on contacting the user.
 
-    system_message(introduction_prompt)
+      We are sending a message to #{intro_name} to let them know about #{matched_user.intro_name}.
+
+      #{formatted_messages}
+
+
+      #{matched_user.formatted_messages}
+    HEREDOC
+  end
+
+  def introduction_prompt
+    telegram_id ? telegram_introduction : instagram_introduction
   end
 
   def searching?
@@ -158,13 +179,23 @@ class User < ApplicationRecord
     response = chat_completion(prompt)
     message = messages.create(role: "assistant", content: response)
 
-    send_telegram(message) if telegram_id
+    send_message(message)
+  end
+
+  def introduce
+    prompt = (telegram_id ? telegram_introduction : instagram_introduction)
+    response = chat_completion(prompt)
+    response += " #{matched_user.profile_link}" if instagram_id
+
+    message = messages.create(role: "assistant", content: response)
+
+    send_message(message)
   end
 
   def respond
     if messages.count == 1
       message = messages.create(role: "assistant", content: welcome_message)
-      send_telegram(message)
+      send_message(message)
     else
       respond_with_chatbot(continue_conversation_prompt)
       UpdateStatusJob.perform_later(id)
@@ -179,10 +210,24 @@ class User < ApplicationRecord
     end
   end
 
+  def send_message(message)
+    if telegram_id
+      send_telegram(message)
+    elsif instagram_id
+      send_instagram(message)
+    end
+  end
+
   def send_telegram(message)
     return unless telegram_id
 
     Telegram.send_message(telegram_id, message.content)
+  end
+
+  def send_instagram(message)
+    return unless instagram_id
+
+    Instagram.send_message(instagram_id, message.content)
   end
 
   def summarize
@@ -197,7 +242,16 @@ class User < ApplicationRecord
   end
 
   def searchers
-    User.where(status: "searching").where.not(id: id)
+    collection = User.where(status: "searching").where.not(id: id)
+    if telegram_id
+      collection = collection.where.not(telegram_id: nil)
+    elsif instagram_id
+      collection = collection.where.not(instagram_id: nil)
+    else
+      collection.where(telegram_id: nil, instagram_id: nil)
+    end
+
+    collection
   end
 
   def closest_matches
@@ -248,12 +302,20 @@ class User < ApplicationRecord
       user.update(status: "matched")
     end
 
-    respond_with_chatbot(introduction_prompt)
-    user.respond_with_chatbot(user.introduction_prompt)
+    introduce
+    user.introduce
+  end
+
+  def profile_link
+    telegram_id ? telegram_link : instagram_link
   end
 
   def telegram_link
    "<a href='tg://user?id=#{telegram_id}'>#{name}</a>"
+  end
+
+  def instagram_link
+    "https://www.instagram.com/#{instagram_username}"
   end
 
   def matched_user
@@ -266,5 +328,19 @@ class User < ApplicationRecord
 
   def system_message(content)
     Ai.chat([ { role: "system", content: } ])
+  end
+
+  def service
+    if telegram_id?
+      "Telegram"
+    elsif instagram_id?
+      "Instagram"
+    else
+      nil
+    end
+  end
+
+  def username
+    telegram_username || instagram_username || email
   end
 end

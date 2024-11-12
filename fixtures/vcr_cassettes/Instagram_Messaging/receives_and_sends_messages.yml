@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.instagram.com/v21.0/504664759221752?fields=name,username
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer IGQWRPdW5qX2l4N1Q2MVZAnVHg0b3AyWHZAxeFN1SDJVOGRiM2lOaUtyWW85ZAnYzU0lxUWFQOU5FUTEzMW40YnhDOXVOd0RqSi1fRTliVUVmbmhqY0xPYWxMeUdrZADF6OHFJMHFUdFN2VDR4WURKZAUFvX1RtelNHMm8ZD
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - graph.instagram.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"6ade1837f79a759c6d64325f78b99cd289117642"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      X-App-Usage:
+      - '{"call_volume":0,"cpu_time":0}'
+      Instagram-Api-Version:
+      - v21.0
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; preload; includeSubDomains
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Request-Id:
+      - ASES4RP9VlZUj43xdH1PRjd
+      X-Fb-Trace-Id:
+      - Gch0qVKXnxg
+      X-Fb-Rev:
+      - '1018101721'
+      X-Stack:
+      - www
+      X-Fb-Debug:
+      - xh0cuwnfnCt4DFKgGYN8Wb+clORq/ynlL2CARe0Jt518+pmSpEy0JmHFsUFFWyg+sByHpx9hmz/oLCNPsKhCmA==
+      Date:
+      - Mon, 11 Nov 2024 23:06:04 GMT
+      X-Fb-Connection-Quality:
+      - EXCELLENT; q=0.9, rtt=5, rtx=0, c=14, mss=1380, tbw=3248, tp=-1, tpl=-1, uplat=265,
+        ullat=0
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - close
+      Content-Length:
+      - '68'
+    body:
+      encoding: UTF-8
+      string: '{"name":"Eli Block","username":"eli.block.7","id":"504664759221752"}'
+  recorded_at: Mon, 11 Nov 2024 23:06:04 GMT
+recorded_with: VCR 6.3.1

@@ -14,5 +14,10 @@ FactoryBot.define do
       telegram_id { rand(10000) }
       telegram_username { first_name.downcase }
     end
+
+    factory :instagram_user do
+      instagram_id { rand(10000) }
+      instagram_username { first_name.downcase }
+    end
   end
 end
