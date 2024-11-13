@@ -37,7 +37,7 @@ RSpec.describe Api::MessagesController, type: :request do
       expect(user.messages.count).to eq(2)
       expect(Message.last.role).to eq("assistant")
 
-      expect(Telegram).to have_received(:send_message).with("5899443915", user.welcome_message)
+      expect(Telegram).to have_received(:send_message).with("5899443915", user.prompts.welcome_message)
     end
   end
 end

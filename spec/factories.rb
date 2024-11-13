@@ -12,12 +12,12 @@ FactoryBot.define do
 
     factory :telegram_user do
       telegram_id { rand(10000) }
-      telegram_username { first_name.downcase }
+      telegram_username { Faker::Internet.username }
     end
 
     factory :instagram_user do
       instagram_id { rand(10000) }
-      instagram_username { first_name.downcase }
+      instagram_username { Faker::Internet.username }
     end
   end
 end

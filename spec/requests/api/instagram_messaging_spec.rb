@@ -36,6 +36,6 @@ RSpec.describe "Instagram Messaging", type: :request do
     expect(response).to be_successful
     expect(user.instagram_id).to eq("504664759221752")
     expect(user.messages.count).to eq(2)
-    expect(Instagram).to have_received(:send_message).with("504664759221752", user.welcome_message)
+    expect(Instagram).to have_received(:send_message).with("504664759221752", user.prompts.welcome_message)
   end
 end

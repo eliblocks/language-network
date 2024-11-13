@@ -1,0 +1,252 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-08-06","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough details about something before you can make a search so you can find
+        someone that is a good match.\n\nHowever do not ask for exessive detail, if
+        the user provides details in their first message dont ask for more unless
+        needed.\n\n\nBased on the conversation below which status should we set the
+        user to?\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nrespond with only
+        one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 463\nuser first
+        name: Esteban\n\n\ndate: 2024-11-13 21:22:01\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-13 21:22:01\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\n\n\n"}],"temperature":0.5}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Nov 2024 21:22:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '444'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29728'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 544ms
+      X-Request-Id:
+      - req_86a133090383f1bccff59aaf0a076894
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=xyIJgbWas1QfZIzhYMPvH5hJQqO5Atj7fImrPvCF5Q8-1731532923-1.0.1.1-ai2Y38HdaT0kNFR716xD7cm_zmOsePwHg4_xgzBK5nBbPB6BINRfS6flwha7ev205Uyxb2JwEBswzXmZ.nrROw;
+        path=/; expires=Wed, 13-Nov-24 21:52:03 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=shnzQYdXYLrUxhudMUOjimIVlCkrgFukKvB6rG3vpkQ-1731532923151-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e21d09b2fa418f2-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-ATF6I0P9eTvm6rMI8O1YxvQwloI8L",
+          "object": "chat.completion",
+          "created": 1731532922,
+          "model": "gpt-4o-2024-08-06",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 243,
+            "completion_tokens": 1,
+            "total_tokens": 244,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_159d8341cc"
+        }
+  recorded_at: Wed, 13 Nov 2024 21:22:03 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-08-06","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough details about something before you can make a search so you can find
+        someone that is a good match.\n\nHowever do not ask for exessive detail, if
+        the user provides details in their first message dont ask for more unless
+        needed.\n\n\nBased on the conversation below which status should we set the
+        user to?\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nrespond with only
+        one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 463\nuser first
+        name: Esteban\n\n\ndate: 2024-11-13 21:22:01\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-13 21:22:01\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\n\ndate: 2024-11-13 21:22:03\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-13 21:22:03\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills\n\n\n"}],"temperature":0.5}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 13 Nov 2024 21:22:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '271'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29640'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 720ms
+      X-Request-Id:
+      - req_518cd61d2c0bda364aef49eccbd8c95b
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=lZMyF3nHnRpIEmEggke7WG0SHTvy5mJynVIX.OqwLms-1731532923-1.0.1.1-8wOQnhSbg2CvaoIhIfxs6fVRPKmVrfZVleg85FokGEJyXL1W1UD.n1Cvydbco.EwTwaJXZhERGtHcrf7ue6Hbg;
+        path=/; expires=Wed, 13-Nov-24 21:52:03 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=1SD5_Ph3y3xZ6yhexOzaXWpJn7oTMDNXQkgwl8biDwM-1731532923647-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e21d0a259d27c81-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-ATF6JoDO9faS7rTGYnLP626XdGjbx",
+          "object": "chat.completion",
+          "created": 1731532923,
+          "model": "gpt-4o-2024-08-06",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 338,
+            "completion_tokens": 1,
+            "total_tokens": 339,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_159d8341cc"
+        }
+  recorded_at: Wed, 13 Nov 2024 21:22:03 GMT
+recorded_with: VCR 6.3.1
