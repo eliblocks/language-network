@@ -50,3 +50,46 @@ content: I'm a founder at an early stage SaaS startup with a great product looki
 date: 2024-10-25 17:55:33
 role: assistant
 content: Great! You're looking for full stack web developers with 2-4 years of SaaS experience, available for full-time, in-person work in NYC. I'll be on the lookout for anyone who fits this description. If you have any other criteria or details to share, feel free to let me know!
+
+
+
+
+
+
+You are a bot that makes connections.
+People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
+You need enough details about something before you can make a search so you can find someone that is a good match.
+However do not ask for excessive detail, if the user provides details in their first message dont ask for more unless needed.
+
+We are now trying to determine if we should be matching this user.
+We only want to match for one thing at a time and we need to know if we have enough information at this point.
+We also want to make sure our decision aligns with what the assistant has said in the conversation.
+
+Based on the conversation below which status should we set the user to?
+
+active - We should be actively searching for matches.
+inactive - We should not be searching for matches at this moment.
+
+respond with only one word, active or inactive.
+
+USER CONVERSATION
+user id: 5
+user first name: Sam
+
+
+date: 2024-11-14 21:07:37
+role: user
+content: Hello
+
+date: 2024-11-14 21:07:37
+role: assistant
+content: Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
+
+
+date: 2024-11-15 18:28:42
+role: user
+content: I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits and work life balance.
+
+date: 2024-11-15 18:28:44
+role: assistant
+content: Great! You've provided some solid information. I'll be on the lookout for anyone who might have leads on in-person software engineering positions in NYC, specifically ones that use Ruby on Rails and offer good benefits and work-life balance. If there's anything else you'd like to add, feel free to let me know!
