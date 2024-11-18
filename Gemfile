@@ -28,6 +28,8 @@ gem "good_job"
 gem "neighbor"
 
 gem "http"
+
+gem "anthropic"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

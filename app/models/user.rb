@@ -107,11 +107,9 @@ class User < ApplicationRecord
     telegram_id ? telegram_link : instagram_link
   end
 
-  protected
-
   def introduce(user)
     prompt = prompts.introduction(user)
-    response = chat_completion(prompt)
+    response = system_message(prompt)
     response += " #{user.profile_link}" if user.instagram_id
 
     message = messages.create(role: "assistant", content: response)
@@ -226,12 +224,10 @@ class User < ApplicationRecord
   end
 
   def system_message(content)
-    Ai.chat([ { role: "system", content: } ])
+    Ai.chat([ { role: "user", content: } ])
   end
 
   def chat_completion(prompt)
-    items = [ { role: "system", content: prompt } ]
-    items.concat(messages.as_json(only: [ :role, :content ]))
-    Ai.chat(items)
+    Ai.chat(messages.as_json(only: [ :role, :content ]))
   end
 end

@@ -1,20 +1,39 @@
 class Ai
+  PROVIDER="openai"
+
   class << self
     def chat(messages)
       Rails.logger.info "Messaging ChatGPT:"
       messages.each { |message| Rails.logger.info message }
 
-      response = OpenAI::Client.new.chat(
+      response = (PROVIDER == "openai" ? openai_chat(messages) : anthropic_chat(messages))
+
+      Rails.logger.info "Response: #{response}"
+
+      response
+    end
+
+    def openai_chat(messages)
+      messages.unshift({ role: "system", content: Prompts.system })
+
+      OpenAI::Client.new.chat(
         parameters: {
           model: "gpt-4o-2024-08-06",
           messages:,
-          temperature: 0.5
-        }
+          temperature: 0.5,
+          store: true
+        },
       ).dig("choices", 0, "message", "content")
+    end
 
-      Rails.logger.info "ChatGPT Response: #{response}"
-
-      response
+    def anthropic_chat(messages)
+      Anthropic::Client.new.messages(
+        parameters: {
+          model: "claude-3-5-sonnet-latest",
+          system: Prompts.system,
+          messages: messages
+        }
+      )
     end
 
     def embed(input)

@@ -5,6 +5,15 @@ class Prompts
     @user = user
   end
 
+  def self.system
+    <<~HEREDOC
+      You are a bot that makes connections.
+      People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
+      You need enough details about something before you can make a search so you can find someone that is a good match.
+      However do not ask for excessive detail, if the user provides details in their first message dont ask for more unless needed.
+    HEREDOC
+  end
+
   def welcome_message
     <<~HEREDOC
       Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you.
@@ -17,8 +26,6 @@ class Prompts
 
   def comparison(user1, user2)
     <<~HEREDOC
-      #{platform_description}
-
       #{comparison_instructions}
 
       searching user
@@ -34,8 +41,6 @@ class Prompts
 
   def active
     <<~HEREDOC
-      #{platform_description}
-
       We are now trying to determine if we should be matching this user.
       We only want to match for one thing at a time and we need to know if we have enough information at this point.
       We also want to make sure our decision aligns with what the assistant has said in the conversation.
@@ -53,16 +58,12 @@ class Prompts
 
   def continue_conversation
     <<~HEREDOC
-      #{platform_description}
-
       Guide the user towards providing sufficient information that could be used to match them with other users.
     HEREDOC
   end
 
   def good_match(possible_match)
     <<~HEREDOC
-      #{platform_description}
-
       Based on the conversations with two separate users below, are they a good match for each other? Return yes or no.
 
       #{user.formatted_messages}
@@ -77,14 +78,14 @@ class Prompts
 
   private
 
-  def platform_description
-    <<~HEREDOC
-      You are a bot that makes connections.
-      People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
-      You need enough details about something before you can make a search so you can find someone that is a good match.
-      However do not ask for excessive detail, if the user provides details in their first message dont ask for more unless needed.
-    HEREDOC
-  end
+  # def platform_description
+  #   <<~HEREDOC
+  #     You are a bot that makes connections.
+  #     People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
+  #     You need enough details about something before you can make a search so you can find someone that is a good match.
+  #     However do not ask for excessive detail, if the user provides details in their first message dont ask for more unless needed.
+  #   HEREDOC
+  # end
 
   def comparison_instructions
     <<~HEREDOC
