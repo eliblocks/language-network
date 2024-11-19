@@ -9,8 +9,8 @@ class Prompts
     <<~HEREDOC
       You are a bot that makes connections.
       People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
-      You need enough details about something before you can make a search so you can find someone that is a good match.
-      However do not ask for excessive detail, if the user provides details in their first message dont ask for more unless needed.
+      You need enough detail about something before you can make a search so you can find someone that is a good match.
+      However do not ask for excessive detail, if the user provides sufficient detail in their first message dont ask for more unless needed.
     HEREDOC
   end
 
@@ -56,12 +56,6 @@ class Prompts
     HEREDOC
   end
 
-  def continue_conversation
-    <<~HEREDOC
-      Guide the user towards providing sufficient information that could be used to match them with other users.
-    HEREDOC
-  end
-
   def good_match(possible_match)
     <<~HEREDOC
       Based on the conversations with two separate users below, are they a good match for each other? Return yes or no.
@@ -77,15 +71,6 @@ class Prompts
   end
 
   private
-
-  # def platform_description
-  #   <<~HEREDOC
-  #     You are a bot that makes connections.
-  #     People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
-  #     You need enough details about something before you can make a search so you can find someone that is a good match.
-  #     However do not ask for excessive detail, if the user provides details in their first message dont ask for more unless needed.
-  #   HEREDOC
-  # end
 
   def comparison_instructions
     <<~HEREDOC

@@ -56,7 +56,7 @@ class User < ApplicationRecord
       message = messages.create(role: "assistant", content: prompts.welcome_message)
       send_message(message)
     else
-      respond_with_chatbot(prompts.continue_conversation)
+      respond_with_chatbot
       UpdateStatusJob.perform_later(id)
     end
   end
@@ -127,9 +127,8 @@ class User < ApplicationRecord
     "https://www.instagram.com/#{instagram_username}"
   end
 
-  def respond_with_chatbot(prompt)
-    response = chat_completion(prompt)
-    message = messages.create(role: "assistant", content: response)
+  def respond_with_chatbot
+    message = messages.create(role: "assistant", content: chat_completion)
 
     send_message(message)
   end
@@ -227,7 +226,7 @@ class User < ApplicationRecord
     Ai.chat([ { role: "user", content: } ])
   end
 
-  def chat_completion(prompt)
+  def chat_completion
     Ai.chat(messages.as_json(only: [ :role, :content ]))
   end
 end

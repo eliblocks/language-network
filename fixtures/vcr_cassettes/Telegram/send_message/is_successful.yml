@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.telegram.org/bot<TELEGRAM_TOKEN>/sendMessage
     body:
       encoding: UTF-8
-      string: '{"chat_id":"5899443915","text":"Hello"}'
+      string: '{"chat_id":"5899443915","text":"Hello","parse_mode":"HTML"}'
     headers:
       Content-Type:
       - application/json
@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx/1.18.0
       Date:
-      - Thu, 07 Nov 2024 21:59:17 GMT
+      - Tue, 19 Nov 2024 19:08:05 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -42,7 +42,7 @@ http_interactions:
       - Content-Length,Content-Type,Date,Server,Connection
     body:
       encoding: UTF-8
-      string: '{"ok":true,"result":{"message_id":120,"from":{"id":7721874674,"is_bot":true,"first_name":"Language
-        Network","username":"language_network_bot"},"chat":{"id":5899443915,"first_name":"Eli","last_name":"Block","username":"eliblocks","type":"private"},"date":1731016757,"text":"Hello"}}'
-  recorded_at: Thu, 07 Nov 2024 21:59:17 GMT
+      string: '{"ok":true,"result":{"message_id":220,"from":{"id":7721874674,"is_bot":true,"first_name":"Language
+        Network","username":"language_network_bot"},"chat":{"id":5899443915,"first_name":"Eli","last_name":"Block","username":"eliblocks","type":"private"},"date":1732043285,"text":"Hello"}}'
+  recorded_at: Tue, 19 Nov 2024 19:08:05 GMT
 recorded_with: VCR 6.3.1
