@@ -2,18 +2,18 @@ class Ai
   PROVIDER="openai"
 
   class << self
-    def chat(messages)
+    def chat(messages, type)
       Rails.logger.info "Messaging ChatGPT:"
       messages.each { |message| Rails.logger.info message }
 
-      response = (PROVIDER == "openai" ? openai_chat(messages) : anthropic_chat(messages))
+      response = (PROVIDER == "openai" ? openai_chat(messages, type) : anthropic_chat(messages))
 
       Rails.logger.info "Response: #{response}"
 
       response
     end
 
-    def openai_chat(messages)
+    def openai_chat(messages, type)
       messages.unshift({ role: "system", content: Prompts.system })
 
       OpenAI::Client.new.chat(
@@ -21,7 +21,8 @@ class Ai
           model: "gpt-4o-2024-08-06",
           messages:,
           temperature: 0.5,
-          store: true
+          store: true,
+          metadata: { type:, environment: Rails.env }
         },
       ).dig("choices", 0, "message", "content")
     end
@@ -32,7 +33,7 @@ class Ai
           model: "claude-3-5-sonnet-latest",
           system: Prompts.system,
           messages: messages
-        }
+        },
       )
     end
 

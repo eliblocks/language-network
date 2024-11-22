@@ -109,7 +109,7 @@ class User < ApplicationRecord
 
   def introduce(user)
     prompt = prompts.introduction(user)
-    response = system_message(prompt)
+    response = system_message(prompt, "introduction")
     response += " #{user.profile_link}" if user.instagram_id
 
     message = messages.create(role: "assistant", content: response)
@@ -134,7 +134,7 @@ class User < ApplicationRecord
   end
 
   def fetch_active?
-    response = system_message(prompts.active)
+    response = system_message(prompts.active, "status")
     response.downcase == "active"
   end
 
@@ -196,17 +196,17 @@ class User < ApplicationRecord
   def compare(user1, user2)
     raise "Users not in searching status" unless user1.searching? && user2.searching?
 
-    response = system_message(prompts.comparison(user1, user2))
+    response = system_message(prompts.comparison(user1, user2), "comparison")
     User.find(response)
   end
 
   def summarize
-    response = system_message(prompts.summary)
+    response = system_message(prompts.summary, "summarization")
     update!(summary: response)
   end
 
   def good_match?(possible_match)
-    response = system_message(prompts.good_match(possible_match))
+    response = system_message(prompts.good_match(possible_match), "match")
     response.downcase.include?("yes")
   end
 
@@ -222,11 +222,11 @@ class User < ApplicationRecord
     user.introduce(self)
   end
 
-  def system_message(content)
-    Ai.chat([ { role: "user", content: } ])
+  def system_message(content, type)
+    Ai.chat([ { role: "user", content: } ], type)
   end
 
   def chat_completion
-    Ai.chat(messages.as_json(only: [ :role, :content ]))
+    Ai.chat(messages.as_json(only: [ :role, :content ]), "conversation")
   end
 end
