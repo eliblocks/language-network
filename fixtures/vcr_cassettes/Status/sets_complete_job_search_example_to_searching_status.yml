@@ -1,0 +1,1293 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '366'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29567'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 864ms
+      X-Request-Id:
+      - req_b30e5160c6ef39f06f82aa532ed802ea
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=uAhuHlv6bytom.Jjl4sGnliTri5aDZPhZEbDCY_HeDI-1732381178-1.0.1.1-O2wRZ4f_BwOGLwovcq64v6dLJla9SZHPHHbjUWql5qMG9wERppXuj5p2f68PJnBJnA.U18Q1Ur6390eNpT002w;
+        path=/; expires=Sat, 23-Nov-24 17:29:38 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=8RmIfd0C9L_N7juX5p6FhmLtvEyWO0okSQicLe7QOqg-1732381178362-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b5f9bcc70cb0-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnlqgprxZfpO8l4kYcdnSqowcjAQ",
+          "object": "chat.completion",
+          "created": 1732381178,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:38 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '275'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29474'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 1.05s
+      X-Request-Id:
+      - req_dc0879f720562dc3fba60897240128e2
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=6RgD9RCefLK4g2AS_C4gYtLKSklvJoN5ZFCAEoJgq.Y-1732381178-1.0.1.1-VItSHnClPOQiji93dYM0FYaYzeDKmyIu48ExqmsPv9zEJJjBY_W1hDjsoDVxF.JKem_DPJZlPzyOnBA0q.6h4g;
+        path=/; expires=Sat, 23-Nov-24 17:29:38 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=narrAaoCWxNr51ETxkmUbjvBavTOQyQE.GpXlyvD.qM-1732381178834-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b5fd3b05443e-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnlqW3sVcAdVzNjkbB0hPo2Ybxoa",
+          "object": "chat.completion",
+          "created": 1732381178,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:38 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '578'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29349'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 1.3s
+      X-Request-Id:
+      - req_01ad7e06c477de168b8f88795024238b
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=djcKcQa1vq3SkvWPETOijcI9LAb_aXhoBTBNnSHQQ4Q-1732381179-1.0.1.1-X4uraQLBPDyALGvwU72P4SgcDkVnvtNCA8s.5vK.sViSTCBFHUdRxdUz6R3KDgQ8h0P_hh6sNQoCF5Z513zD3g;
+        path=/; expires=Sat, 23-Nov-24 17:29:39 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=fe.wrSMJp7qruVAeYWiBd5Zvx.SQEYTxaE2NObhPGQs-1732381179649-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b6005eea1881-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnlr24Nyhry0ryD3fD7ObHo0l3hL",
+          "object": "chat.completion",
+          "created": 1732381179,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:39 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '288'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29385'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 1.229s
+      X-Request-Id:
+      - req_f10a0805ed9802fc1d459f669917ea9e
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=DLRwnWIesb7Tce021sO6eeacw8456rZaPfqFjL7BySY-1732381180-1.0.1.1-N7._7BDiC80PNKDxE2OC_iBBtTS7HuDBukBYOAUHiB7TF30pMAKqwWTcdYLY_C8q5USHXl6zU8y9Y6RdBe8Qqw;
+        path=/; expires=Sat, 23-Nov-24 17:29:40 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=8EEBHGngS7I.PNDsVS1ipS3ew1CHqohr.cpCv3.IuUU-1732381180169-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b6057b404346-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnlsUEZXceOjqV1HwIuyjxgdUiw6",
+          "object": "chat.completion",
+          "created": 1732381180,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:40 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '300'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29265'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 1.469s
+      X-Request-Id:
+      - req_d2b978d5a858b7a41ca4d5874d3cbdb1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=X58_vmmMD5nl3eaBB2hwhAQzLZcIKZGVJJeM5_5L79I-1732381180-1.0.1.1-sOC7Yddkhd20s6GvI4W6uiqYOWsdiPKkPmyl2ledCSYestix_MYAqQhxzlOyzXTBcyGEYnSuHzNv8ejswbMUGw;
+        path=/; expires=Sat, 23-Nov-24 17:29:40 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=y.ENsloUOUM2nlF0.x2x.5W02DGauOxM7ca19g7LnWs-1732381180705-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b608af967d11-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnlsld4n6nHfS5yKQBErSVpB13EL",
+          "object": "chat.completion",
+          "created": 1732381180,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:40 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '289'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29149'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 1.701s
+      X-Request-Id:
+      - req_9c33f22dcb53ab4f5f01c55257bc74ee
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=i.W8etQDMCJosqw2NBcgTQsT7RhkaEsmefOXa9WqY_4-1732381181-1.0.1.1-.b93ymfOu5LyzaMjTZMBjvUYvYWMK6hKzFuYFwbgW3mZQCafkgAntOjW1k9fQ6pKCYQBa6J4tJSfcm.ek48Prw;
+        path=/; expires=Sat, 23-Nov-24 17:29:41 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=GZ_RTH1.Va5fd6.zkc2BEfOUermA7tMZ7AAevhjvKv4-1732381181198-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b60bec6e0f37-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnltgCuls7vsbeByD9NICXZyjsqY",
+          "object": "chat.completion",
+          "created": 1732381181,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:41 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '286'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '29004'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 1.991s
+      X-Request-Id:
+      - req_16f131130f8728e2379428978a50f491
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=48snWLqxPYW0o0wpseYpOo4DdDl0M6zGMPiMKq8vgeQ-1732381181-1.0.1.1-kBx2l89bK11Vl2xk_BOhGshhUDs8ps6x0EqjjoEffP_aMr3TrWgFl5KoOAX0yfNJwWKRZiPBvDhqI0YlOnVU1A;
+        path=/; expires=Sat, 23-Nov-24 17:29:41 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=1qVk6DWfBCHRNAzKz.cX_HRaGRFh_lagCkTwJQ0j7Xo-1732381181656-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b60ecdce8c72-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnltTqQpsU7okupGsoozgabnrsal",
+          "object": "chat.completion",
+          "created": 1732381181,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:41 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:42 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '281'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '28933'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.132s
+      X-Request-Id:
+      - req_02554d8bf1b652539b73f28b57c8de83
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=hmFQSVY0w5Y7BLNesVMKiCm0PtzD62R4BWBuWIDMyOU-1732381182-1.0.1.1-DFPPqAVHUokxBST5Gu7zDkyDm.VnEIFEoWXXs6pdY3Ksk_14G0hvzLy1jXNvvEn_wpgsrQ5N85APaqjQ0VTalA;
+        path=/; expires=Sat, 23-Nov-24 17:29:42 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=WyKh1N2uOD7lYSPa70S7Wfm1fBnV2AX5qT1jPywuuaA-1732381182269-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b6119f583350-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnluz6h8BWLR8BNh5qVBsE7yBVjD",
+          "object": "chat.completion",
+          "created": 1732381182,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:42 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '581'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '28790'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.419s
+      X-Request-Id:
+      - req_768fac1e96d7c05b8ae26d6945985c63
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=qw_NcETnTFEXcMJanagY91wqQB8WC9Fw6pUq7Geiw4A-1732381183-1.0.1.1-eUWyw6miFa3LSm8PMSO0Ij3tVBJrefexCT6c2ToJ6_QVBBFmGG_MmSxnTJbDcHX3y.J2HVZE9JFIMsAy0xV4wA;
+        path=/; expires=Sat, 23-Nov-24 17:29:43 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=tSGlJsvigtviMvsJHFVEOt_KsAb7DoEA6f_zk5AuuvA-1732381183024-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b6157b8341b2-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnluZ1VXSUe8VZmlng11ulr7o3EI",
+          "object": "chat.completion",
+          "created": 1732381182,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:42 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We are now trying
+        to determine if we should be matching this user.\nWe only want to match for
+        one thing at a time and we need to know if we have enough information at this
+        point.\nWe also want to make sure our decision aligns with what the assistant
+        has said in the conversation.\n\nBased on the conversation below which status
+        should we set the user to?\n\nactive - We should be actively searching for
+        matches.\ninactive - We should not be searching for matches at this moment.\n\nrespond
+        with only one word, active or inactive.\n\nUSER CONVERSATION\nuser id: 1061\nuser
+        first name: Coleman\n\n\ndate: 2024-11-23 16:59:37\nrole: user\ncontent: Hello\n\ndate:
+        2024-11-23 16:59:37\nrole: assistant\ncontent: Hello! I''m a bot that can
+        connect you to people. Tell me a little about what you''re looking for and
+        I''ll try to find someone relevant to you.\n\ndate: 2024-11-23 16:59:37\nrole:
+        user\ncontent: I''m a software engineer in NYC with experience using Ruby
+        on Rails at several SaaS startups. Looking for a new in-person position with
+        good benefits and work life balance.\n\ndate: 2024-11-23 16:59:37\nrole: assistant\ncontent:
+        Great! I''ll let you know if I find someone looking for an engineer with your
+        skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 23 Nov 2024 16:59:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '568'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '28800'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 2.398s
+      X-Request-Id:
+      - req_a010dcd4157b97af9e4e89a4154a85d1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Yo6pkVnfb0ZObOeXl8n0btuBJVIEEMwD37borv95MkA-1732381183-1.0.1.1-.Mksd.4jMNRS2bXJppebHvkKafuZEAtfoIhLvNbd8w3UnZ2XExe64t1WAtCFA0LX.vnLburq0NO1CPhmlIEN0A;
+        path=/; expires=Sat, 23-Nov-24 17:29:43 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=PVbfhuj2GGsHSe07LJaf5kyW0PULkJz8xcowQldfiqY-1732381183777-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e72b61a4e9a8c84-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AWnlviscoLDxituEXrYuNwBfut4m5",
+          "object": "chat.completion",
+          "created": 1732381183,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "active",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 374,
+            "completion_tokens": 1,
+            "total_tokens": 375,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Sat, 23 Nov 2024 16:59:43 GMT
+recorded_with: VCR 6.3.1
