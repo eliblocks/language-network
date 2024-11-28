@@ -38,18 +38,47 @@ class Prompts
     HEREDOC
   end
 
+  # def active
+  #   <<~HEREDOC
+  #     We need to determine if we should be matching this user. 
+  #     We need to know if we have enough information at this point.
+  #     We also want to make sure our decision aligns with what the assistant has said in the conversation.
+
+  #     Based on the conversation below which status should we set the user to?
+
+  #     active - We should be actively searching for matches.
+  #     inactive - We should not be searching for matches at this moment.
+
+  #     respond with only one word, active or inactive.
+
+  #     #{user.formatted_messages}
+  #   HEREDOC
+  # end
+
+
+  # def active
+  #   <<~HEREDOC
+  #     We need to determine the current status of the conversation with the user below.
+
+
+  #     respond with only one word, active or inactive.
+
+  #     active - We should be actively searching for matches.
+  #     inactive - We should not be searching for matches at this moment.
+
+  #     #{user.formatted_messages}
+  #   HEREDOC
+  # end
+
   def active
     <<~HEREDOC
-      We are now trying to determine if we should be matching this user.
-      We only want to match for one thing at a time and we need to know if we have enough information at this point.
-      We also want to make sure our decision aligns with what the assistant has said in the conversation.
+      We need to determine the current status of the conversation with the user below.
+      Are we currently searching for matches for the user?
 
-      Based on the conversation below which status should we set the user to?
+      respond with only one word, active or inactive.
 
       active - We should be actively searching for matches.
       inactive - We should not be searching for matches at this moment.
-
-      respond with only one word, active or inactive.
 
       #{user.formatted_messages}
     HEREDOC
@@ -74,8 +103,14 @@ class Prompts
   def comparison_instructions
     <<~HEREDOC
       We are now trying to find the best match for the searching user.
-      Given the user and two other users along with their conversation histores,
+      Given the user and two other users along with their conversation histories,
       return the user id of the best match for the searching user. return only a user_id.
+      Even if both users are a poor match, return the best possible option.
+
+
+      ===========================
+
+      Example response: 521
     HEREDOC
   end
 

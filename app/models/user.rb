@@ -62,10 +62,14 @@ class User < ApplicationRecord
   end
 
   def update_status
-    if fetch_active?
+    new_status = fetch_status
+
+    if new_status == "active"
       update(status: "searching")
-    else
+    elsif new_status == "inactive"
       update(status: "drafting")
+    else
+      raise "AI returned invalid status"
     end
   end
 
@@ -133,9 +137,8 @@ class User < ApplicationRecord
     send_message(message)
   end
 
-  def fetch_active?
-    response = system_message(prompts.active, "status")
-    response.downcase == "active"
+  def fetch_status
+    system_message(prompts.active, "status").downcase
   end
 
   def send_message(message)
@@ -194,9 +197,11 @@ class User < ApplicationRecord
   end
 
   def compare(user1, user2)
+    raise "users are same" if user1 == user2
     raise "Users not in searching status" unless user1.searching? && user2.searching?
 
     response = system_message(prompts.comparison(user1, user2), "comparison")
+
     User.find(response)
   end
 
@@ -222,7 +227,7 @@ class User < ApplicationRecord
     user.introduce(self)
   end
 
-  def system_message(content, type)
+  def system_message(content, type = nil)
     Ai.chat([ { role: "user", content: } ], type)
   end
 
