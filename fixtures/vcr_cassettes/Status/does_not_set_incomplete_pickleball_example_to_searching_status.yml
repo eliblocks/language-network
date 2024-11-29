@@ -15,12 +15,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -40,7 +40,257 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:35 GMT
+      - Fri, 29 Nov 2024 19:42:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '231'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '18142'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 23.715s
+      X-Request-Id:
+      - req_a4db08d971fff96d6db516601d041b86
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=oZ2ut9nj3ABvas5m0KISNXAwQmfFSu1QlBVsqGOGHz4-1732909373-1.0.1.1-ePdLpGihFBn8TTMoogmeHTqVn0Af8noeDhZ2PAjmAgAdQ8riXGA3n.ezqRRMbbJkKHNl8.2kMnydV9VqKANiDg;
+        path=/; expires=Fri, 29-Nov-24 20:12:53 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=4r8P4YKRnTnn9yydYu_HqMkTO2qYzVdzJb9cz3zLCQo-1732909373678-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea5155f38eac459-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1B7wuHAlouWZYO4ZreIpLbQSd1t",
+          "object": "chat.completion",
+          "created": 1732909373,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 316,
+            "completion_tokens": 1,
+            "total_tokens": 317,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:42:53 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
+        skill level and when you''re usually available to play? This will help me
+        find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:42:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '275'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '18078'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 23.842s
+      X-Request-Id:
+      - req_53871e786b845ac0fa3cdf45a190a7eb
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=17dKdL0VCi9JFGpvolewTxLvMQU9G9XvRpJbljh4Dyk-1732909374-1.0.1.1-.g6bUe_xaLm_PFIDQcUBnuvnA4DKK714PeYpKRt7uQN4dBE.g8LwJQ2QkxhxSItMe.WG0fIql3ugpBRutTp27g;
+        path=/; expires=Fri, 29-Nov-24 20:12:54 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=ibKMhSfsbFIozYtAS4lQBpsm2XGI65VqIMzrJDLhsTA-1732909374224-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea515625bf1427f-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1B8p8c3ybKDQXAGncui8qw6rdxx",
+          "object": "chat.completion",
+          "created": 1732909374,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 316,
+            "completion_tokens": 1,
+            "total_tokens": 317,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:42:54 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
+        skill level and when you''re usually available to play? This will help me
+        find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:42:54 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -62,38 +312,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '22436'
+      - '18012'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 15.127s
+      - 23.974s
       X-Request-Id:
-      - req_daefb07867467a571d68bcdf1ee9c333
+      - req_92426ff99313c794b21153cea4c2b9fa
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=7MKu_TWzoNR4B3ZSey2yGDtWOHJHPeAng.HZ5aot6hE-1732823675-1.0.1.1-GjjAMAlRObNR09myO83KM6g2o.KYo_PWdbSgwd95VPJ4gOsh3A.tj8u8TDQLLFSImFeGPLbxJmxdXWfOVyezqw;
-        path=/; expires=Thu, 28-Nov-24 20:24:35 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=uI3JL.GiLUf7UY0X.W_HfPhVAC_dn01H4SlMyTpTHl0-1732909374-1.0.1.1-0N7Bp7IyvByuIxJSPq3dIobPE4nSNYHC_phBheeN5ZVr8if4FaKGEvzXvP3uXWeEApqw4wzfQW3jRxgnEjYtlg;
+        path=/; expires=Fri, 29-Nov-24 20:12:54 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=Cd7DrdcDE0fESyfbpqkkRzoPlzxgrtkqxuOUzT4UV9w-1732823675810-0.0.1.1-604800000;
+      - _cfuvid=AudWkZs4NZQ.zapau12RLukkNAmV9x6GJdIAHItIC70-1732909374636-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce923ec3f42e0-EWR
+      - 8ea51565785643e3-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYestWyZWjGZVvDw9xOYZAuE7s0oL",
+          "id": "chatcmpl-AZ1B8OPIJekDKILohgXfmfcUIQtfb",
           "object": "chat.completion",
-          "created": 1732823675,
+          "created": 1732909374,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -108,9 +358,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -124,7 +374,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:35 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:54 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -140,12 +390,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -165,7 +415,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:36 GMT
+      - Fri, 29 Nov 2024 19:42:55 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -177,7 +427,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '192'
+      - '175'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -187,38 +437,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '22302'
+      - '17903'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 15.394s
+      - 24.192s
       X-Request-Id:
-      - req_836a1084ec85c5ce22d93fef192b254a
+      - req_7bcb3b022437b9e318787c2dcc7c597c
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=rCTOaGtZEntOh3n.s5hhHz6fmDnlihOS_aIcLORVmOA-1732823676-1.0.1.1-8uM_Mr5eIxG8yntwc1MroqdnsHM8YADVEJE5Tja0.NMFrDZn.MUl0b2HXD1wS3PbvCSoCZ.vfYJTNEb2Lp4zLQ;
-        path=/; expires=Thu, 28-Nov-24 20:24:36 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=Cn7mZTz.2YxeckOWMPPzP0dGJXZzVU92kV9Bp2.eiN0-1732909375-1.0.1.1-_1xog3r78.2r5TtBcDS6nN8d32QLKCvcD9Ruui4voJgg36cmyyvMf2.6bYaA7pHIVLxLMvUkYVh_92a8CJ9qhw;
+        path=/; expires=Fri, 29-Nov-24 20:12:55 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=gY3rR7OpcXWzXj32l3LVzM9GIgiGg02iW8fNj_dsmrQ-1732823676183-0.0.1.1-604800000;
+      - _cfuvid=ELjOdUQOCgdc24IN85Lq13lBECOq.IChWTV.ZxdUCDc-1732909375048-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce9262ae10c82-EWR
+      - 8ea515681a998ce0-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYesuPDt2WeqABZVhfL9PCtBgwm3X",
+          "id": "chatcmpl-AZ1B8PqGBQp36fPCnl0RkgatRG8GS",
           "object": "chat.completion",
-          "created": 1732823676,
+          "created": 1732909374,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -233,9 +483,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -249,7 +499,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:36 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:55 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -265,12 +515,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -290,7 +540,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:36 GMT
+      - Fri, 29 Nov 2024 19:42:55 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -302,7 +552,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '170'
+      - '303'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -312,38 +562,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '22207'
+      - '17781'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 15.584s
+      - 24.437s
       X-Request-Id:
-      - req_9ab3dc3d3b7d38fd059b6e86220c13c4
+      - req_edceeac27848f6ad2b01574033b29675
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=YLr5utS2zZ2AbWlCdZMamOA.WuOSHJtfD9Hoxxg_zkI-1732823676-1.0.1.1-J1Rh_D262cMQ4ncqaWhlScowwJz2jPmjQxDHbQHywy.znnspFdBy1Mdq.HC2JJEc_RvCgFCPFbesuwgS4G3Y_w;
-        path=/; expires=Thu, 28-Nov-24 20:24:36 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=kJpv3CMCWbWofthc53TW8uXWC1njYkejAMZIZgtzV0A-1732909375-1.0.1.1-JsiedBvwjOfO66YyuCDnynFgi2Zv_UWveVZxfm3nc1UcD2dyrH3GaDLpfiyGf4wHGOeOyDekF3dFioUOOEFN0w;
+        path=/; expires=Fri, 29-Nov-24 20:12:55 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=nrpYJanfmIzftnthwXaMsYfFPHc.ze2Ys_ueUprPG9M-1732823676614-0.0.1.1-604800000;
+      - _cfuvid=.sSr6smCaBzItTvUvypgjYVvzyOwLBJucAk2DpVbjJI-1732909375556-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce928de37428e-EWR
+      - 8ea5156a89fd72a5-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYesuPZw1GTA75eUh8ZHLgDJGxlNP",
+          "id": "chatcmpl-AZ1B9fUpweH4yFk9UHYfUhS3wBxaa",
           "object": "chat.completion",
-          "created": 1732823676,
+          "created": 1732909375,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -358,9 +608,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -374,7 +624,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:36 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:55 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -390,12 +640,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -415,7 +665,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:37 GMT
+      - Fri, 29 Nov 2024 19:42:55 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -427,7 +677,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '194'
+      - '175'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -437,38 +687,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '22098'
+      - '17722'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 15.803s
+      - 24.555s
       X-Request-Id:
-      - req_2a6acd325e083ddba2c127e48cd56f64
+      - req_b008c7f4a34608ef03db209a761841b9
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=3v53Xutgc37nyOfNFW_8uF66rBiZRR.YkwJenpYaa2Q-1732823677-1.0.1.1-0fW.Ot.5qW6UiMkKGtOmvOSlwqy5zKoo7xqVwYdlEHGO4VWf4ohQ.m2IiMpbp.wcVlQHN.YA3HEBW1PqiYMVAA;
-        path=/; expires=Thu, 28-Nov-24 20:24:37 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=VK3LWk8isSyIEl.A1MGA71AMUPKH0O9XypunW62Mylo-1732909375-1.0.1.1-DPAv5IUCOuzf3Lgi3sbTw3PSabt_83sFfkQnFr171GhhJwvTYKe.O3gvSjPVudrz.f8ZP.D2FDBZmlmeLAbD.A;
+        path=/; expires=Fri, 29-Nov-24 20:12:55 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=sPDOk1xfOHTaJA24w9WS2BMyZwTQIMxWr2zhm7AmQfI-1732823677039-0.0.1.1-604800000;
+      - _cfuvid=ZlX55JJf0t1ytwXuPj8532iXrNRPSSFcZp4eBR63O0Q-1732909375949-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce92b7faf8c45-EWR
+      - 8ea5156dcaf38c29-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYesuXRK4u0HB8wMoqMdkb7ta282h",
+          "id": "chatcmpl-AZ1B9VfKjjHGcGNLukdjreXpMzi5L",
           "object": "chat.completion",
-          "created": 1732823676,
+          "created": 1732909375,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -483,9 +733,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -499,7 +749,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:37 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:55 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -515,12 +765,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -540,7 +790,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:37 GMT
+      - Fri, 29 Nov 2024 19:42:56 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -552,7 +802,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '313'
+      - '235'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -562,38 +812,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '21974'
+      - '17618'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 16.05s
+      - 24.762s
       X-Request-Id:
-      - req_b503c5a51a06de621c828d7679e6ecff
+      - req_41956086b1f7d80405add20335d0c5df
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=GG5wQRNOVAeeZQrch72GWdAKn5U4fjNGGTqWbm4Cdws-1732823677-1.0.1.1-eK21pesv9NROqiv9kVQ4GnUXVlssy7StSU6C5O81mKlDsgGLC2er8KLVRf1Ds8TJdRc2fQQI5Rc2TSqwK0AgkQ;
-        path=/; expires=Thu, 28-Nov-24 20:24:37 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=BnfKzAvJHZGiosAHDEB2teM6zYJvo4GxX1eiDGUuBSw-1732909376-1.0.1.1-JyldIJar0SJXBZi0eRcVQc6kTRLyA3BN7hofflLT226JSQVjdpNVhvp0Uo3faq3FLTdWuaQrtHP8aNZMP_ibzQ;
+        path=/; expires=Fri, 29-Nov-24 20:12:56 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=k.kWQJjijpfMk0ZMgO5RtH8Qp1Y8oxh0gLuEQ45O9Dw-1732823677561-0.0.1.1-604800000;
+      - _cfuvid=2xVZlske0OQ7I.mAu92rEGGeIOgVJigcwLgD9BcX_6Q-1732909376448-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce92e09398ce0-EWR
+      - 8ea515706e298c75-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYesvnsXyeRFTFfIL04riELHjwGSq",
+          "id": "chatcmpl-AZ1BAqvDioaX2zerYLHBlkOD6RjHQ",
           "object": "chat.completion",
-          "created": 1732823677,
+          "created": 1732909376,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -608,9 +858,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -624,7 +874,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:37 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:56 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -640,12 +890,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -665,7 +915,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:37 GMT
+      - Fri, 29 Nov 2024 19:42:56 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -677,7 +927,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '184'
+      - '181'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -687,38 +937,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '21918'
+      - '17525'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 16.162s
+      - 24.948s
       X-Request-Id:
-      - req_27a38ad80272cbfda9ee176e4887ea1e
+      - req_f1bac4613bdd3e1a84815429b39a7552
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=LilLpl0k2NN5GBXZOTTKrmOj7_h_wVn_6B8oZPf2ZKM-1732823677-1.0.1.1-UUB1VeD1sn9uOFB3Oejbt5eMY0dK1lofnLThwKAypjOcLkQFglUQ403nHCC.oAiuOgLsdVV0rToCf2SmZz3gUA;
-        path=/; expires=Thu, 28-Nov-24 20:24:37 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=ITONpFodb6GDXmhqDNv2BRiTK9ZkqfqVw3xuIN2BJFA-1732909376-1.0.1.1-no9_d8ZoHQUlXPitavUA0QdM6hYiSpq4cD_WqkfaSqxUivjbAhpOHZYtzfQRozbtdxCPbC36GozQWtbWVi_kjQ;
+        path=/; expires=Fri, 29-Nov-24 20:12:56 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=5NOBIBsH0Aiab_upBmsp0kad3JEyLtTnWmgBkJlK9o8-1732823677943-0.0.1.1-604800000;
+      - _cfuvid=xgPK9OIlXNlD6UA7y3FSLOMLAfWJgMvoXmQjPYs1BLc-1732909376830-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce9313aeec35b-EWR
+      - 8ea515733ef80c8e-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYesvI67gPs3aL1ze5Ir6aXfTIok1",
+          "id": "chatcmpl-AZ1BAcVKDfhVwvC5fLHieipBxV92o",
           "object": "chat.completion",
-          "created": 1732823677,
+          "created": 1732909376,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -733,9 +983,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -749,7 +999,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:37 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:56 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -765,12 +1015,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -790,7 +1040,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:38 GMT
+      - Fri, 29 Nov 2024 19:42:57 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -802,7 +1052,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '166'
+      - '165'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -812,38 +1062,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '21807'
+      - '17458'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 16.384s
+      - 25.083s
       X-Request-Id:
-      - req_44bf441970493c1136124b10372c8e10
+      - req_fc72f5b4b67bbd6616d9148d6edb31ac
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=z7EjbIZQHakTUw5KIAo82.JSeOGBJJk8LR6xKKuJW5E-1732823678-1.0.1.1-RIzFtyfcGtAS1kYr70tyo2HLjMMCR_XXK7uHRDkXQBx._OC7bd9uECC_ifZu4vmaVP8GEgKpR2nLLjMg35kOyw;
-        path=/; expires=Thu, 28-Nov-24 20:24:38 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=sJwExtHPifhT3hhgWtWDW6WjAdWHh7RLZVVkvYPJGZ8-1732909377-1.0.1.1-H7C7yExt7sHv02klT9lXZltNpyoAWqYWXcuuAovZozC7qLAeCtpNvmr9GwZCInkILGFPf8o_peiL.tHAcF5sFw;
+        path=/; expires=Fri, 29-Nov-24 20:12:57 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=v8Q6bv9Rkfn4NYxTX9ttpkmTJlxOfI4bHRj_WRr5SGo-1732823678325-0.0.1.1-604800000;
+      - _cfuvid=6zmyZ5z6_V9FUA3qbGMa3lrMrP_IAYtChw3mBfT_4ks-1732909377315-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce933cde241d8-EWR
+      - 8ea5157628bb0f98-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYeswZbZNbTdvAJLs3PHQ2MROlkY4",
+          "id": "chatcmpl-AZ1BB5vcre9Cq8jwV5l5cky2LxnbR",
           "object": "chat.completion",
-          "created": 1732823678,
+          "created": 1732909377,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -858,9 +1108,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -874,7 +1124,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:38 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:57 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -890,12 +1140,12 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
+        id: 1625\nuser first name: Alena\n\n\ndate: 2024-11-29 19:42:53\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:42:53\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:42:53\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-11-29 19:42:53\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -915,7 +1165,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:38 GMT
+      - Fri, 29 Nov 2024 19:42:57 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -927,7 +1177,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '177'
+      - '186'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -937,38 +1187,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '21698'
+      - '17317'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 16.602s
+      - 25.364s
       X-Request-Id:
-      - req_eb4ed30ba1160329ae92ed45ab89c5c5
+      - req_d9a64dac3d14866f247711e4a85694a3
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=wTt1Mlwl6qDIE92rCVaSO1bRxzz1jXqr2MbyZz.12No-1732823678-1.0.1.1-yUR9ne90WxH2umyUPzWym.xuacxeU0RcZrQEeNNBYteLKOwXy4SqxbiObYEu1IOlI2JI7dDMisdJBgfNsRgd2A;
-        path=/; expires=Thu, 28-Nov-24 20:24:38 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=ESHTsj.yCnFVWKblAZBHmqhZGgY2ujuQujsut0ULmus-1732909377-1.0.1.1-HreWUCDXnnvHbWrPpJgyKa.zvzSVesWiJsBLK8JpyaFkIH_s9YpPrnUtf0v63iRZYQbKyH4Y1qlnX2NbMoNTww;
+        path=/; expires=Fri, 29-Nov-24 20:12:57 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=grHQeiiSdIQw_0Jdu0d.ZsxF1NboVrw_VRglBcGgt2s-1732823678754-0.0.1.1-604800000;
+      - _cfuvid=Od2Q5a8JjE2I46HnuFElnLt8zeAgBt1pQB58DrpvFTU-1732909377692-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce9365e1b8c87-EWR
+      - 8ea5157889824382-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYeswu1tCs3p120D4XTfpS5VdI8v1",
+          "id": "chatcmpl-AZ1BBxhydlhBXrBm2tzlnx4tgw6Qo",
           "object": "chat.completion",
-          "created": 1732823678,
+          "created": 1732909377,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -983,9 +1233,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 315,
+            "prompt_tokens": 316,
             "completion_tokens": 1,
-            "total_tokens": 316,
+            "total_tokens": 317,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -999,255 +1249,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:38 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
-        skill level and when you''re usually available to play? This will help me
-        find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:39 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '173'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '21586'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 16.827s
-      X-Request-Id:
-      - req_42ce9928316ce352b06d003484751f26
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=NTNjLdWNFtgMMiC1BvXnPidr9Xrjgec612Mi2CQqWJw-1732823679-1.0.1.1-1OWYCZM61ve8RO.rlIzCyHyXcZer0iGLlDxNiWls.Zj8b.F0_WFwZuS2.d1QP1lxBch08LSo6jMQ5iYgDqnwzw;
-        path=/; expires=Thu, 28-Nov-24 20:24:39 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=SxL23s315Fh9TRz528r7Y.xioTQKIXDjX5BQ7JJz3Cw-1732823679152-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce938ea108cb3-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYesxioSpQpyr6dd0A2U1SeYNX1kI",
-          "object": "chat.completion",
-          "created": 1732823679,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 315,
-            "completion_tokens": 1,
-            "total_tokens": 316,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:39 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1429\nuser first name: Elliot\n\n\ndate: 2024-11-28 19:54:35\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:35\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:35\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-28 19:54:35\nrole: assistant\ncontent: Got it! Could you tell me your
-        skill level and when you''re usually available to play? This will help me
-        find a compatible pickleball partner for you.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:39 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '228'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '21471'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 17.056s
-      X-Request-Id:
-      - req_79634ae92337de92d7410a1a892b3b50
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=KGDFc8sO7Sil7U3kK1.N.ijXmYa7IE2ertte6MxQMv4-1732823679-1.0.1.1-XQIimoMrlDTWT6Uwu76YeLaCbidAjOeE8rYjicwtDMUGLf1EkcQJ_5Fev14FGBs.RKzIEoo2.pziA4XTC0fUiw;
-        path=/; expires=Thu, 28-Nov-24 20:24:39 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=gS1pmz.V0EXk7w.RDdTOeiZ2xi3mq0lJKz8Rb.igUX0-1732823679630-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce93b699b4376-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYesxQxOYFgmoDlFjWeBbEs8LBANY",
-          "object": "chat.completion",
-          "created": 1732823679,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 315,
-            "completion_tokens": 1,
-            "total_tokens": 316,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:39 GMT
+  recorded_at: Fri, 29 Nov 2024 19:42:57 GMT
 recorded_with: VCR 6.3.1

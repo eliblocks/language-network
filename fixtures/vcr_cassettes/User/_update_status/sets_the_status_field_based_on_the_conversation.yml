@@ -15,8 +15,8 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1437\nuser first name: Milford\n\n\ndate: 2024-11-28 19:54:49\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:49\nrole: assistant\ncontent: Hello! I''m
+        id: 1603\nuser first name: Felix\n\n\ndate: 2024-11-29 19:35:37\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:35:37\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
         looking for and I''ll try to find someone relevant to you.\n\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -36,7 +36,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:50 GMT
+      - Fri, 29 Nov 2024 19:35:37 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -48,7 +48,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '315'
+      - '308'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -58,38 +58,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '18692'
+      - '19932'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 22.615s
+      - 20.135s
       X-Request-Id:
-      - req_105f95fdcacd3d4de32661c6c4fc96c3
+      - req_0d1a9ef59ec77d891b21ebe5ca71f365
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=wirt4j8BbD8SItsumPruPq..31I9tYmIPZfBakpy9Os-1732823690-1.0.1.1-.sBu9jrffEybA93eUe6itApkStH154NLedTq9r_UcIxSW_4TMfiP0sTGEm9dygkLwpa6fZwnM9_eYt4CgQJ14A;
-        path=/; expires=Thu, 28-Nov-24 20:24:50 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=0MXUyiakXun.eupGurgDcA53UGBBNnyy0ldc7LDJpiY-1732908937-1.0.1.1-hnZUsP.ArXXlHPU8PR3AzO.eMxKihx9_zQTKPhQS7J.f4Yqrcl62988TfD38.slUtPoev0LRTvflsU5I53Tyng;
+        path=/; expires=Fri, 29-Nov-24 20:05:37 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=E_azN42XKv1phvYWWREiryS41EWn4vgVHBw06p4xMSo-1732823690488-0.0.1.1-604800000;
+      - _cfuvid=1ktnAO2Jj.sU.ESIy7vSTEVgyHtD3pTSxdmoPriS_vE-1732908937559-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce97ed9357d00-EWR
+      - 8ea50ab8da48726e-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet8udBBpcPYcVbvxkkpNjLp4F05",
+          "id": "chatcmpl-AZ145rTOIXsRXEDVOx4BZQJKPeXC3",
           "object": "chat.completion",
-          "created": 1732823690,
+          "created": 1732908937,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -120,7 +120,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:50 GMT
+  recorded_at: Fri, 29 Nov 2024 19:35:37 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -136,13 +136,13 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1437\nuser first name: Milford\n\n\ndate: 2024-11-28 19:54:49\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:49\nrole: assistant\ncontent: Hello! I''m
+        id: 1603\nuser first name: Felix\n\n\ndate: 2024-11-29 19:35:37\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:35:37\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\n\ndate: 2024-11-28
-        19:54:50\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        looking for and I''ll try to find someone relevant to you.\n\n\ndate: 2024-11-29
+        19:35:37\nrole: user\ncontent: I''m a software engineer in NYC with experience
         using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:50\nrole:
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:35:37\nrole:
         assistant\ncontent: Great! I''ll let you know if I find someone looking for
         an engineer with your skills\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -162,7 +162,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:50 GMT
+      - Fri, 29 Nov 2024 19:35:38 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -174,7 +174,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '213'
+      - '363'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -184,38 +184,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '18668'
+      - '19868'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 22.662s
+      - 20.263s
       X-Request-Id:
-      - req_04fbb0425e6867d32d86a580363c94d4
+      - req_be38a64c9d13a22aa0721ce132f0bca3
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=cRZ0hsTRDoOuPYjJGV84q3_Fuu.PNKiawozOa5DzMIQ-1732823690-1.0.1.1-NxjYWB6Z75POyy9s.h1mNVBAEEtHm.2Bo8wP8cDTLahnm9uxKrVrAUD0SzKAh41oZfouIqxKLO.hbTBmSh8SqA;
-        path=/; expires=Thu, 28-Nov-24 20:24:50 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=Tf9BPq_e_b7tiS67XHs1aSgnrKBb_Vqiz8cX6.fZ0dQ-1732908938-1.0.1.1-RkP4qaOCR2FYJhpM_yJE1YK0pjt0kKzazuvLIVVtophYBxDesns5g_I8W7Um9IG_gGv_gIPXJhJ.YY.9fP.dVg;
+        path=/; expires=Fri, 29-Nov-24 20:05:38 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=zndRLnPqTpNV.YwHlZW9.G50Jn80Glhn6stEybIneH0-1732823690982-0.0.1.1-604800000;
+      - _cfuvid=cVGADukf_MgjBEBmVscSiKk.wFSFxN4TVZruldx6GUs-1732908938135-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce9828d2b5e68-EWR
+      - 8ea50abc3ab18c95-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet8j9QpAkVNpB1561S6gujVFLsr",
+          "id": "chatcmpl-AZ1458R68ndu4GnSA2kSUsb4lAZK6",
           "object": "chat.completion",
-          "created": 1732823690,
+          "created": 1732908937,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -246,5 +246,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:50 GMT
+  recorded_at: Fri, 29 Nov 2024 19:35:38 GMT
 recorded_with: VCR 6.3.1

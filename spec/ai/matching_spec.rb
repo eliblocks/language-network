@@ -26,7 +26,7 @@ RSpec.describe "Matching", :vcr, type: :model do
 
     users.each_with_index do |user, index|
       user.messages.create(role: "user", content: "Hello")
-      user.messages.create(role: "assistant", content: user.prompts.welcome_message)
+      user.messages.create(role: "assistant", content: Prompts.welcome_message)
       user.messages.create(role: "user", content: searches[index])
       user.update_status
     end

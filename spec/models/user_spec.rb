@@ -145,7 +145,7 @@ RSpec.describe User do
       expect(user.status).to eq("initial")
 
       user.messages.create(role: "user", content: "Hello")
-      user.messages.create(role: "assistant", content: user.prompts.welcome_message)
+      user.messages.create(role: "assistant", content: Prompts.welcome_message)
 
       user.update_status
 

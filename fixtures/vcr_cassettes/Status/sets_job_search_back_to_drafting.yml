@@ -15,20 +15,20 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
         using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
         fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
       Content-Type:
@@ -47,7 +47,271 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:45 GMT
+      - Fri, 29 Nov 2024 19:43:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '183'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '16118'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 27.762s
+      X-Request-Id:
+      - req_735bc20ce2fd2520906c1a435baafe47
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=YnNmNMauEADyxLYPZkOr_S6OidnIELph9WD32uj_8S8-1732909382-1.0.1.1-1Svua0PNlsEfaTWaIWlTir8ehT_K6Z33mtNFms5AccpS.Fsap.EPej3wrQalcS2jwWZbyM9CkydTb2wuNaojoQ;
+        path=/; expires=Fri, 29-Nov-24 20:13:02 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=8j9oKDRXYOrZKSUks_dCjAeDFjTo3zrPmTHb9aA9sGs-1732909382756-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea515984dd80cb2-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1BGZVnHFQYCMQYdox99XKDGBG0E",
+          "object": "chat.completion",
+          "created": 1732909382,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 1,
+            "total_tokens": 447,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:43:02 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        using Ruby on Rails at several SaaS startups. Looking for a new in-person
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
+        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:43:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '176'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '15863'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 28.273s
+      X-Request-Id:
+      - req_1816fbf2663bde91038a54b4b14c9066
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=cnqw6DImT6v_EQ7FJMZar53C_ELLLFhPt7n3FEpTAXA-1732909383-1.0.1.1-znL4tqjvJk.PvT2sjaUviH_p6SALo_tB5oTjDPj7dq7Riui0IrZJa2.QwQAfcSw09xVUD895i6cRuJ12Y6mdWw;
+        path=/; expires=Fri, 29-Nov-24 20:13:03 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=PWqfWcG1fYzwUL1kwhB0UO9qPcXp.9kHSAWlTNAhA3I-1732909383136-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea5159a9f568c48-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1BH0kxXJADnRK0VBBWpMKsgoh4C",
+          "object": "chat.completion",
+          "created": 1732909383,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 1,
+            "total_tokens": 447,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:43:03 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        using Ruby on Rails at several SaaS startups. Looking for a new in-person
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
+        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:43:03 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -69,38 +333,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '20596'
+      - '15625'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 18.806s
+      - 28.748s
       X-Request-Id:
-      - req_a187758ebb4e78e0e2254467c3e1ba59
+      - req_5497ce2a54c371aae86df4a10b3cee31
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=.w_HZp3e0pl1xLVpAzGA1X6yiU_AbGOcsfqr7a9GUQ0-1732823685-1.0.1.1-iyj9DWs8u.eQ1km7_T0A8gtEx4uZXy9lIamRZMYSklxEe79RZhlmtcXc3qeMn6J4nvZ61fnFEkUivG3RJJp_.Q;
-        path=/; expires=Thu, 28-Nov-24 20:24:45 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=4xRP1q_68xvo7CqsI3F.Ey.ImsiKaqTGigxsk4sDmb4-1732909383-1.0.1.1-QhL8SnhvRi53tFXr1oE6tnayUGShlU.c6KwoeowDDCSlampso.E5LGuxarzwM_iBceRLgaZI6iPi8UABr1Fzjw;
+        path=/; expires=Fri, 29-Nov-24 20:13:03 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=wwbqTszIfzoneynLGaDnWrAXrzTBVrYgH.a0CYjY1SU-1732823685344-0.0.1.1-604800000;
+      - _cfuvid=Mx2G0hC3eVaVHz266DUP5QfU4wb2YtoGKAS0mQg7U5A-1732909383568-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce95f6f8a7292-EWR
+      - 8ea5159d39b04241-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet35ApGFnkQtlS5Zp4zRtAVz0hq",
+          "id": "chatcmpl-AZ1BHnXcsFi6XXVclY2vUpMz1sy0H",
           "object": "chat.completion",
-          "created": 1732823685,
+          "created": 1732909383,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -115,9 +379,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 447,
+            "prompt_tokens": 446,
             "completion_tokens": 1,
-            "total_tokens": 448,
+            "total_tokens": 447,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -131,7 +395,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:45 GMT
+  recorded_at: Fri, 29 Nov 2024 19:43:03 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -147,20 +411,20 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
         using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
         fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
       Content-Type:
@@ -179,7 +443,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:45 GMT
+      - Fri, 29 Nov 2024 19:43:03 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -191,7 +455,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '182'
+      - '174'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -201,38 +465,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '20362'
+      - '15371'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 19.275s
+      - 29.256s
       X-Request-Id:
-      - req_f0469b4deef5f6db8bae68c79d2d97fb
+      - req_4a3cdc7ab724e8b33fe7ba6ef4e67f32
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=HPWyw_Dhplmrc2WmcJuR4G0U8Q1ieBZl3ljoHiatEPo-1732823685-1.0.1.1-cjbduxdTDK82g.5aRGSo2zwOrDmdT.egLGOKYfEbwCTmedNYdOnmurZQg4metKSZXGgRWOv4KNrZJ49rwdA5VA;
-        path=/; expires=Thu, 28-Nov-24 20:24:45 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=zaJR.JzpQ7DGTKexXrBboz3gLlJDKEEPVMLTtAhyCz8-1732909383-1.0.1.1-xXbo1jaJIqgnMDs9.5u7MloZvuZMUfXxzSlMpy_.kc5QVn9absGrMc88C3fHDuPRs0tKEcsGCKtpZUdCJIK0Dw;
+        path=/; expires=Fri, 29-Nov-24 20:13:03 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=rNmDQkb96CdAvkDgcGIEufotp1L5VOe1boT2lM_saTs-1732823685725-0.0.1.1-604800000;
+      - _cfuvid=9_4YlzraG3zho5D_3w5lbZNKr5wAKxcJEob8_Sxl6vA-1732909383940-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce961d9fc5e6e-EWR
+      - 8ea5159fac227c87-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet3cLevmyi1IVhahvKcHoBaesej",
+          "id": "chatcmpl-AZ1BHleSbtivQgBxN3Fb5OsDidcI7",
           "object": "chat.completion",
-          "created": 1732823685,
+          "created": 1732909383,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -247,9 +511,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 447,
+            "prompt_tokens": 446,
             "completion_tokens": 1,
-            "total_tokens": 448,
+            "total_tokens": 447,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -263,7 +527,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:45 GMT
+  recorded_at: Fri, 29 Nov 2024 19:43:03 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -279,20 +543,20 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
         using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
         fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
       Content-Type:
@@ -311,7 +575,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:46 GMT
+      - Fri, 29 Nov 2024 19:43:04 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -323,7 +587,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '240'
+      - '183'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -333,38 +597,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '20095'
+      - '15142'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 19.809s
+      - 29.714s
       X-Request-Id:
-      - req_a9b9fe24949c408ea7a342adc51a8247
+      - req_ffe3fffedb3bf88eb4d963a3ff85f45d
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=HXRFIXcOEUCW7mwLeNMLbWGHwZ3GTckf9hBandoV9Tw-1732823686-1.0.1.1-EudZ2WSsTNQkyKLbrVAUcFdqA8sTkHePbwRyOnt_Kms2MpS0Wd7oizz9bqfig5JiazG54EdmpSYV8PdfjxVCmA;
-        path=/; expires=Thu, 28-Nov-24 20:24:46 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=fT2CFSfTTSykY0fvLf5Fu8MpsB5FaPXNDWbbODfxg3Q-1732909384-1.0.1.1-jQMpOXPRsvGQZxOiZt_60Qx5W_FjbbysqZE5QwRBg94WD1rdXEfEsYLqUOt4bTIHmKAP_ZanVoNCrSTEJZnf0A;
+        path=/; expires=Fri, 29-Nov-24 20:13:04 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=3Qw381JnCiMk8o0B6Cq2be3_j46_pogHTTJ8lJK38qY-1732823686189-0.0.1.1-604800000;
+      - _cfuvid=6RyqPaNKcb.3gL8LoswyBmE7MkNQx80XB48y3Sr4EKU-1732909384393-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce964692d41cd-EWR
+      - 8ea515a26b030f77-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet3prlSy9c1mkN7qJO2OC2VfhSo",
+          "id": "chatcmpl-AZ1BIVQ73CUTfir2SIHxnCbi7MLgK",
           "object": "chat.completion",
-          "created": 1732823685,
+          "created": 1732909384,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -379,9 +643,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 447,
+            "prompt_tokens": 446,
             "completion_tokens": 1,
-            "total_tokens": 448,
+            "total_tokens": 447,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -395,7 +659,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:46 GMT
+  recorded_at: Fri, 29 Nov 2024 19:43:04 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -411,20 +675,20 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
         using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
         fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
       Content-Type:
@@ -443,7 +707,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:46 GMT
+      - Fri, 29 Nov 2024 19:43:04 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -455,7 +719,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '185'
+      - '268'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -465,38 +729,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '19873'
+      - '14901'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 20.253s
+      - 30.196s
       X-Request-Id:
-      - req_880b2b839eebb4ecbae020e93ef8f8bf
+      - req_7fa6e2aa78cf8b0b82d8dbfe42a5724f
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=X8RnM9NZ0_aGO74PYVSQfjR2jwBYRl7Zjf4YScjp4ZI-1732823686-1.0.1.1-aULfl6XiSqwUwFzc3rpLIur8DMuJQe4.CwDaRcPFRz9VoWs67VP8ZoHSE3aPJluAg2irXvcKVWv5WR9YCBsAsQ;
-        path=/; expires=Thu, 28-Nov-24 20:24:46 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=wNF7e94tO_oHj9fEwRJRvr3tc8R.uPKTyY8xYBmD1vU-1732909384-1.0.1.1-s310NcLfXiwr.NTtAjwdz17WzTnxJk_ZKSbeuIxtbg4Hr1VEMeAiLEUEL_RBlldWvWPd6BvN9c.zAfikNv70Ug;
+        path=/; expires=Fri, 29-Nov-24 20:13:04 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=eDJlYfEdLxiqdERlGzsWI5hv94E5QjyacgH.BRHxcjg-1732823686557-0.0.1.1-604800000;
+      - _cfuvid=iQ2PUFA3PwiEOB1dIg3LI7ONR97IRaz5T6nSwcIsJGg-1732909384883-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce966f81642e7-EWR
+      - 8ea515a4ee3c42ee-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet4CNp21KYPjnqh93cA66t8OkIS",
+          "id": "chatcmpl-AZ1BIQGYhK35JDiyXqOStPdOsoYP3",
           "object": "chat.completion",
-          "created": 1732823686,
+          "created": 1732909384,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -511,9 +775,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 447,
+            "prompt_tokens": 446,
             "completion_tokens": 1,
-            "total_tokens": 448,
+            "total_tokens": 447,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -527,7 +791,7 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:46 GMT
+  recorded_at: Fri, 29 Nov 2024 19:43:04 GMT
 - request:
     method: post
     uri: https://api.openai.com/v1/chat/completions
@@ -543,20 +807,20 @@ http_interactions:
         searching for matches for the user?\n\nrespond with only one word, active
         or inactive.\n\nactive - We should be actively searching for matches.\ninactive
         - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
         a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
         using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
         fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
       Content-Type:
@@ -575,667 +839,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 19:54:46 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '203'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '19631'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 20.737s
-      X-Request-Id:
-      - req_616b5a5239baee64d49c4b945714e4e6
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=J0yUyQrL_L7gDyaZGUjKR73ErOMk5rNE5mFgsaUBuic-1732823686-1.0.1.1-yK2iKzuhCxn4IsPr3YGfZt4_0BZOSDNPdWY679qGMB6nZ5vXV0L5ZNKUtlXRUteg5HsgalywCyL2OMWEhHGCLA;
-        path=/; expires=Thu, 28-Nov-24 20:24:46 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=kMPOjJWxabMUydxI.IOBdms9jO03lc4GZWBROITp1Cw-1732823686963-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce969883bc33f-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYet4djaEdwSPDzBamNWikyrHZ0an",
-          "object": "chat.completion",
-          "created": 1732823686,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 447,
-            "completion_tokens": 1,
-            "total_tokens": 448,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:46 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
-        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:47 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '246'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '19387'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 21.225s
-      X-Request-Id:
-      - req_cd25fe2961df84631b971733d786e973
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=2c7gHIl3v1h7qp4ev.f3dOygVDiqByYlAyp7HUUyAcE-1732823687-1.0.1.1-FcH11Q3iot09uiZs8RqNoSQQlMbFUPYIBa_Zbtxl2SbUBrzLJqPK.3yp4nBpAwYuggBZfAQDnhx2SchD4cGf4g;
-        path=/; expires=Thu, 28-Nov-24 20:24:47 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=MImh_4qNRDeSV6iV77uMJjUndCg3jkJvZH8ycG8fOHE-1732823687414-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce96c1e7cf795-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYet5f76oiZ34vDx66ZFuMCuKaD49",
-          "object": "chat.completion",
-          "created": 1732823687,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 447,
-            "completion_tokens": 1,
-            "total_tokens": 448,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:47 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
-        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:47 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '200'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '19226'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 21.547s
-      X-Request-Id:
-      - req_12420ecbf8137d38e06e2e77bf699ddb
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=LiE5jJX.Lo7WhvSXduhJoeONyR.clRlCCn2K2OdOWY8-1732823687-1.0.1.1-KVk4cMAWMEfZiCs_Z8n8ooBqd3QRTN1HnJpGkNEfRsggzmswe.pGW_z5iFIyJwpUstzcH9Kj9P971BMojz3rvQ;
-        path=/; expires=Thu, 28-Nov-24 20:24:47 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=6ERsWk2nKbM8m8wymZrqL4OBKlnV2KtGiT2WvlpUwAE-1732823687947-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce96fa93ec470-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYet5qr2J7Qp0tnv2G9u3jFDouD4O",
-          "object": "chat.completion",
-          "created": 1732823687,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 447,
-            "completion_tokens": 1,
-            "total_tokens": 448,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:47 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
-        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:48 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '202'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '19008'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 21.982s
-      X-Request-Id:
-      - req_d5d2ff72b5671f3e60ebb90bc4c45d39
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=lplSG4mhlahtVQA0PxTxfpNMcFWql5KhrxOhPJRC0aE-1732823688-1.0.1.1-6jV.71.D28jJ8mCydGLdeizRQiajeYOGrJe2pBJ7844zpuC2JuE7sL8vKRfCIxaktgbVFFt12r4fKnyXnIxrMg;
-        path=/; expires=Thu, 28-Nov-24 20:24:48 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=ZJxarZqYLIYM6YgUugORHVXJw2pngf5BKSSJwaAXJuE-1732823688409-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce9728e401a0f-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYet6QigNjxHK9sKDzDaG8e8509Eq",
-          "object": "chat.completion",
-          "created": 1732823688,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 447,
-            "completion_tokens": 1,
-            "total_tokens": 448,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:48 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
-        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:48 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Access-Control-Expose-Headers:
-      - X-Request-ID
-      Openai-Organization:
-      - user-esz09v1ru9ycpuh3vohbbyka
-      Openai-Processing-Ms:
-      - '328'
-      Openai-Version:
-      - '2020-10-01'
-      X-Ratelimit-Limit-Requests:
-      - '500'
-      X-Ratelimit-Limit-Tokens:
-      - '30000'
-      X-Ratelimit-Remaining-Requests:
-      - '499'
-      X-Ratelimit-Remaining-Tokens:
-      - '18762'
-      X-Ratelimit-Reset-Requests:
-      - 120ms
-      X-Ratelimit-Reset-Tokens:
-      - 22.475s
-      X-Request-Id:
-      - req_41749e54880a519b1bab9823cfe8fffa
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Cf-Cache-Status:
-      - DYNAMIC
-      Set-Cookie:
-      - __cf_bm=6KrPu.qgfZJLaKDomuaRVUv_PC_7crF6SHS.7EY393U-1732823688-1.0.1.1-dx_5pBnq4LAqRxLcXcvNcI4egl96HQT5h9_R1HbdOTBNbZ9nBkczrnGK413ezLADrZc6ObA6ottzHnScJWzWtg;
-        path=/; expires=Thu, 28-Nov-24 20:24:48 GMT; domain=.api.openai.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=zfSJl8lh2DVuxSFEcO_PplDz_Xh6j.gfLgRFmD39y8c-1732823688941-0.0.1.1-604800000;
-        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
-      X-Content-Type-Options:
-      - nosniff
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 8e9ce9750acac337-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: |
-        {
-          "id": "chatcmpl-AYet6xiYGI1Bxcaacm3FAFEi8xyCO",
-          "object": "chat.completion",
-          "created": 1732823688,
-          "model": "gpt-4o-2024-11-20",
-          "choices": [
-            {
-              "index": 0,
-              "message": {
-                "role": "assistant",
-                "content": "inactive",
-                "refusal": null
-              },
-              "logprobs": null,
-              "finish_reason": "stop"
-            }
-          ],
-          "usage": {
-            "prompt_tokens": 447,
-            "completion_tokens": 1,
-            "total_tokens": 448,
-            "prompt_tokens_details": {
-              "cached_tokens": 0,
-              "audio_tokens": 0
-            },
-            "completion_tokens_details": {
-              "reasoning_tokens": 0,
-              "audio_tokens": 0,
-              "accepted_prediction_tokens": 0,
-              "rejected_prediction_tokens": 0
-            }
-          },
-          "system_fingerprint": "fp_a523ccd45c"
-        }
-  recorded_at: Thu, 28 Nov 2024 19:54:48 GMT
-- request:
-    method: post
-    uri: https://api.openai.com/v1/chat/completions
-    body:
-      encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
-        are a bot that makes connections.\nPeople message you when they need something
-        and whenever you feel you have enough information you let them know that you
-        will be on the lookout for any users that can be of use to them.\nYou need
-        enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1431\nuser first name: Norberto\n\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-11-28 19:54:44\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-28 19:54:44\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-28
-        19:54:44\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-28 19:54:44\nrole:
-        assistant\ncontent: I have found a potential connection for you. Bob is a
-        founder at an early stage SaaS startup in NYC looking to bring on full stack
-        web developers with 2-4 years of SaaS experience for full-time in-person work.
-        This opportunity might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-11-28 19:54:44\nrole: user\ncontent: Thank you, that sounds like a great
-        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
-    headers:
-      Content-Type:
-      - application/json
-      Authorization:
-      - Bearer <OPENAI_SECRET>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 28 Nov 2024 19:54:49 GMT
+      - Fri, 29 Nov 2024 19:43:05 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1257,38 +861,38 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '18566'
+      - '14669'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 22.867s
+      - 30.66s
       X-Request-Id:
-      - req_e0daaf51a1a63e8a8f92770bb52bcbf3
+      - req_d21c44440cb36b464e7b6f7b0e6e442d
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ebd14M8qXcT1endaY2xSwj2I47GpkuiKRzxcuSouBPI-1732823689-1.0.1.1-W5YkseHVsyWYNJpMvaHyxCxakqNFYJIG8M7Lme99O226X4a4Tew61diUop22vuDGyrM6lctZi9TjqlLZs8rzVA;
-        path=/; expires=Thu, 28-Nov-24 20:24:49 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=XwwpYZ4OhaMMrCaLwjg1mX9oMp_lBUCS6Sv9ecb.Xtk-1732909385-1.0.1.1-gTcjIjl8AAm4BR5ornJMwEMQxEnHavlkxEuZkA1mjfHd1ZeLGWSdLevP5Y0R3JUAb2wKYqawYfSyXPOngbiAmw;
+        path=/; expires=Fri, 29-Nov-24 20:13:05 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=t_T_KYMZphgHjxdSObEZxhVRnRoFoh_RJAKAq7Xpk2E-1732823689301-0.0.1.1-604800000;
+      - _cfuvid=e6oq2qaD73Qb0yDZDUG2hoJ96bIKySdOG9igUyz4DH8-1732909385229-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ce97839b80f41-EWR
+      - 8ea515a7cc9ff799-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYet7mCDiBcuert8uNwAuD7DcuUOa",
+          "id": "chatcmpl-AZ1BJZRZbEQpd6jGlMGOGyEn0wMLG",
           "object": "chat.completion",
-          "created": 1732823689,
+          "created": 1732909385,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
@@ -1303,9 +907,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 447,
+            "prompt_tokens": 446,
             "completion_tokens": 1,
-            "total_tokens": 448,
+            "total_tokens": 447,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -1319,5 +923,401 @@ http_interactions:
           },
           "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Thu, 28 Nov 2024 19:54:49 GMT
+  recorded_at: Fri, 29 Nov 2024 19:43:05 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        using Ruby on Rails at several SaaS startups. Looking for a new in-person
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
+        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:43:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '155'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '14464'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 31.07s
+      X-Request-Id:
+      - req_c98f480ff49019b93a214fcca9757452
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=9lTvRxiURGCcEB_yRTxKoWQ1TkKVV8PJFmBlcjW1Zyc-1732909385-1.0.1.1-mM5LAEZb4vdXym4Hj8vi1PT9Ek0.oh3rpuE1rjaK0gG9I0JFewDfYZDNvc2yuDEHKGjWl8k8633Ml6Fgjs3erA;
+        path=/; expires=Fri, 29-Nov-24 20:13:05 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=07vTJH5uhBefgmXxqDYHkUucFzyo26AHw3cKblvp.4E-1732909385681-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea515aaa99743d4-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1BJHis8mCL4dzgrGTOJ9lu7ml1E",
+          "object": "chat.completion",
+          "created": 1732909385,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 1,
+            "total_tokens": 447,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:43:05 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        using Ruby on Rails at several SaaS startups. Looking for a new in-person
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
+        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:43:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '164'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '14228'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 31.543s
+      X-Request-Id:
+      - req_48e05914caf6439cd6590214401a1144
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=J6SN_TQ0gWsuMyHIiSGG6zrICORHIg.v3QHmqqD0hsc-1732909386-1.0.1.1-9tABXo5aaTcq1I4hBSE.ckidb9Fc9PpdgiHaPzMHa3Me8LqtETzRCt.fNyY5wtRf2VwBOslywnTgJfqeMRqfEQ;
+        path=/; expires=Fri, 29-Nov-24 20:13:06 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=2OfnsUdYP5y2hx02N9ca9DoLSZWzwZtL.lzmYR5uiDo-1732909386110-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea515ad5ef58c3b-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1BJ8Jcwjr5gSN9Qmvx7SuFBmOSl",
+          "object": "chat.completion",
+          "created": 1732909385,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 1,
+            "total_tokens": 447,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:43:06 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+        are a bot that makes connections.\nPeople message you when they need something
+        and whenever you feel you have enough information you let them know that you
+        will be on the lookout for any users that can be of use to them.\nYou need
+        enough detail about something before you can make a search so you can find
+        someone that is a good match.\n"},{"role":"user","content":"We need to determine
+        the current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nrespond with only one word, active
+        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
+        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
+        id: 1627\nuser first name: Phil\n\n\ndate: 2024-11-29 19:43:02\nrole: user\ncontent:
+        Hello\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-29
+        19:43:02\nrole: user\ncontent: I''m a software engineer in NYC with experience
+        using Ruby on Rails at several SaaS startups. Looking for a new in-person
+        position with good benefits and work life balance.\n\ndate: 2024-11-29 19:43:02\nrole:
+        assistant\ncontent: Great! I''ll let you know if I find someone looking for
+        an engineer with your skills.\n\ndate: 2024-11-29 19:43:02\nrole: assistant\ncontent:
+        I have found a potential connection for you. Bob is a founder at an early
+        stage SaaS startup in NYC looking to bring on full stack web developers with
+        2-4 years of SaaS experience for full-time in-person work. This opportunity
+        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
+        2024-11-29 19:43:02\nrole: user\ncontent: Thank you, that sounds like a great
+        fit!\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_SECRET>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 29 Nov 2024 19:43:06 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      Openai-Organization:
+      - user-esz09v1ru9ycpuh3vohbbyka
+      Openai-Processing-Ms:
+      - '172'
+      Openai-Version:
+      - '2020-10-01'
+      X-Ratelimit-Limit-Requests:
+      - '500'
+      X-Ratelimit-Limit-Tokens:
+      - '30000'
+      X-Ratelimit-Remaining-Requests:
+      - '499'
+      X-Ratelimit-Remaining-Tokens:
+      - '13991'
+      X-Ratelimit-Reset-Requests:
+      - 120ms
+      X-Ratelimit-Reset-Tokens:
+      - 32.017s
+      X-Request-Id:
+      - req_6723e838a9d0eed1885d00bafc752c0c
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=8bL1k4V0I93kl.YG0JLqRPBt.TEPFGdZRRPcCLNHEkQ-1732909386-1.0.1.1-oogfN5RrAvZ7xfWfXBeBkeyo1.XB9YAdb_yjcjB64VMCnxh9ODawE0NQ3fWbph8j1x5pkJrFqhmauMPCmw2ZMg;
+        path=/; expires=Fri, 29-Nov-24 20:13:06 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=efb4Ek.iZW4xRzUis4Ngd3DQYkwb45qVghm9c48lLgI-1732909386558-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ea515afda1019ae-EWR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "chatcmpl-AZ1BKinxSuF3tErBim8XeA1YjOWHc",
+          "object": "chat.completion",
+          "created": 1732909386,
+          "model": "gpt-4o-2024-11-20",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "inactive",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 1,
+            "total_tokens": 447,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": "fp_a523ccd45c"
+        }
+  recorded_at: Fri, 29 Nov 2024 19:43:06 GMT
 recorded_with: VCR 6.3.1

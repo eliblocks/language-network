@@ -53,7 +53,7 @@ class User < ApplicationRecord
 
   def respond
     if messages.count == 1
-      message = messages.create(role: "assistant", content: prompts.welcome_message)
+      message = messages.create(role: "assistant", content: Prompts.welcome_message)
       send_message(message)
     else
       respond_with_chatbot
