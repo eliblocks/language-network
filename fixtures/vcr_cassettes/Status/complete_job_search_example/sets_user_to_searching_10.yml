@@ -47,7 +47,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 30 Nov 2024 20:18:04 GMT
+      - Sat, 30 Nov 2024 20:18:05 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -59,7 +59,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '388'
+      - '508'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -69,36 +69,36 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '12119'
+      - '11917'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 35.76s
+      - 36.164s
       X-Request-Id:
-      - req_e3aab1a92ddff7d55a119869ca2802b1
+      - req_24aaa5f95de97be8cf583e5e43db2884
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=XuaIHgq3svDWXDily7rKlClESApBpfB1wpaphErWLKo-1732997884-1.0.1.1-OgRZCW3dn09CXiZolA0RgdalDSuMdKRQjwOrpWc4P0aOkA.B0vpwA.unj_arvQTgQ5n62UrJTqmw8O5mmRz0Ow;
-        path=/; expires=Sat, 30-Nov-24 20:48:04 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=VEfOJqsgPoPzFiK5JZjrm2Fcy2iaQHTM6CI93O4LvDk-1732997885-1.0.1.1-TNZQq5fdf_0tl5N7NN153EEAWslkHnflH9UMksllgLblrbWdKI4yzPjArgQuCWQ.gU1UMmfU.jaLd7t.qOM0LA;
+        path=/; expires=Sat, 30-Nov-24 20:48:05 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=XC.RlUZWItLWUZ0lGefAmakICJC735v6rc2O0wGLFSI-1732997884512-0.0.1.1-604800000;
+      - _cfuvid=RXBPtLIz8ksLeLap2LGGczZZ68w7C1imAm2TF8J.AGQ-1732997885206-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8ead8646fa730cb2-EWR
+      - 8ead864a8b204331-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZOCi3m7khxiAwPJ9gKhAoYlYx8G1",
+          "id": "chatcmpl-AZOCi9xKZT4Y87h5DZapTvd93HZRT",
           "object": "chat.completion",
           "created": 1732997884,
           "model": "gpt-4o-2024-11-20",
@@ -107,7 +107,7 @@ http_interactions:
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"active\",\"explanation\":\"The assistant has sufficient details about the user's needs and is now actively searching for matches.\"}",
+                "content": "{\"status\":\"active\",\"explanation\":\"The assistant has acknowledged the user's request and is actively searching for matches.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -116,8 +116,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 457,
-            "completion_tokens": 26,
-            "total_tokens": 483,
+            "completion_tokens": 23,
+            "total_tokens": 480,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -131,5 +131,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Sat, 30 Nov 2024 20:18:04 GMT
+  recorded_at: Sat, 30 Nov 2024 20:18:05 GMT
 recorded_with: VCR 6.3.1

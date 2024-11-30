@@ -62,7 +62,7 @@ class User < ApplicationRecord
   end
 
   def update_status
-    new_status = fetch_status
+    new_status = JSON.parse(fetch_status)["status"]
 
     if new_status == "active"
       update(status: "searching")
@@ -113,7 +113,7 @@ class User < ApplicationRecord
 
   def introduce(user)
     prompt = prompts.introduction(user)
-    response = system_message(prompt, "introduction")
+    response = system_message(prompt, type: "introduction")
     response += " #{user.profile_link}" if user.instagram_id
 
     message = messages.create(role: "assistant", content: response)
@@ -138,7 +138,7 @@ class User < ApplicationRecord
   end
 
   def fetch_status
-    system_message(prompts.active, "status").downcase
+    system_message(prompts.status, type: "status", format: Prompts.status_format).downcase
   end
 
   def send_message(message)
@@ -200,18 +200,18 @@ class User < ApplicationRecord
     raise "users are same" if user1 == user2
     raise "Users not in searching status" unless user1.searching? && user2.searching?
 
-    response = system_message(prompts.comparison(user1, user2), "comparison")
+    response = system_message(prompts.comparison(user1, user2), type: "comparison")
 
     User.find(response)
   end
 
   def summarize
-    response = system_message(prompts.summary, "summarization")
+    response = system_message(prompts.summary, type: "summarization")
     update!(summary: response)
   end
 
   def good_match?(possible_match)
-    response = system_message(prompts.good_match(possible_match), "match")
+    response = system_message(prompts.good_match(possible_match), type: "match")
     response.downcase.include?("yes")
   end
 
@@ -227,11 +227,11 @@ class User < ApplicationRecord
     user.introduce(self)
   end
 
-  def system_message(content, type = nil)
-    Ai.chat([ { role: "user", content: } ], type)
+  def system_message(content, type: nil, format: nil)
+    Ai.chat([ { role: "user", content: } ], type:, format:)
   end
 
   def chat_completion
-    Ai.chat(messages.as_json(only: [ :role, :content ]), "conversation")
+    Ai.chat(messages.as_json(only: [ :role, :content ]), type: "conversation")
   end
 end

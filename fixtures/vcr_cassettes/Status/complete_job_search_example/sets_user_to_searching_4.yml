@@ -10,20 +10,26 @@ http_interactions:
         and whenever you feel you have enough information you let them know that you
         will be on the lookout for any users that can be of use to them.\nYou need
         enough detail about something before you can make a search so you can find
-        someone that is a good match.\n"},{"role":"user","content":"We need to determine
-        the current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nrespond with only one word, active
-        or inactive.\n\nactive - We should be actively searching for matches.\ninactive
-        - We should not be searching for matches at this moment.\n\nUSER CONVERSATION\nuser
-        id: 1825\nuser first name: Shawna\n\n\ndate: 2024-11-30 01:20:52\nrole: user\ncontent:
-        Hello\n\ndate: 2024-11-30 01:20:52\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-11-30
-        01:20:52\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-11-30 01:20:52\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\n\n"}],"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
+        someone that is a good match.\nOnce you have made a match the search is complete,
+        until a user wants something else or requests another match.\n"},{"role":"user","content":"We
+        need to determine the current status of the conversation with the user below.\nAre
+        we currently searching for matches for the user?\n\nactive - We are currently
+        searching for matches.\ninactive - We are not searching for matches at this
+        moment.\n\nWe need to align with the assistant in the conversation.\nSo if
+        we recently asked the user for more details, the status would not be active
+        because we are still collecting information.\nAnd if we already found a match
+        and have not started a new search, they would also not be active.\n\nUSER
+        CONVERSATION\nuser id: 2044\nuser first name: Danilo\n\n\ndate: 2024-11-30
+        20:17:57\nrole: user\ncontent: Hello\n\ndate: 2024-11-30 20:17:57\nrole: assistant\ncontent:
+        Hello! I''m a bot that can connect you to people. Tell me a little about what
+        you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
+        2024-11-30 20:17:57\nrole: user\ncontent: I''m a software engineer in NYC
+        with experience using Ruby on Rails at several SaaS startups. Looking for
+        a new in-person position with good benefits and work life balance.\n\ndate:
+        2024-11-30 20:17:57\nrole: assistant\ncontent: Great! I''ll let you know if
+        I find someone looking for an engineer with your skills.\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
+        whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
+        for the given status."}},"required":["status","explanation"],"additionalProperties":false},"strict":true}},"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
       Content-Type:
       - application/json
@@ -41,7 +47,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 30 Nov 2024 01:20:55 GMT
+      - Sat, 30 Nov 2024 20:18:00 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -53,7 +59,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '191'
+      - '516'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -63,45 +69,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '27858'
+      - '12546'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 4.283s
+      - 34.906s
       X-Request-Id:
-      - req_4677a4120c3217c45bb2eba03793887f
+      - req_bf56fcb6caa2c165d7634717d2de65e7
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=WGKjhZarpEknhwhzEeg7I7BL.GPiBpC98k1hl38Ah2c-1732929655-1.0.1.1-SnTVbkzX_RtT1FwK8VYWfrMk8uo96NGMxPg2LqOftiWS0Uf106kFproH8DOJqlYg3kBy3zzhRwkNb_9iMrXw6A;
-        path=/; expires=Sat, 30-Nov-24 01:50:55 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=Br93._lQ183eRch4OXt2u5A60AOymANLlVTPJic.bFE-1732997880-1.0.1.1-9GQ5NGCZhJhhF4TOwqtEiTCMoS5ExHVeyNWpEgcaTD3Glpj0xfcfoWpQzh6vPt6vUwlJsll.ZUdPM83PyB9L1A;
+        path=/; expires=Sat, 30-Nov-24 20:48:00 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=weAg86w4sNX._BNb1mLny949fA.jW.BF_NzgHDkT2ps-1732929655275-0.0.1.1-604800000;
+      - _cfuvid=rydRC60BRyIyJMcK_zk9ZrVvEgXYAFrw_3nKtuootYM-1732997880634-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8ea7048729835e7e-EWR
+      - 8ead862dfc7132e8-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZ6SFxYJayYRNaG68yN4TN3jDDfS9",
+          "id": "chatcmpl-AZOCe5QG0lkPkvu0J8kuyqVfWpXkR",
           "object": "chat.completion",
-          "created": 1732929655,
+          "created": 1732997880,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "active",
+                "content": "{\"status\":\"active\",\"explanation\":\"The assistant acknowledged the user's details and is actively searching for a match based on the provided information.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -109,9 +115,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 328,
-            "completion_tokens": 1,
-            "total_tokens": 329,
+            "prompt_tokens": 457,
+            "completion_tokens": 28,
+            "total_tokens": 485,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -123,7 +129,7 @@ http_interactions:
               "rejected_prediction_tokens": 0
             }
           },
-          "system_fingerprint": "fp_a523ccd45c"
+          "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Sat, 30 Nov 2024 01:20:55 GMT
+  recorded_at: Sat, 30 Nov 2024 20:18:00 GMT
 recorded_with: VCR 6.3.1

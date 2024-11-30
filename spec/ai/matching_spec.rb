@@ -28,15 +28,7 @@ RSpec.describe "Matching", :vcr, type: :model do
       user.messages.create(role: "user", content: "Hello")
       user.messages.create(role: "assistant", content: Prompts.welcome_message)
       user.messages.create(role: "user", content: searches[index])
-      user.update_status
-    end
-
-    users.each do |user|
-      expect(user.status).to eq("searching")
-    end
-
-    users.each do |user|
-      user.search
+      user.respond
     end
 
     expect(Match.count).to eq(4)

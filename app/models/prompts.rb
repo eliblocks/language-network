@@ -10,6 +10,7 @@ class Prompts
       You are a bot that makes connections.
       People message you when they need something and whenever you feel you have enough information you let them know that you will be on the lookout for any users that can be of use to them.
       You need enough detail about something before you can make a search so you can find someone that is a good match.
+      Once you have made a match the search is complete, until a user wants something else or requests another match.
     HEREDOC
   end
 
@@ -58,15 +59,49 @@ class Prompts
     HEREDOC
   end
 
-  def active
+  def self.status_format
+    {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "user_status",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "description": "Indicates whether a user is active or inactive.",
+              "enum": [
+                "active",
+                "inactive"
+              ]
+            },
+            "explanation": {
+              "type": "string",
+              "description": "explanation for the given status."
+            }
+          },
+          "required": [
+            "status",
+            "explanation"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      }
+    }
+  end
+
+  def status
     <<~HEREDOC
       We need to determine the current status of the conversation with the user below.
       Are we currently searching for matches for the user?
 
-      respond with only one word, active or inactive.
+      active - We are currently searching for matches.
+      inactive - We are not searching for matches at this moment.
 
-      active - We should be actively searching for matches.
-      inactive - We should not be searching for matches at this moment.
+      We need to align with the assistant in the conversation.
+      So if we recently asked the user for more details, the status would not be active because we are still collecting information.
+      And if we already found a match and have not started a new search, they would also not be active.
 
       #{user.formatted_messages}
     HEREDOC
@@ -107,7 +142,7 @@ class Prompts
       We are trying to craft a text message to introduce two users based on their conversations below.
       We need to return the actual message, not an explanation of the message, because the result of this prompt will be messaged to the user.
       This message will be sent to the user in middle of their current conversation so no need for a greeting.
-      Don't provide any information on contacting the user.
+      We do not want any kind of conclusion in the message.
 
       We are sending a message to #{user.intro_name} to let them know about #{matched_user.intro_name}.
 

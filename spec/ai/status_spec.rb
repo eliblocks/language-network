@@ -15,7 +15,7 @@ RSpec.describe "Status", :vcr, type: :model do
       @user.messages << messages
     end
     10.times do |i|
-      it "updates user status correctly ##{i}" do
+      it "updates user status correctly ##{i + 1}" do
         @user.update_status
         expect(@user.status).to eq("drafting")
       end
@@ -35,7 +35,7 @@ RSpec.describe "Status", :vcr, type: :model do
       @user.messages << messages
     end
     10.times do |i|
-      it "is still in draft status ##{i}" do
+      it "is still in draft status ##{i + 1}" do
         @user.update_status
         expect(@user.status).to eq("drafting")
       end
@@ -55,7 +55,7 @@ RSpec.describe "Status", :vcr, type: :model do
       @user.messages << messages
     end
     10.times do |i|
-      it "sets user to searching ##{i}" do
+      it "sets user to searching ##{i + 1}" do
         @user.update_status
         expect(@user.status).to eq("searching")
       end
@@ -77,7 +77,7 @@ RSpec.describe "Status", :vcr, type: :model do
       @user.messages << messages
     end
     10.times do |i|
-      it "sets user back to drafting ##{i}" do
+      it "sets user back to drafting ##{i + 1}" do
         @user.update_status
         expect(@user.status).to eq("drafting")
       end
