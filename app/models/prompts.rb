@@ -24,7 +24,6 @@ class Prompts
   #   HEREDOC
   # end
 
-
   # def self.system
   #   <<~HEREDOC
   #     You are a bot that makes connections.
@@ -58,38 +57,6 @@ class Prompts
       #{user2.formatted_messages}
     HEREDOC
   end
-
-  # def active
-  #   <<~HEREDOC
-  #     We need to determine if we should be matching this user. 
-  #     We need to know if we have enough information at this point.
-  #     We also want to make sure our decision aligns with what the assistant has said in the conversation.
-
-  #     Based on the conversation below which status should we set the user to?
-
-  #     active - We should be actively searching for matches.
-  #     inactive - We should not be searching for matches at this moment.
-
-  #     respond with only one word, active or inactive.
-
-  #     #{user.formatted_messages}
-  #   HEREDOC
-  # end
-
-
-  # def active
-  #   <<~HEREDOC
-  #     We need to determine the current status of the conversation with the user below.
-
-
-  #     respond with only one word, active or inactive.
-
-  #     active - We should be actively searching for matches.
-  #     inactive - We should not be searching for matches at this moment.
-
-  #     #{user.formatted_messages}
-  #   HEREDOC
-  # end
 
   def active
     <<~HEREDOC
