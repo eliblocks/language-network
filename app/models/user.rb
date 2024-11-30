@@ -200,9 +200,10 @@ class User < ApplicationRecord
     raise "users are same" if user1 == user2
     raise "Users not in searching status" unless user1.searching? && user2.searching?
 
-    response = system_message(prompts.comparison(user1, user2), type: "comparison")
+    response = system_message(prompts.comparison(user1, user2), type: "comparison", format: Prompts.comparison_format)
+    best_id = JSON.parse(response)["user_id"]
 
-    User.find(response)
+    User.find(best_id)
   end
 
   def summarize

@@ -40,6 +40,35 @@ class Prompts
     HEREDOC
   end
 
+
+  def self.comparison_format
+    {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "best_match",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "user_id": {
+              "type": "integer",
+              "description": "User id of the best match"
+            },
+            "explanation": {
+              "type": "string",
+              "description": "explanation for the given selection."
+            }
+          },
+          "required": [
+            "user_id",
+            "explanation"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      }
+    }
+  end
+
   def summary
     "Summarize the interest of the user with the following conversation:\n\n#{user.formatted_messages}"
   end
@@ -127,13 +156,7 @@ class Prompts
     <<~HEREDOC
       We are now trying to find the best match for the searching user.
       Given the user and two other users along with their conversation histories,
-      return the user id of the best match for the searching user. return only a user_id.
-      Even if both users are a poor match, return the best possible option.
-
-
-      ===========================
-
-      Example response: 521
+      return the user id of the best match for the searching user.
     HEREDOC
   end
 
