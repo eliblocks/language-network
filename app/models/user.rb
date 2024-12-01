@@ -52,8 +52,9 @@ class User < ApplicationRecord
   end
 
   def respond
-    if messages.count == 1
+    if messages.count == 1 && messages.last.content.length < 30
       message = messages.create(role: "assistant", content: Prompts.welcome_message)
+      update(status: "drafting")
       send_message(message)
     else
       respond_with_chatbot

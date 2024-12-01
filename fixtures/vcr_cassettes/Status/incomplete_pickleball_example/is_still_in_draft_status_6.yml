@@ -11,20 +11,22 @@ http_interactions:
         will be on the lookout for any users that can be of use to them.\nYou need
         enough detail about something before you can make a search so you can find
         someone that is a good match.\nOnce you have made a match the search is complete,
-        until a user wants something else or requests another match.\n"},{"role":"user","content":"We
-        need to determine the current status of the conversation with the user below.\nAre
-        we currently searching for matches for the user?\n\nactive - We are currently
-        searching for matches.\ninactive - We are not searching for matches at this
-        moment.\n\nWe need to align with the assistant in the conversation.\nSo if
-        we recently asked the user for more details, the status would not be active
-        because we are still collecting information.\nAnd if we already found a match
-        and have not started a new search, they would also not be active.\n\nUSER
-        CONVERSATION\nuser id: 2091\nuser first name: Heath\n\n\ndate: 2024-11-30
-        23:26:36\nrole: user\ncontent: Hello\n\ndate: 2024-11-30 23:26:36\nrole: assistant\ncontent:
-        Hello! I''m a bot that can connect you to people. Tell me a little about what
-        you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
-        2024-11-30 23:26:36\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-11-30 23:26:36\nrole: assistant\ncontent: Got it! Could you tell me your
+        until a user wants something else or requests another match.\nWhen people
+        first message you they may not know much about you, so a short explanation
+        may be appropriate.\n"},{"role":"user","content":"We need to determine the
+        current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nactive - We are currently searching
+        for matches.\ninactive - We are not searching for matches at this moment.\n\nWe
+        need to align with the assistant in the conversation.\nSo if we recently asked
+        the user for more details, the status would not be active because we are still
+        collecting information.\nAnd if we already found a match and have not started
+        a new search, they would also not be active.\n\nUSER CONVERSATION\nuser id:
+        2217\nuser first name: Rashad\n\n\ndate: 2024-12-01 17:40:28\nrole: user\ncontent:
+        Hello\n\ndate: 2024-12-01 17:40:28\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-12-01
+        17:40:28\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-12-01 17:40:28\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
@@ -46,7 +48,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 30 Nov 2024 23:26:40 GMT
+      - Sun, 01 Dec 2024 17:40:33 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -58,7 +60,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '573'
+      - '389'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -68,45 +70,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '11494'
+      - '17200'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 37.01s
+      - 25.598s
       X-Request-Id:
-      - req_7e412bea0adbd75e5eb146f91bcd4ec8
+      - req_54edc7cb0ed367d0b41f9607d3381f23
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ftZyBMEai6d2SwwnKs94ATbeudUctwEndczWSeL0vt0-1733009200-1.0.1.1-kKYOMDmtPCOCokVMHEMr19wGBcmcUWvEjkoxPZzmGd.LgcrzA0G7y8_nUJU6ExSbsFOv8zDfbgtaF_4f.sriZw;
-        path=/; expires=Sat, 30-Nov-24 23:56:40 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=vpN7vVKePu5rW.4Bz.heWDzJzldVa9lz78lX0r46Ml4-1733074833-1.0.1.1-Lmoo5_DwdK83kEfvS14k5dBHoFVRGEdXVcLXn5iJXNlwdYUKZA8lWSlTmQlXSI6tzeiQKmF4TBs_cy5aVStfEw;
+        path=/; expires=Sun, 01-Dec-24 18:10:33 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=CaLoDAOjQLHvasjVKj4hsKDBgMTS3ZubvXJwYEW6cNg-1733009200948-0.0.1.1-604800000;
+      - _cfuvid=LVXnBBWX2QnVxmGd76rMNlN0hlMz6zgKAVpbHe3hLuY-1733074833218-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8eae9a8d5a504349-EWR
+      - 8eb4dce85e00188d-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZR9EtB5pZjxoGIpDcVdOCNEhufMu",
+          "id": "chatcmpl-AZiDoGMvC3mmDJtaD2rtfMhea1Uyy",
           "object": "chat.completion",
-          "created": 1733009200,
+          "created": 1733074832,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"The user has not yet provided the additional details requested by the assistant to proceed with the search for a match.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"The assistant is currently collecting more details from the user before initiating the search for a match.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -114,9 +116,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 444,
-            "completion_tokens": 31,
-            "total_tokens": 475,
+            "prompt_tokens": 466,
+            "completion_tokens": 27,
+            "total_tokens": 493,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -130,5 +132,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Sat, 30 Nov 2024 23:26:40 GMT
+  recorded_at: Sun, 01 Dec 2024 17:40:33 GMT
 recorded_with: VCR 6.3.1

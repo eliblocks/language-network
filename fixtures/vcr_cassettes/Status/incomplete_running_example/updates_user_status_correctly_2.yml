@@ -11,23 +11,25 @@ http_interactions:
         will be on the lookout for any users that can be of use to them.\nYou need
         enough detail about something before you can make a search so you can find
         someone that is a good match.\nOnce you have made a match the search is complete,
-        until a user wants something else or requests another match.\n"},{"role":"user","content":"We
-        need to determine the current status of the conversation with the user below.\nAre
-        we currently searching for matches for the user?\n\nactive - We are currently
-        searching for matches.\ninactive - We are not searching for matches at this
-        moment.\n\nWe need to align with the assistant in the conversation.\nSo if
-        we recently asked the user for more details, the status would not be active
-        because we are still collecting information.\nAnd if we already found a match
-        and have not started a new search, they would also not be active.\n\nUSER
-        CONVERSATION\nuser id: 2090\nuser first name: Odis\n\n\ndate: 2024-11-30 23:26:28\nrole:
-        user\ncontent: Hello\n\ndate: 2024-11-30 23:26:28\nrole: assistant\ncontent:
-        Hello! I''m a bot that can connect you to people. Tell me a little about what
-        you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
-        2024-11-30 23:26:28\nrole: user\ncontent: I''m looking to go for a running
-        partner in NYC on the west side highway\n\ndate: 2024-11-30 23:26:28\nrole:
-        assistant\ncontent: Great! How often do you plan on running, and what pace
-        or distance are you comfortable with? This will help me find someone who matches
-        your running style.\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
+        until a user wants something else or requests another match.\nWhen people
+        first message you they may not know much about you, so a short explanation
+        may be appropriate.\n"},{"role":"user","content":"We need to determine the
+        current status of the conversation with the user below.\nAre we currently
+        searching for matches for the user?\n\nactive - We are currently searching
+        for matches.\ninactive - We are not searching for matches at this moment.\n\nWe
+        need to align with the assistant in the conversation.\nSo if we recently asked
+        the user for more details, the status would not be active because we are still
+        collecting information.\nAnd if we already found a match and have not started
+        a new search, they would also not be active.\n\nUSER CONVERSATION\nuser id:
+        2216\nuser first name: Detra\n\n\ndate: 2024-12-01 17:40:19\nrole: user\ncontent:
+        Hello\n\ndate: 2024-12-01 17:40:19\nrole: assistant\ncontent: Hello! I''m
+        a bot that can connect you to people. Tell me a little about what you''re
+        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-12-01
+        17:40:19\nrole: user\ncontent: I''m looking to go for a running partner in
+        NYC on the west side highway\n\ndate: 2024-12-01 17:40:19\nrole: assistant\ncontent:
+        Great! How often do you plan on running, and what pace or distance are you
+        comfortable with? This will help me find someone who matches your running
+        style.\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
         for the given status."}},"required":["status","explanation"],"additionalProperties":false},"strict":true}},"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -47,7 +49,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 30 Nov 2024 23:26:29 GMT
+      - Sun, 01 Dec 2024 17:40:21 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -59,7 +61,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '555'
+      - '397'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -69,45 +71,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '12700'
+      - '18254'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 34.598s
+      - 23.49s
       X-Request-Id:
-      - req_fc1869a5deb34c0b92cbb71ca94c239b
+      - req_80a553d89fca634007f22560a1359bba
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=JX40NsEdeTWAPPEnpQyAf4nWIjHXsJaZxUW2v60f8CY-1733009189-1.0.1.1-AmdC6_LzQ7Q.8gd.taqTEMP3gMJH01QUe_lFElTqcphysc4l9oKugv5dEngUPbHMTlYdbgZ6hYa59mJuFNGRZQ;
-        path=/; expires=Sat, 30-Nov-24 23:56:29 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=qVscQc5kEvJBsUNzbD95hhro.jQxXO2umfoFSIccPDM-1733074821-1.0.1.1-b3VDnyhFFYwehR8iOS2s.6_d3nL4fGwu935nsjg2aGcv.KJzAQHoYxG.fOclyOoNrOUtZmae1X0Ej1h2MooO5g;
+        path=/; expires=Sun, 01-Dec-24 18:10:21 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=6k2W9o57ufopyFFjTHUgqTW.xFZg_PKzCfkKPzfAi4c-1733009189946-0.0.1.1-604800000;
+      - _cfuvid=KNkMwoId3grozUiwG6xcbBFtg67KxdMaIExm8eb2MSY-1733074821320-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8eae9a48ec1341ed-EWR
+      - 8eb4dc9dcda242c8-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZR93aFNxw6SZqFQJZHen2nvHjmPQ",
+          "id": "chatcmpl-AZiDckwzD7qGDCSN2uxuapv6hi9jo",
           "object": "chat.completion",
-          "created": 1733009189,
+          "created": 1733074820,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"We are not actively searching for matches because we are still collecting additional details from the user about their running preferences.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"We are still collecting information from the user to refine the search criteria for a match.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -115,9 +117,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 454,
-            "completion_tokens": 31,
-            "total_tokens": 485,
+            "prompt_tokens": 475,
+            "completion_tokens": 26,
+            "total_tokens": 501,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -131,5 +133,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Sat, 30 Nov 2024 23:26:29 GMT
+  recorded_at: Sun, 01 Dec 2024 17:40:21 GMT
 recorded_with: VCR 6.3.1

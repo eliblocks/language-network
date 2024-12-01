@@ -24,7 +24,7 @@ RSpec.describe "Messaging", type: :request do
 
     post api_messages_path(params(sam, "Hello"))
     expect(sam.messages.count).to eq(2)
-    expect(sam.reload.status).to eq("initial")
+    expect(sam.reload.status).to eq("drafting")
 
     sam_message = "I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits and work life balance."
     post api_messages_path(params(sam, sam_message))
@@ -38,7 +38,7 @@ RSpec.describe "Messaging", type: :request do
 
     post api_messages_path(params(bob, "Hello"))
     expect(bob.reload.messages.count).to eq(2)
-    expect(bob.reload.status).to eq("initial")
+    expect(bob.reload.status).to eq("drafting")
 
     # Bob searches and matches with Sam
     bob_message = "I'm a founder at an early stage SaaS startup with a great product looking to bring on full stack web developers with 2-4 years SaaS experience who are available to work full time in person in NYC."
@@ -98,7 +98,7 @@ RSpec.describe "Messaging", type: :request do
 
       post api_webhooks_instagram_path(params(sam, "Hello"))
       expect(sam.messages.count).to eq(2)
-      expect(sam.reload.status).to eq("initial")
+      expect(sam.reload.status).to eq("drafting")
 
       sam_message = "I'm a software engineer in NYC with experience using Ruby on Rails at several SaaS startups. Looking for a new in-person position with good benefits and work life balance."
       post api_webhooks_instagram_path(params(sam, sam_message))
@@ -112,7 +112,7 @@ RSpec.describe "Messaging", type: :request do
 
       post api_webhooks_instagram_path(params(bob, "Hello"))
       expect(bob.reload.messages.count).to eq(2)
-      expect(bob.reload.status).to eq("initial")
+      expect(bob.reload.status).to eq("drafting")
 
       # Bob searches and matches with Sam
       bob_message = "I'm a founder at an early stage SaaS startup with a great product looking to bring on full stack web developers with 2-4 years SaaS experience who are available to work full time in person in NYC."
