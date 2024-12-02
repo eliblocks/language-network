@@ -175,7 +175,7 @@ class User < ApplicationRecord
     elsif instagram_id
       collection = collection.where.not(instagram_id: nil)
     else
-      collection.where(telegram_id: nil, instagram_id: nil)
+      collection = collection.where(telegram_id: nil, instagram_id: nil)
     end
 
     collection

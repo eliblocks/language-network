@@ -22,20 +22,20 @@ http_interactions:
         we recently asked the user for more details, the status would not be active
         because we are still collecting information.\nAnd if we already found a match
         and have not started a new search, they would also not be active.\n\nUSER
-        CONVERSATION\nuser id: 2251\nuser first name: Shena\n\n\ndate: 2024-12-01
-        21:02:49\nrole: user\ncontent: Hello\n\ndate: 2024-12-01 21:02:49\nrole: assistant\ncontent:
+        CONVERSATION\nuser id: 2331\nuser first name: Christoper\n\n\ndate: 2024-12-02
+        17:50:42\nrole: user\ncontent: Hello\n\ndate: 2024-12-02 17:50:42\nrole: assistant\ncontent:
         Hello! I''m a bot that can connect you to people. Tell me a little about what
         you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
-        2024-12-01 21:02:49\nrole: user\ncontent: I''m a software engineer in NYC
+        2024-12-02 17:50:42\nrole: user\ncontent: I''m a software engineer in NYC
         with experience using Ruby on Rails at several SaaS startups. Looking for
         a new in-person position with good benefits and work life balance.\n\ndate:
-        2024-12-01 21:02:49\nrole: assistant\ncontent: Great! I''ll let you know if
-        I find someone looking for an engineer with your skills.\n\ndate: 2024-12-01
-        21:02:49\nrole: assistant\ncontent: I have found a potential connection for
+        2024-12-02 17:50:42\nrole: assistant\ncontent: Great! I''ll let you know if
+        I find someone looking for an engineer with your skills.\n\ndate: 2024-12-02
+        17:50:42\nrole: assistant\ncontent: I have found a potential connection for
         you. Bob is a founder at an early stage SaaS startup in NYC looking to bring
         on full stack web developers with 2-4 years of SaaS experience for full-time
         in-person work. This opportunity might align well with your background and
-        career goals. https://www.instagram.com.\n\ndate: 2024-12-01 21:02:49\nrole:
+        career goals. https://www.instagram.com.\n\ndate: 2024-12-02 17:50:42\nrole:
         user\ncontent: Thank you, that sounds like a great fit!\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
         for the given status."}},"required":["status","explanation"],"additionalProperties":false},"strict":true}},"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
@@ -56,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 01 Dec 2024 21:02:51 GMT
+      - Mon, 02 Dec 2024 17:50:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -68,7 +68,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '398'
+      - '1203'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -78,45 +78,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '9829'
+      - '28026'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 40.34s
+      - 3.947s
       X-Request-Id:
-      - req_9ffde0fe151d5fb59be74a18004a0ed3
+      - req_0787b08b3b920f2c76e0834f4e11a65c
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=rr8CnTbvgvKpkJYp10prJBy3V8HG01IZCVLYrr4M_ac-1733086971-1.0.1.1-bCWAmW90VPht_Hg_7Zp.Nob8Hwwr6B5NrtwPYdiOFWLwY5OupxZSYGwUf6fBM03d4jlx77Zp1eU2KxJW2lFGRw;
-        path=/; expires=Sun, 01-Dec-24 21:32:51 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=DvpR48UrZNtyZKB.C.CXxX6IOgTpM.8E0csElNe1HmQ-1733161846-1.0.1.1-ezub7meVYNFo5BUVRaZdR0u4JIbROUnyHRV9_4C1HVspnkHipvaMOob6tfnWkEMHstdoy8BERbviGrT_E2hXXw;
+        path=/; expires=Mon, 02-Dec-24 18:20:46 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=LDn1pYuAK7oKQ9AjWqEYyzb1WvgOxpN.Yp3PfEnAyYk-1733086971717-0.0.1.1-604800000;
+      - _cfuvid=mUz_1TT5qzDIVOADDjp8N7LB..wF_cDedFwY.wYo2Qw-1733161846567-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8eb60541aa4ac344-EWR
+      - 8ebd293cbf002394-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZlNbdttwSrGYmJfGwkojeDAYIDwL",
+          "id": "chatcmpl-Aa4rGDskHra8drGaiXcmsLiV8fIb0",
           "object": "chat.completion",
-          "created": 1733086971,
+          "created": 1733161846,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"The user has been provided a match and has not initiated a new search, so the status is inactive.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"The user has received a match and has not indicated a desire to start a new search.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -125,8 +125,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 614,
-            "completion_tokens": 30,
-            "total_tokens": 644,
+            "completion_tokens": 27,
+            "total_tokens": 641,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -138,7 +138,7 @@ http_interactions:
               "rejected_prediction_tokens": 0
             }
           },
-          "system_fingerprint": "fp_28935134ad"
+          "system_fingerprint": "fp_a523ccd45c"
         }
-  recorded_at: Sun, 01 Dec 2024 21:02:51 GMT
+  recorded_at: Mon, 02 Dec 2024 17:50:46 GMT
 recorded_with: VCR 6.3.1
