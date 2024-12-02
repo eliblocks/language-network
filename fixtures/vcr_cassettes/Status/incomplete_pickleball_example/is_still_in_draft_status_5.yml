@@ -13,20 +13,21 @@ http_interactions:
         someone that is a good match.\nOnce you have made a match the search is complete,
         until a user wants something else or requests another match.\nWhen people
         first message you they may not know much about you, so a short explanation
-        may be appropriate.\n"},{"role":"user","content":"We need to determine the
-        current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nactive - We are currently searching
-        for matches.\ninactive - We are not searching for matches at this moment.\n\nWe
-        need to align with the assistant in the conversation.\nSo if we recently asked
-        the user for more details, the status would not be active because we are still
-        collecting information.\nAnd if we already found a match and have not started
-        a new search, they would also not be active.\n\nUSER CONVERSATION\nuser id:
-        2217\nuser first name: Rashad\n\n\ndate: 2024-12-01 17:40:28\nrole: user\ncontent:
-        Hello\n\ndate: 2024-12-01 17:40:28\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-12-01
-        17:40:28\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
-        2024-12-01 17:40:28\nrole: assistant\ncontent: Got it! Could you tell me your
+        may be appropriate.\nUsers will view your messages on mobile so its best to
+        avoid formatting like bullet points.\n"},{"role":"user","content":"We need
+        to determine the current status of the conversation with the user below.\nAre
+        we currently searching for matches for the user?\n\nactive - We are currently
+        searching for matches.\ninactive - We are not searching for matches at this
+        moment.\n\nWe need to align with the assistant in the conversation.\nSo if
+        we recently asked the user for more details, the status would not be active
+        because we are still collecting information.\nAnd if we already found a match
+        and have not started a new search, they would also not be active.\n\nUSER
+        CONVERSATION\nuser id: 2249\nuser first name: Lonnie\n\n\ndate: 2024-12-01
+        21:02:32\nrole: user\ncontent: Hello\n\ndate: 2024-12-01 21:02:32\nrole: assistant\ncontent:
+        Hello! I''m a bot that can connect you to people. Tell me a little about what
+        you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
+        2024-12-01 21:02:32\nrole: user\ncontent: I''m looking for a pickleball partner\n\ndate:
+        2024-12-01 21:02:32\nrole: assistant\ncontent: Got it! Could you tell me your
         skill level and when you''re usually available to play? This will help me
         find a compatible pickleball partner for you.\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
@@ -48,7 +49,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 01 Dec 2024 17:40:32 GMT
+      - Sun, 01 Dec 2024 21:02:36 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -60,7 +61,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '666'
+      - '500'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -70,45 +71,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '17180'
+      - '11745'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 25.638s
+      - 36.509s
       X-Request-Id:
-      - req_76ab39d4a74f2fb7c1472d11e5025fe1
+      - req_61518139c9a772e3801c382813e4c5a0
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=tSV992nf_zuAv1ETxNMF9pV6g3JVN3NKRpQqpja8BG0-1733074832-1.0.1.1-uQULQmtr2wseDC_DOr5ON0LehjXc9iOurWM9crRmn40HJYTbaSyx2NJbyOpXG5Nwc4v59gtCxHuJ6CJLxPSYvw;
-        path=/; expires=Sun, 01-Dec-24 18:10:32 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=SW2wq4FK0u_b1PMfu3JctfR_lbQJ2r_PGPpfeIZGBO8-1733086956-1.0.1.1-JmSlx9GR5.4HOIjVEKOKpDuZaOUS3pyB2GOcmiOGfsau3QCCBxS3__NhEeSUOv_Z81Nft17pxf8yYroO_KFc8g;
+        path=/; expires=Sun, 01-Dec-24 21:32:36 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=LZqB2bXeu3Wbx42oj6i6f2tNTWuuGYMIEHdvfhSLoaU-1733074832451-0.0.1.1-604800000;
+      - _cfuvid=UMWPnd74YNmnUgpOqcDtKTN8IyWlF1o2n73TsosQqyM-1733086956223-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8eb4dce1edb83314-EWR
+      - 8eb604e08984438d-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZiDocDZz0qsY1gfL9fnKPao1xrAV",
+          "id": "chatcmpl-AZlNLIoW9AkQ2DpyScwL8de7AB1QT",
           "object": "chat.completion",
-          "created": 1733074832,
+          "created": 1733086955,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"The assistant is currently waiting for the user to provide additional details about their skill level and availability before beginning the search for a match.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"We are currently waiting for more details from the user to proceed with the search for a match.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -116,9 +117,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 466,
-            "completion_tokens": 35,
-            "total_tokens": 501,
+            "prompt_tokens": 483,
+            "completion_tokens": 28,
+            "total_tokens": 511,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -132,5 +133,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Sun, 01 Dec 2024 17:40:32 GMT
+  recorded_at: Sun, 01 Dec 2024 21:02:36 GMT
 recorded_with: VCR 6.3.1

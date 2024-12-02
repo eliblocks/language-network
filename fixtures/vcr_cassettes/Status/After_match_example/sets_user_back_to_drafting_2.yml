@@ -13,29 +13,30 @@ http_interactions:
         someone that is a good match.\nOnce you have made a match the search is complete,
         until a user wants something else or requests another match.\nWhen people
         first message you they may not know much about you, so a short explanation
-        may be appropriate.\n"},{"role":"user","content":"We need to determine the
-        current status of the conversation with the user below.\nAre we currently
-        searching for matches for the user?\n\nactive - We are currently searching
-        for matches.\ninactive - We are not searching for matches at this moment.\n\nWe
-        need to align with the assistant in the conversation.\nSo if we recently asked
-        the user for more details, the status would not be active because we are still
-        collecting information.\nAnd if we already found a match and have not started
-        a new search, they would also not be active.\n\nUSER CONVERSATION\nuser id:
-        2219\nuser first name: Wayne\n\n\ndate: 2024-12-01 17:40:46\nrole: user\ncontent:
-        Hello\n\ndate: 2024-12-01 17:40:46\nrole: assistant\ncontent: Hello! I''m
-        a bot that can connect you to people. Tell me a little about what you''re
-        looking for and I''ll try to find someone relevant to you.\n\ndate: 2024-12-01
-        17:40:46\nrole: user\ncontent: I''m a software engineer in NYC with experience
-        using Ruby on Rails at several SaaS startups. Looking for a new in-person
-        position with good benefits and work life balance.\n\ndate: 2024-12-01 17:40:46\nrole:
-        assistant\ncontent: Great! I''ll let you know if I find someone looking for
-        an engineer with your skills.\n\ndate: 2024-12-01 17:40:46\nrole: assistant\ncontent:
-        I have found a potential connection for you. Bob is a founder at an early
-        stage SaaS startup in NYC looking to bring on full stack web developers with
-        2-4 years of SaaS experience for full-time in-person work. This opportunity
-        might align well with your background and career goals. https://www.instagram.com.\n\ndate:
-        2024-12-01 17:40:46\nrole: user\ncontent: Thank you, that sounds like a great
-        fit!\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
+        may be appropriate.\nUsers will view your messages on mobile so its best to
+        avoid formatting like bullet points.\n"},{"role":"user","content":"We need
+        to determine the current status of the conversation with the user below.\nAre
+        we currently searching for matches for the user?\n\nactive - We are currently
+        searching for matches.\ninactive - We are not searching for matches at this
+        moment.\n\nWe need to align with the assistant in the conversation.\nSo if
+        we recently asked the user for more details, the status would not be active
+        because we are still collecting information.\nAnd if we already found a match
+        and have not started a new search, they would also not be active.\n\nUSER
+        CONVERSATION\nuser id: 2251\nuser first name: Shena\n\n\ndate: 2024-12-01
+        21:02:49\nrole: user\ncontent: Hello\n\ndate: 2024-12-01 21:02:49\nrole: assistant\ncontent:
+        Hello! I''m a bot that can connect you to people. Tell me a little about what
+        you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
+        2024-12-01 21:02:49\nrole: user\ncontent: I''m a software engineer in NYC
+        with experience using Ruby on Rails at several SaaS startups. Looking for
+        a new in-person position with good benefits and work life balance.\n\ndate:
+        2024-12-01 21:02:49\nrole: assistant\ncontent: Great! I''ll let you know if
+        I find someone looking for an engineer with your skills.\n\ndate: 2024-12-01
+        21:02:49\nrole: assistant\ncontent: I have found a potential connection for
+        you. Bob is a founder at an early stage SaaS startup in NYC looking to bring
+        on full stack web developers with 2-4 years of SaaS experience for full-time
+        in-person work. This opportunity might align well with your background and
+        career goals. https://www.instagram.com.\n\ndate: 2024-12-01 21:02:49\nrole:
+        user\ncontent: Thank you, that sounds like a great fit!\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
         for the given status."}},"required":["status","explanation"],"additionalProperties":false},"strict":true}},"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -55,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 01 Dec 2024 17:40:48 GMT
+      - Sun, 01 Dec 2024 21:02:51 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -67,7 +68,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '657'
+      - '430'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -77,45 +78,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '16275'
+      - '10154'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 27.448s
+      - 39.691s
       X-Request-Id:
-      - req_f8c68654be6a6e82c4ea9742dada51cb
+      - req_22b8582cf6d395710d4246bf07100de2
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=lKreykAjmy5FNn9e21V0uucAEw1kzCrXqN_VJyEo7ZE-1733074848-1.0.1.1-0c5wq5NJO6LmjjrRv_IAdamm3TKLUmm6uH_kPKxyaph1jIt8yI06y3oauN36qACXCWIyRUsTrWilnhjEXh4aow;
-        path=/; expires=Sun, 01-Dec-24 18:10:48 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=SmRWmOUyfHedRmam0qtTD1e7NhfakvWfl_DZ0ejrXxw-1733086971-1.0.1.1-rlWVbWuYWiv4j3ZLVkChTqS7F6uxXpBHvGk.5Vb7QXuVS0fgh..mdZtK824cI7RTlAYMGBcHZFM2z1BdT9BKhA;
+        path=/; expires=Sun, 01-Dec-24 21:32:51 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=RZVhaYfFrQNUmv9QZQpCQ9sbo67zApeDQObSKTV4JGU-1733074848315-0.0.1.1-604800000;
+      - _cfuvid=vC_iNFlfzjlS2wQgDWX5q.ZNl3HPNrgN015xc0Iny34-1733086971102-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8eb4dd4448658c7d-EWR
+      - 8eb6053ddc997c8d-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AZiE3J3mXRb1X0VTpje59DxmRyFvm",
+          "id": "chatcmpl-AZlNafxf2uZJqcW51MwdtDkb0rgte",
           "object": "chat.completion",
-          "created": 1733074847,
+          "created": 1733086970,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"The user has been provided a match, and there is no indication that a new search is required at this time.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"The user has already been matched with a potential connection, and there is no indication that a new search has begun.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -123,9 +124,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 596,
+            "prompt_tokens": 614,
             "completion_tokens": 32,
-            "total_tokens": 628,
+            "total_tokens": 646,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -139,5 +140,5 @@ http_interactions:
           },
           "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Sun, 01 Dec 2024 17:40:50 GMT
+  recorded_at: Sun, 01 Dec 2024 21:02:51 GMT
 recorded_with: VCR 6.3.1

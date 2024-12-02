@@ -57,6 +57,7 @@ class Prompts
       You need enough detail about something before you can make a search so you can find someone that is a good match.
       Once you have made a match the search is complete, until a user wants something else or requests another match.
       When people first message you they may not know much about you, so a short explanation may be appropriate.
+      Users will view your messages on mobile so its best to avoid formatting like bullet points.
     HEREDOC
   end
 
