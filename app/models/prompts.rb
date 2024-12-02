@@ -51,7 +51,7 @@ class Prompts
   end
 
   def summary
-    "Summarize the interest of the user with the following conversation:\n\n#{user.formatted_messages}"
+    "Create a single message from the following conversation as if you were the user sending just a single message. Return only the message. \n\n#{user.formatted_messages}"
   end
 
   def comparison(user1, user2)

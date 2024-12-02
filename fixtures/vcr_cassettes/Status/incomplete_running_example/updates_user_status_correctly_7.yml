@@ -22,12 +22,12 @@ http_interactions:
         we recently asked the user for more details, the status would not be active
         because we are still collecting information.\nAnd if we already found a match
         and have not started a new search, they would also not be active.\n\nUSER
-        CONVERSATION\nuser id: 2328\nuser first name: Efren\n\n\ndate: 2024-12-02
-        17:50:00\nrole: user\ncontent: Hello\n\ndate: 2024-12-02 17:50:00\nrole: assistant\ncontent:
+        CONVERSATION\nuser id: 2360\nuser first name: King\n\n\ndate: 2024-12-02 20:04:05\nrole:
+        user\ncontent: Hello\n\ndate: 2024-12-02 20:04:05\nrole: assistant\ncontent:
         Hello! I''m a bot that can connect you to people. Tell me a little about what
         you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
-        2024-12-02 17:50:00\nrole: user\ncontent: I''m looking to go for a running
-        partner in NYC on the west side highway\n\ndate: 2024-12-02 17:50:00\nrole:
+        2024-12-02 20:04:05\nrole: user\ncontent: I''m looking to go for a running
+        partner in NYC on the west side highway\n\ndate: 2024-12-02 20:04:05\nrole:
         assistant\ncontent: Great! How often do you plan on running, and what pace
         or distance are you comfortable with? This will help me find someone who matches
         your running style.\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
@@ -50,7 +50,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 02 Dec 2024 17:50:09 GMT
+      - Mon, 02 Dec 2024 20:04:12 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -62,7 +62,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '714'
+      - '447'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -72,45 +72,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '23655'
+      - '17064'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 12.689s
+      - 25.871s
       X-Request-Id:
-      - req_eeb019dbe4fe3d758f0a760676b3b441
+      - req_64ca88061b9632f4cebe59db431b926e
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=TluqsfJ2WOL9402FzI6KwDPGJkX9dPWtrHHt_Wz8rp0-1733161809-1.0.1.1-zxY.wzSwFJRCIh.QoBxnlch7PREISYzquO44PWAW8kjrurdl5LAwcG60A5pIxmvm8bKBen54TU51EYgcpRqcGQ;
-        path=/; expires=Mon, 02-Dec-24 18:20:09 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=LNfulW89R7yIBhhZpgupPGv_g8pKIXKYbRV3FfgbvDM-1733169852-1.0.1.1-Uy2VvEi2twqyUGwOPkHXm0c6JdTELCdgOUPSHG2w.VsG.CzuqzQ9vwfeajpsLXRzyxC0Zy2cbYr6eK08h4gZWw;
+        path=/; expires=Mon, 02-Dec-24 20:34:12 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=hNL8IOEHl_rl7L02gS4cLVudTZlBkR4O7IFAFpdX9dI-1733161809577-0.0.1.1-604800000;
+      - _cfuvid=4zxlvpnN2eiZGmsFIiVCSvWo3ckHvIFUN_iYPfBpqTU-1733169852541-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8ebd28588c5f17e9-EWR
+      - 8ebdecb6da9e0f7c-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-Aa4qfuwAQZxDixXg4aGATfSka46gn",
+          "id": "chatcmpl-Aa6wOBWoBnNsZQgnRBnyHTatPBoU2",
           "object": "chat.completion",
-          "created": 1733161809,
+          "created": 1733169852,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"We are still collecting information from the user about their running preferences before we can start searching for a match.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"The user is providing additional details about their request, and the assistant is awaiting a response before starting the search.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -118,8 +118,8 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 492,
-            "completion_tokens": 30,
+            "prompt_tokens": 491,
+            "completion_tokens": 31,
             "total_tokens": 522,
             "prompt_tokens_details": {
               "cached_tokens": 0,
@@ -132,7 +132,7 @@ http_interactions:
               "rejected_prediction_tokens": 0
             }
           },
-          "system_fingerprint": "fp_a523ccd45c"
+          "system_fingerprint": "fp_28935134ad"
         }
-  recorded_at: Mon, 02 Dec 2024 17:50:09 GMT
+  recorded_at: Mon, 02 Dec 2024 20:04:12 GMT
 recorded_with: VCR 6.3.1
