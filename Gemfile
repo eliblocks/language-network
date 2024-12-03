@@ -30,6 +30,12 @@ gem "neighbor"
 gem "http"
 
 gem "anthropic"
+
+gem "rollbar"
+
+# required for rollbar
+gem "ostruct"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
