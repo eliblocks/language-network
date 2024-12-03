@@ -52,7 +52,6 @@ class User < ApplicationRecord
   end
 
   def respond
-    Rollbar.info("responding to user message")
     if messages.count == 1 && messages.last.content.length < 30
       message = messages.create(role: "assistant", content: Prompts.welcome_message)
       update(status: "drafting")
