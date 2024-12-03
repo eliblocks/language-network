@@ -28,7 +28,7 @@ class User < ApplicationRecord
       user first name: #{first_name}
 
 
-      #{messages.format}
+      #{messages.order(:created_at).format}
     HEREDOC
   end
 
@@ -234,6 +234,6 @@ class User < ApplicationRecord
   end
 
   def chat_completion
-    Ai.chat(messages.as_json(only: [ :role, :content ]), type: "conversation")
+    Ai.chat(messages.order(:created_at).as_json(only: [ :role, :content ]), type: "conversation")
   end
 end
