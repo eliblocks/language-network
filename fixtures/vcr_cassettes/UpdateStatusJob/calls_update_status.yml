@@ -22,7 +22,7 @@ http_interactions:
         we recently asked the user for more details, the status would not be active
         because we are still collecting information.\nAnd if we already found a match
         and have not started a new search, they would also not be active.\n\nUSER
-        CONVERSATION\nuser id: 2333\nuser first name: Carey\n\n\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
+        CONVERSATION\nuser id: 2547\nuser first name: Karissa\n\n\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
         for the given status."}},"required":["status","explanation"],"additionalProperties":false},"strict":true}},"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
     headers:
@@ -42,7 +42,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 02 Dec 2024 17:51:01 GMT
+      - Thu, 12 Dec 2024 21:53:37 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -54,7 +54,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '4224'
+      - '438'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -64,45 +64,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '28933'
+      - '13075'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 2.133s
+      - 33.849s
       X-Request-Id:
-      - req_1759d8de13cd9e47d48258fdd41e8bf8
+      - req_d49638cd4a8d4c1252f8492a3c834533
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=oDMDC.ivNjEjlYZjFcZkuCy5qaEOjac_YDOqVEex630-1733161861-1.0.1.1-._7S7OmGc2H4D0TM4StG4PbWqE5SUfZYyfr3MXlwHPqQJrcASmMbBjHcnXZIePuUYQ3eIWYLPwKmNMwARqV97w;
-        path=/; expires=Mon, 02-Dec-24 18:21:01 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=znCxPwVhN_aHDtKE8SjQodmRpof4yvj_Dht21PQHXGE-1734040417-1.0.1.1-R4.5ueb2gyrQsxZzkwMZIE62iI1CsSadaVU3w0oFTfBSQ_UzswbVq1fkWbHkOm8FsElOr3mXFUY.zTGjFf8KDg;
+        path=/; expires=Thu, 12-Dec-24 22:23:37 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=vVwXtMqBU20Fp2FuynkstfQbCW4fI3cwQqKN62n_9tU-1733161861207-0.0.1.1-604800000;
+      - _cfuvid=uflTqnd_6UBE.OAKFtlt7lZ5Kbda0.WfvsI5Q.FAk74-1734040417564-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8ebd29852afe42b0-EWR
+      - 8f10f2be4da0c434-EWR
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-Aa4rUyR9RKbl89uBmMygu9ISluc8J",
+          "id": "chatcmpl-AdlPlGHTv3WNlKfz2ZyqYm0Q83yZf",
           "object": "chat.completion",
-          "created": 1733161860,
+          "created": 1734040417,
           "model": "gpt-4o-2024-11-20",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"We are currently not searching for matches for Carey because we are still in the process of collecting information or have not initiated a search yet.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"We are not currently searching for matches for Karissa because we are either gathering information or have already completed a previous search.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -110,9 +110,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 322,
-            "completion_tokens": 36,
-            "total_tokens": 358,
+            "prompt_tokens": 323,
+            "completion_tokens": 33,
+            "total_tokens": 356,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -124,7 +124,7 @@ http_interactions:
               "rejected_prediction_tokens": 0
             }
           },
-          "system_fingerprint": "fp_a523ccd45c"
+          "system_fingerprint": "fp_0f09f8ead9"
         }
-  recorded_at: Mon, 02 Dec 2024 17:51:01 GMT
+  recorded_at: Thu, 12 Dec 2024 21:53:37 GMT
 recorded_with: VCR 6.3.1
