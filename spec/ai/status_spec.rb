@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Status", :vcr, type: :model do
   context "incomplete running example" do
-    before(:all) do
+    before(:each) do
       messages = [
         { role: "user", content: "Hello" },
         { role: "assistant", content: "Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you." },
@@ -23,7 +23,7 @@ RSpec.describe "Status", :vcr, type: :model do
   end
 
   context "incomplete pickleball example" do
-    before(:all) do
+    before(:each) do
       messages = [
         { role: "user", content: "Hello" },
         { role: "assistant", content: "Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you." },
@@ -43,7 +43,7 @@ RSpec.describe "Status", :vcr, type: :model do
   end
 
   context "complete job search example" do
-    before(:all) do
+    before(:each) do
       messages = [
         { role: "user", content: "Hello" },
         { role: "assistant", content: "Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you." },
@@ -63,7 +63,7 @@ RSpec.describe "Status", :vcr, type: :model do
   end
 
   context "After match example" do
-    before(:all) do
+    before(:each) do
       messages = [
         { role: "user", content: "Hello" },
         { role: "assistant", content: "Hello! I'm a bot that can connect you to people. Tell me a little about what you're looking for and I'll try to find someone relevant to you." },
