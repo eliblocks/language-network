@@ -71,7 +71,7 @@ RSpec.describe User do
 
   describe "#service" do
     it "returns nil for web user" do
-      expect(build(:user).service).to be_nil
+      expect(build(:user).service).to eq("Web")
     end
 
     it "returns telegram for a telegram user" do

@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
     get "/webhooks/instagram", to: "webhooks#verify_instagram"
     post "/webhooks/instagram", to: "webhooks#instagram"
+
+    post "/webhooks/discord", to: "webhooks#discord"
   end
 end

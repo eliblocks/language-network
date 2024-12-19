@@ -1,4 +1,6 @@
 class Api::WebhooksController < ApiController
+  before_action :verify_discord_request!, only: :discord
+
   def verify_facebook
     render json: params["hub.challenge"]
   end
@@ -39,5 +41,35 @@ class Api::WebhooksController < ApiController
     user.respond
 
     head :ok
+  end
+
+  def discord
+    payload = JSON.parse(request.raw_post)
+
+    if payload["type"] == 1
+      render json: { type: 1 }
+      return
+    end
+
+    head :ok
+  end
+
+  private
+
+  def verify_discord_request!
+    signature = request.headers["X-Signature-Ed25519"]
+    timestamp = request.headers["X-Signature-Timestamp"]
+
+    return head :unauthorized unless signature && timestamp
+
+    begin
+      verify_key.verify([ signature ].pack("H*"), "#{timestamp}#{request.raw_post}")
+    rescue Ed25519::VerifyError
+      head :unauthorized
+    end
+  end
+
+  def verify_key
+    Ed25519::VerifyKey.new([ ENV["DISCORD_PUBLIC_KEY"] ].pack("H*")).freeze
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_10_204530) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_19_210353) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "vector"
@@ -146,6 +146,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_10_204530) do
     t.vector "embedding"
     t.string "instagram_id"
     t.string "instagram_username"
+    t.string "discord_id"
+    t.string "discord_username"
+    t.index ["discord_id"], name: "index_users_on_discord_id", unique: true
+    t.index ["discord_username"], name: "index_users_on_discord_username", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["instagram_id"], name: "index_users_on_instagram_id", unique: true
     t.index ["instagram_username"], name: "index_users_on_instagram_username", unique: true

@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def username
-    telegram_username || instagram_username || email
+    telegram_username || instagram_username || discord_username || email
   end
 
   def intro_name
@@ -99,8 +99,10 @@ class User < ApplicationRecord
       "Telegram"
     elsif instagram_id?
       "Instagram"
+    elsif discord_id?
+      "Discord"
     else
-      nil
+      "Web"
     end
   end
 
@@ -122,7 +124,7 @@ class User < ApplicationRecord
     send_message(message)
   end
 
-  private
+  # private
 
   def telegram_link
   "<a href='tg://user?id=#{telegram_id}'>#{name}</a>"
@@ -147,6 +149,8 @@ class User < ApplicationRecord
       send_telegram(message)
     elsif instagram_id
       send_instagram(message)
+    elsif discord_id
+      send_discord(message)
     end
   end
 
@@ -162,6 +166,12 @@ class User < ApplicationRecord
     Instagram.send_message(instagram_id, message.content)
   end
 
+  def send_discord(message)
+    return unless discord_id
+
+    Discord.send_message(discord_id, message.content)
+  end
+
   def embed
     raise "Requires a summary" unless summary
 
@@ -174,8 +184,10 @@ class User < ApplicationRecord
       collection = collection.where.not(telegram_id: nil)
     elsif instagram_id
       collection = collection.where.not(instagram_id: nil)
+    elsif discord_id
+      collection = collection.where.not(discord_id: nil)
     else
-      collection = collection.where(telegram_id: nil, instagram_id: nil)
+      collection = collection.where(telegram_id: nil, instagram_id: nil, discord_id: nil)
     end
 
     collection
