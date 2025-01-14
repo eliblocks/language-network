@@ -55,6 +55,21 @@ RSpec.describe "Messaging", type: :request do
 
     post api_messages_path(params(bob, "Thank you"))
     expect(bob.reload.status).to eq("drafting")
+
+    # Sam reactivates
+
+    post api_messages_path(params(sam, "Hello"))
+    post api_messages_path(params(sam, "I'm looking to meet fellow intermediate basketball players in nyc for pickup"))
+    expect(sam.reload.status).to eq("searching")
+
+    # Max searches and Sam Rematches
+    max = create(:telegram_user, first_name: "Max")
+    post api_messages_path(params(max, "Hello"))
+    post api_messages_path(params(max, "Im visiting new york, staying in manhattan and want to play pickup basketball as a way to meet locals! Open to all levels"))
+
+    expect(max.reload.status).to eq("matched")
+    expect(sam.reload.status).to eq("matched")
+    expect(max.matched_user).to eq(sam)
   end
 
   context "with instagram" do
@@ -123,13 +138,6 @@ RSpec.describe "Messaging", type: :request do
       expect(bob.reload.messages.last.content).to include("www.instagram.com")
       expect(bob.reload.status).to eq("matched")
       expect(sam.reload.matched_user).to eq(bob)
-
-      # Sam and Bob no longer active
-      post api_webhooks_instagram_path(params(sam, "Thank you"))
-      expect(sam.reload.status).to eq("drafting")
-
-      post api_webhooks_instagram_path(params(bob, "Thank you"))
-      expect(bob.reload.status).to eq("drafting")
     end
   end
 end

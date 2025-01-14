@@ -119,7 +119,8 @@ class Prompts
 
   def good_match(possible_match)
     <<~HEREDOC
-      Based on the conversations with two separate users below, are they a good match for each other? Return yes or no.
+      We are now trying to determine if we have found a good match.
+      Given the conversation histories of two users below, are they a good match? return yes or no.
 
       #{user.formatted_messages}
 
