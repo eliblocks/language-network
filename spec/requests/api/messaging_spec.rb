@@ -70,6 +70,18 @@ RSpec.describe "Messaging", type: :request do
     expect(max.reload.status).to eq("matched")
     expect(sam.reload.status).to eq("matched")
     expect(max.matched_user).to eq(sam)
+
+    # Joe Searches
+    joe = create(:telegram_user, first_name: "Joe")
+    post api_messages_path(params(joe, "Hello"))
+    post api_messages_path(params(joe, "I'm looking for people to go on hikes with. Im in nyc and usually take the train upstate to nearby trails. Im in pretty good hiking shape and looking for at least intermediate hikers"))
+    expect(joe.reload.status).to eq("searching")
+
+    # Sam searches again
+    post api_messages_path(params(sam, "I live in NYC and trying to get out of the city for some strenous outdoor activites. Need people to explore with! I dont have a car but hopefully Ill figure something out."))
+    expect(sam.reload.status).to eq("matched")
+    expect(joe.reload.status).to eq("matched")
+    expect(joe.matched_user).to eq(sam)
   end
 
   context "with instagram" do

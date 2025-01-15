@@ -18,7 +18,7 @@ class Ai
 
       OpenAI::Client.new.chat(
         parameters: {
-          model: "gpt-4o-2024-11-20",
+          model: "gpt-4o-2024-08-06",
           messages:,
           response_format: format,
           temperature: 0.5,

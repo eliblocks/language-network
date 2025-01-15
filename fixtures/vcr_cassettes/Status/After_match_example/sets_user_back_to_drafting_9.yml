@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-4o-2024-11-20","messages":[{"role":"system","content":"You
+      string: '{"model":"gpt-4o-2024-08-06","messages":[{"role":"system","content":"You
         are a bot that makes connections.\nPeople message you when they need something
         and whenever you feel you have enough information you let them know that you
         will be on the lookout for any users that can be of use to them.\nYou need
@@ -22,20 +22,20 @@ http_interactions:
         we recently asked the user for more details, the status would not be active
         because we are still collecting information.\nAnd if we already found a match
         and have not started a new search, they would also not be active.\n\nUSER
-        CONVERSATION\nuser id: 2363\nuser first name: Tommy\n\n\ndate: 2024-12-02
-        20:04:35\nrole: user\ncontent: Hello\n\ndate: 2024-12-02 20:04:35\nrole: assistant\ncontent:
+        CONVERSATION\nuser id: 834\nuser first name: Vernon\n\n\ndate: 2025-01-15
+        01:16:45\nrole: user\ncontent: Hello\n\ndate: 2025-01-15 01:16:45\nrole: assistant\ncontent:
         Hello! I''m a bot that can connect you to people. Tell me a little about what
         you''re looking for and I''ll try to find someone relevant to you.\n\ndate:
-        2024-12-02 20:04:35\nrole: user\ncontent: I''m a software engineer in NYC
+        2025-01-15 01:16:45\nrole: user\ncontent: I''m a software engineer in NYC
         with experience using Ruby on Rails at several SaaS startups. Looking for
         a new in-person position with good benefits and work life balance.\n\ndate:
-        2024-12-02 20:04:35\nrole: assistant\ncontent: Great! I''ll let you know if
-        I find someone looking for an engineer with your skills.\n\ndate: 2024-12-02
-        20:04:35\nrole: assistant\ncontent: I have found a potential connection for
+        2025-01-15 01:16:45\nrole: assistant\ncontent: Great! I''ll let you know if
+        I find someone looking for an engineer with your skills.\n\ndate: 2025-01-15
+        01:16:45\nrole: assistant\ncontent: I have found a potential connection for
         you. Bob is a founder at an early stage SaaS startup in NYC looking to bring
         on full stack web developers with 2-4 years of SaaS experience for full-time
         in-person work. This opportunity might align well with your background and
-        career goals. https://www.instagram.com.\n\ndate: 2024-12-02 20:04:35\nrole:
+        career goals. https://www.instagram.com.\n\ndate: 2025-01-15 01:16:45\nrole:
         user\ncontent: Thank you, that sounds like a great fit!\n\n\n"}],"response_format":{"type":"json_schema","json_schema":{"name":"user_status","schema":{"type":"object","properties":{"status":{"type":"string","description":"Indicates
         whether a user is active or inactive.","enum":["active","inactive"]},"explanation":{"type":"string","description":"explanation
         for the given status."}},"required":["status","explanation"],"additionalProperties":false},"strict":true}},"temperature":0.5,"store":true,"metadata":{"type":"status","environment":"test"}}'
@@ -56,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 02 Dec 2024 20:04:43 GMT
+      - Wed, 15 Jan 2025 01:16:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -68,7 +68,7 @@ http_interactions:
       Openai-Organization:
       - user-esz09v1ru9ycpuh3vohbbyka
       Openai-Processing-Ms:
-      - '919'
+      - '1049'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -78,45 +78,43 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '499'
       X-Ratelimit-Remaining-Tokens:
-      - '14462'
+      - '29387'
       X-Ratelimit-Reset-Requests:
       - 120ms
       X-Ratelimit-Reset-Tokens:
-      - 31.074s
+      - 1.224s
       X-Request-Id:
-      - req_14f819813b819b1ddf4f671d195a007f
+      - req_2fdba5e4fe8a1bf784c70d0764bc5afc
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=XqWgvh1KX59_7OUzkFTI5Oxs9fEK3cELKRgHSgHk64k-1733169883-1.0.1.1-DGTwWwYAX_kID0V1kHRt4VbEwPTd.0.xVKjLQjou.xLCV_q6FS.SWuFqxeT16Eo27NjwnR9NjUmI_5H9GUXRtw;
-        path=/; expires=Mon, 02-Dec-24 20:34:43 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=gt86fMNUbvm49LZfFRGIcalwT8013i_EclkM71wcmYA-1736903806-1.0.1.1-Cx5VtaYlobkHTlKsLvbhK2CJElkv3_n5AxHBu.Y8BHDrkkANvP63gxJTmWhkSe9igy8ioGy8tI7YxcnPyIVyJA;
+        path=/; expires=Wed, 15-Jan-25 01:46:46 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=4Sv2S3hn_5.2KxO6W7EfK_0lrp_Wg5s5v6Im8m0FErw-1733169883267-0.0.1.1-604800000;
+      - _cfuvid=7kqSWgKOe.EV0K2SYGEr6ipGKrfUmrHr_qEGqCER.I8-1736903806549-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8ebded73cb2a8cd7-EWR
-      Alt-Svc:
-      - h3=":443"; ma=86400
+      - 902205aedcf28cad-EWR
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-Aa6wsQ629iob0yDsCtHeMYlPbw9B7",
+          "id": "chatcmpl-ApmJRsYwriX4NibAYQMRpHh5HU27E",
           "object": "chat.completion",
-          "created": 1733169882,
-          "model": "gpt-4o-2024-11-20",
+          "created": 1736903805,
+          "model": "gpt-4o-2024-08-06",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"status\":\"inactive\",\"explanation\":\"The user has received a match and has not initiated a new search.\"}",
+                "content": "{\"status\":\"inactive\",\"explanation\":\"We are not currently searching for matches because a match has already been found for the user, and there has been no request for a new search.\"}",
                 "refusal": null
               },
               "logprobs": null,
@@ -124,9 +122,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 613,
-            "completion_tokens": 23,
-            "total_tokens": 636,
+            "prompt_tokens": 612,
+            "completion_tokens": 39,
+            "total_tokens": 651,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -138,7 +136,8 @@ http_interactions:
               "rejected_prediction_tokens": 0
             }
           },
-          "system_fingerprint": "fp_28935134ad"
+          "service_tier": "default",
+          "system_fingerprint": "fp_50cad350e4"
         }
-  recorded_at: Mon, 02 Dec 2024 20:04:43 GMT
+  recorded_at: Wed, 15 Jan 2025 01:16:46 GMT
 recorded_with: VCR 6.3.1
